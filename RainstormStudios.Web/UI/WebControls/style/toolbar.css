@@ -1,0 +1,27 @@
+﻿
+div.toolbar
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.toolbar.toolbarTransBg.png")%>');
+    background-position: left top;
+    background-repeat: repeat;
+    height: 40px;
+    padding: 2px;
+    border: 1px solid #aeb6be;
+}
+span.tbItemCont
+{
+    width: 41px;
+    height: 41px;   
+    text-align: center;
+    cursor: pointer;
+}
+span.tbItemCont img
+{
+    /*margin-top: 8px;*/
+}
+span.tbItemCont.active
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.toolbar.toolbarIconHoverBg.png")%>');
+    background-position: left top;
+    background-repeat: no-repeat;
+}

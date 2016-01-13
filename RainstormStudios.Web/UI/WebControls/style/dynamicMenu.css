@@ -1,0 +1,55 @@
+﻿div.iconMenu
+{
+    white-space: nowrap;
+}
+div.iconMenu fieldset.iconGroup
+{
+    float: left;
+    white-space: nowrap;
+    margin: 4px 8px;
+    border: solid 1px gray;
+    padding: 10px 15px;
+}
+div.iconMenu fieldset.iconGroup legend
+{
+    
+}
+div.iconMenu fieldset.iconGroup span
+{
+    width: 80px;
+    margin: 15px 8px 0px 8px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    float: left;
+    white-space: normal;
+    overflow: hidden;
+}
+div.iconMenu fieldset.iconGroup span a, div.iconMenu fieldset span a:visited
+{
+    color: #0066cc;
+}
+
+div.iconMenu div.popoutMenu, div.iconMenu div.popoutSubMenu
+{
+    white-space: nowrap;
+    /*padding: 2px 15px 2px 15px;*/
+}
+div.iconMenu div.popoutMenu.popoutMenuOpen
+{
+}
+div.iconMenu div.popoutMenu span.menuItem, div.iconMenu div.popoutSubMenu span.menuItem
+{
+    display: inline-block;
+    cursor: pointer;
+    /*min-height: 25px;*/
+}
+div.iconMenu div.popoutMenu span.menuItem img, div.iconMenu div.popoutSubMenu span.menuItem img
+{
+    vertical-align: middle;
+}
+div.iconMenu div.popoutSubMenu
+{
+    background-color: inherit;
+    /*min-height: 25px;*/
+}

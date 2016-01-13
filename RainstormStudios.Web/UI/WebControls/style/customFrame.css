@@ -1,0 +1,108 @@
+﻿.rsFrameStyle1
+{
+}
+.rsFrameStyle1.blue .top .l
+{
+    width: 15px !important;
+    height: 31px !important;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_TL_blue.png")%>');
+}
+.rsFrameStyle1.blue .top .c
+{
+    height: 31px !important;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_TC_blue.png")%>');
+}
+.rsFrameStyle1.blue .top .r
+{
+    width: 15px !important;
+    height: 31px !important;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_TR_blue.png")%>');
+}
+.rsFrameStyle1.green .top .l
+{
+    width: 15px !important;
+    height: 31px !important;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_TL_green.png")%>');
+}
+.rsFrameStyle1.green .top .c
+{
+    height: 31px !important;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_TC_green.png")%>');
+}
+.rsFrameStyle1.green .top .r
+{
+    width: 15px !important;
+    height: 31px !important;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_TR_green.png")%>');
+}
+
+.rsFrameStyle1 .middle .l
+{
+    background-position: right top;
+    background-repeat: repeat-y;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_L.png")%>');
+}
+.rsFrameStyle1 .middle .c
+{
+    background-color: #E7E7E7;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_C.png")%>');
+}
+.rsFrameStyle1 .middle .l .s
+{
+    background-position: right top;
+    background-repeat: repeat-x;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_Ls.png")%>');
+    height: 110px;
+    width: 15px;
+}
+.rsFrameStyle1 .middle .r .s
+{
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_Rs.png")%>');
+    height: 110px;
+    width: 15px;
+}
+.rsFrameStyle1 .middle .m
+{
+    background-position: left top;
+    background-repeat: repeat-y;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_R.png")%>');
+}
+.rsFrameStyle1 .bottom .l
+{
+    width: 15px !important;
+    height: 12px !important;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_BL.png")%>');
+}
+.rsFrameStyle1 .bottom .c
+{
+    height: 12px !important;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_BC.png")%>');
+}
+.rsFrameStyle1 .bottom .r
+{
+    width: 15px !important;
+    height: 12px !important;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.customFrame.frameStyle1.frameStyle1_BR.png")%>');
+}

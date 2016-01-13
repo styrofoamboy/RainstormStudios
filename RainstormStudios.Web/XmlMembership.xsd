@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by Emily Van Nes (Cal Data Systems, Inc.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="XmlMembership" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Users" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:ID" nillable="false"/>
+							<xs:element name="UserId" type="xs:ID" nillable="false" msdata:Unique="true"/>
+							<xs:element name="UserName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="256"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="LoweredUserName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="collapse"/>
+										<xs:length value="256"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="MobileAlias" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="collapse"/>
+										<xs:length value="16"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="IsAnonymous" default="false" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:boolean">
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="LastActivityDate" type="xs:dateTime" nillable="false"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Profile" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="UserId" type="xs:ID" nillable="false" msdata:Unique="true"/>
+							<xs:element name="PropertyNames" type="xs:string" nillable="false"/>
+							<xs:element name="PropertyValuesString" type="xs:string" nillable="false"/>
+							<xs:element name="PropertyValuesBinary" type="xs:base64Binary" nillable="false"/>
+							<xs:element name="LastUpdatedDate" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:dateTime"/>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Applications" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="256"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="LoweredApplicationName" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="256"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ApplicationId" type="xs:ID" nillable="false" msdata:Unique="true"/>
+							<xs:element name="Description" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="256"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Membership" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:ID" nillable="false"/>
+							<xs:element name="UserId" type="xs:ID" nillable="false" msdata:Unique="true"/>
+							<xs:element name="Password" nillable="false">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="preserve"/>
+										<xs:length value="128"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="PasswordFormat" type="xs:int" nillable="false"/>
+							<xs:element name="PasswordSalt" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="128"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="MobilePIN" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="16"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Email" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="256"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="LoweredEmail" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="256"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="PasswordQuestion" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:whiteSpace value="collapse"/>
+										<xs:length value="256"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="PasswordAnswer" nillable="true">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="128"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="IsApproved" type="xs:boolean" default="true" nillable="false"/>
+							<xs:element name="IsLockedOut" type="xs:boolean" default="false" nillable="false"/>
+							<xs:element name="CreateDate" type="xs:dateTime" nillable="false"/>
+							<xs:element name="LastLoginDate" type="xs:dateTime" nillable="false"/>
+							<xs:element name="LastPasswordChanged" type="xs:dateTime" nillable="false"/>
+							<xs:element name="LastLockoutDate" type="xs:dateTime" nillable="false"/>
+							<xs:element name="FailedPasswordAttemptCount" type="xs:int" default="0" nillable="false"/>
+							<xs:element name="FailedPasswordAttemptWindowStart" type="xs:dateTime" nillable="false"/>
+							<xs:element name="FailedPasswordAnswerAttemptCount" type="xs:int" default="0" nillable="false"/>
+							<xs:element name="FailedPasswordAnswerAttemptWindowStart" type="xs:dateTime" nillable="false"/>
+							<xs:element name="Comment" type="xs:string" nillable="true"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Paths" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:ID"/>
+							<xs:element name="PathId" type="xs:ID" msdata:Unique="true"/>
+							<xs:element name="Path">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="255"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="LoweredPath">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="255"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

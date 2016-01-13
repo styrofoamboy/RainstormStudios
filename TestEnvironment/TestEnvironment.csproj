@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4EAF1D56-29FD-4930-89BE-E3167D525967}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestEnvironment</RootNamespace>
+    <AssemblyName>TestEnvironment</AssemblyName>
+    <StartupObject>TestEnvironment.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1273875660_gnome-dev-harddisk-usb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RainstormStudios.Controls\RainstormStudios.Controls.csproj">
+      <Project>{B2349047-501B-40FF-A45F-B5E1FAEC1CF8}</Project>
+      <Name>RainstormStudios.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.Data.DB2\RainstormStudios.Data.DB2.csproj">
+      <Project>{87F01870-B071-4528-A21B-F20857D9CF12}</Project>
+      <Name>RainstormStudios.Data.DB2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.Data\RainstormStudios.Data.csproj">
+      <Project>{70D010C8-4471-4210-A5E4-F6498AFA78EF}</Project>
+      <Name>RainstormStudios.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.DirectX\RainstormStudios.DirectX.csproj">
+      <Project>{CC1A136D-2AF6-4CD5-8698-44839A2980CE}</Project>
+      <Name>RainstormStudios.DirectX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.Drawing.BinaryImages\RainstormStudios.Drawing.BinaryImages.csproj">
+      <Project>{1733D7BE-B681-42EA-B9B0-40679B1B8F8F}</Project>
+      <Name>RainstormStudios.Drawing.BinaryImages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.Drawing.Charts\RainstormStudios.Drawing.Charts.csproj">
+      <Project>{5E4683A5-A2A7-4C85-9774-2493891E3E06}</Project>
+      <Name>RainstormStudios.Drawing.Charts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.Drawing.PDF\RainstormStudios.Drawing.PDF.csproj">
+      <Project>{A1D6900C-5872-4A42-8F67-D626B504FCEB}</Project>
+      <Name>RainstormStudios.Drawing.PDF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.Drawing\RainstormStudios.Drawing.csproj">
+      <Project>{7FCDA335-1F3C-438F-AEE7-BC86F58E6670}</Project>
+      <Name>RainstormStudios.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.DynamicCodeGeneration\RainstormStudios.DynamicCodeGeneration.csproj">
+      <Project>{433D0F69-449D-4DFA-B4AA-5B19857439FC}</Project>
+      <Name>RainstormStudios.DynamicCodeGeneration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.Html\RainstormStudios.Html.csproj">
+      <Project>{3D1CFB08-9D2A-491A-BF76-ADCDEB72423D}</Project>
+      <Name>RainstormStudios.Html</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.Reflection\RainstormStudios.Reflection.csproj">
+      <Project>{9F957A74-2436-4541-AD73-F0B5E5DBC2AC}</Project>
+      <Name>RainstormStudios.Reflection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios.Unmanaged\RainstormStudios.Unmanaged.csproj">
+      <Project>{4A705927-AFD4-4ACC-83C3-9F297C77FCD2}</Project>
+      <Name>RainstormStudios.Unmanaged</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios\RainstormStudios.csproj">
+      <Project>{2B3495A5-12D8-46AF-9A15-4591BC67218E}</Project>
+      <Name>RainstormStudios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

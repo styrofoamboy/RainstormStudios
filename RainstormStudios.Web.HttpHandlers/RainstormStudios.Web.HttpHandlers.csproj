@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72A1027B-0AC2-4524-8875-06A1E43E5694}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RainstormStudios.Web.HttpHandlers</RootNamespace>
+    <AssemblyName>RainstormStudios.Web.HttpHandlers</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalogClock.cs" />
+    <Compile Include="AuthorAttribute.cs" />
+    <Compile Include="Clock.cs" />
+    <Compile Include="DyanamicImageHandler.cs" />
+    <Compile Include="FileTypeIcon.cs" />
+    <Compile Include="GantTimeHandler.cs" />
+    <Compile Include="GradientBackgroundHandler.cs" />
+    <Compile Include="NoLeach.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Timeline.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bmp.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\csv.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\docx.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dotx.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\htm.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\html.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jpg.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mdb.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mht.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ppt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pptx.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\txt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xls.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xlsb.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xlsm.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xlsx.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xml.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RainstormStudios\RainstormStudios.csproj">
+      <Project>{2B3495A5-12D8-46AF-9A15-4591BC67218E}</Project>
+      <Name>RainstormStudios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

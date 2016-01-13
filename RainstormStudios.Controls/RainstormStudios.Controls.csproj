@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2349047-501B-40FF-A45F-B5E1FAEC1CF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RainstormStudios</RootNamespace>
+    <AssemblyName>RainstormStudios.Controls</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/RainstormStudios.Controls/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile>bin\Debug\RainstormStudios.Controls.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorAttribute.cs" />
+    <Compile Include="Controls\ADOProviderSelectList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SqlAutoComplete.cs" />
+    <Compile Include="Controls\AdvancedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AdvProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AdvButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdvRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ConnectionStringDisplay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrl3DLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlAnimWidgetRotator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlAnimWidgetStars.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlConnectionString.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlConnectionString.designer.cs">
+      <DependentUpon>ctrlConnectionString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlDropDownButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFileSelectBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFileSelectBox.designer.cs">
+      <DependentUpon>ctrlFileSelectBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlFixedColumnListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFolderSelectBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFolderSelectBox.designer.cs">
+      <DependentUpon>ctrlFolderSelectBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlGridPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlIPEntryBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlIPEntryBox.designer.cs">
+      <DependentUpon>ctrlIPEntryBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlNumberedDataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlNumberedDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlQueryTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlSqlDatabaseList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlSqlDataTypeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlSqlServerComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomColumnStyles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DriveListTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DriveListTreeView.Designer.cs">
+      <DependentUpon>DriveListTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\enums.cs" />
+    <Compile Include="Controls\RsUserControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CrossThreadUI.cs" />
+    <Compile Include="ctrlTestControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomCursor.cs" />
+    <Compile Include="Forms\frmCSVList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCSVList.Designer.cs">
+      <DependentUpon>frmCSVList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFindText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFindText.Designer.cs">
+      <DependentUpon>frmFindText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStringBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmStringBuilder.designer.cs">
+      <DependentUpon>frmStringBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProgress.designer.cs">
+      <DependentUpon>frmProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ctrlConnectionString.resx">
+      <DependentUpon>ctrlConnectionString.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlFileSelectBox.resx">
+      <DependentUpon>ctrlFileSelectBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlFolderSelectBox.resx">
+      <DependentUpon>ctrlFolderSelectBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlIPEntryBox.resx">
+      <DependentUpon>ctrlIPEntryBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFindText.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFindText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStringBuilder.resx">
+      <DependentUpon>frmStringBuilder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProgress.resx">
+      <DependentUpon>frmProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="QueryTextBox.png" />
+    <EmbeddedResource Include="Forms\frmCSVList.resx">
+      <DependentUpon>frmCSVList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RainstormStudios.Drawing\RainstormStudios.Drawing.csproj">
+      <Project>{7fcda335-1f3c-438f-aee7-bc86f58e6670}</Project>
+      <Name>RainstormStudios.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios\RainstormStudios.csproj">
+      <Project>{2B3495A5-12D8-46AF-9A15-4591BC67218E}</Project>
+      <Name>RainstormStudios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PointerReverse.cur" />
+    <EmbeddedResource Include="PointerReverse2.cur" />
+    <EmbeddedResource Include="SelectLineArrow.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PointerReverse.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="QueryTextBox.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ToolBoxIcons\QueryTextBox.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

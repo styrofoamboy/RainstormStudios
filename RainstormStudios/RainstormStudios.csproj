@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B3495A5-12D8-46AF-9A15-4591BC67218E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RainstormStudios</RootNamespace>
+    <AssemblyName>RainstormStudios</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/RainstormStudios/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile>bin\Debug\RainstormStudios.XML</DocumentationFile>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorAttribute.cs" />
+    <Compile Include="BinaryByte.cs" />
+    <Compile Include="Collections\ByteCollection.cs" />
+    <Compile Include="Collections\DataSetCollections.cs" />
+    <Compile Include="Collections\DateTimeCollection.cs" />
+    <Compile Include="Collections\ExceptionCollection.cs" />
+    <Compile Include="Collections\Int32Collection.cs" />
+    <Compile Include="Collections\ObjectCollection.cs" />
+    <Compile Include="Collections\StringCollection.cs" />
+    <Compile Include="Controls\UndoState.cs" />
+    <Compile Include="Data\DataTarget.cs" />
+    <Compile Include="Data\Db2ConnectionStringBuilder.cs" />
+    <Compile Include="Data\DbConnectionProperties.cs" />
+    <Compile Include="Data\Enums.cs" />
+    <Compile Include="Data\EventArgs.cs" />
+    <Compile Include="Data\rsData.cs" />
+    <Compile Include="DebugOut.cs" />
+    <Compile Include="Drawing\ExtensionMethods.cs" />
+    <Compile Include="Encryption\rsaEncryption.cs" />
+    <Compile Include="Collections\Enums.cs" />
+    <Compile Include="Enumeration.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="EventValueTypes\EventBoolean.cs" />
+    <Compile Include="EventValueTypes\EventInteger.cs" />
+    <Compile Include="EventValueTypes\EventString.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="IO\CircularBuffer.cs" />
+    <Compile Include="IO\FolderACL.cs" />
+    <Compile Include="Collections\ObjectCollectionBase.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Hex.cs" />
+    <Compile Include="IO\DelimitedTextReader.cs" />
+    <Compile Include="IO\FixedWidthStreamWriter.cs" />
+    <Compile Include="LocalizableDescriptionAttribute.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Math\PI.cs" />
+    <Compile Include="MetricConv.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Collections\ArrayConvert.cs" />
+    <Compile Include="rsDateTime.cs" />
+    <Compile Include="rsFileSystem.cs" />
+    <Compile Include="rsString.cs" />
+    <Compile Include="Schedule.cs" />
+    <Compile Include="Serialization\AbstractClasses.cs" />
+    <Compile Include="Serialization\Interfaces.cs" />
+    <Compile Include="Serialization\PropertyAttributes.cs" />
+    <Compile Include="Timing\ScheduledServiceModule.cs" />
+    <Compile Include="Timing\ScheduleEnums.cs" />
+    <Compile Include="Timing\ScheduleEvent.cs" />
+    <Compile Include="Timing\ScheduleParams.cs" />
+    <Compile Include="Timing\Scheduler.cs" />
+    <Compile Include="Unmanaged\Enums.cs" />
+    <Compile Include="Unmanaged\Structs.cs" />
+    <Compile Include="Unmanaged\Win32Const.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

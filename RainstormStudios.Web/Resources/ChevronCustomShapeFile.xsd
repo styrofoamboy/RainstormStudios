@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+//  Copyright (c) 2013, Michael unfried
+//  Email:  serbius3@gmail.com
+//  All rights reserved.
+
+//  Redistribution and use in source and binary forms, with or without modification, 
+//  are permitted provided that the following conditions are met:
+
+//  Redistributions of source code must retain the above copyright notice, 
+//  this list of conditions and the following disclaimer. 
+//  Redistributions in binary form must reproduce the above copyright notice, 
+//  this list of conditions and the following disclaimer in the documentation 
+//  and/or other materials provided with the distribution. 
+
+//  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+//  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+//  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+//  PURPOSE. IT CAN BE DISTRIBUTED FREE OF CHARGE AS LONG AS THIS HEADER 
+//  REMAINS UNCHANGED.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="shapes">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="shape" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="points">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="point" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>The name of this point.  This is how you will refer to this point when defining each "line" element.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="x" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>The x-coordinate offset of the point.  Formulas allowed.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="y" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>The y-coordinate offset of the point.  Formulas allowed.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="lines" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="line" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="StartPoint" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>The "name" of the point element where this line will be drawn from.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="EndPoint" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>The "name" of the point element where this line will be drawn to.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="BezierLine" type="xs:boolean" use="optional" default="false">
+													<xs:annotation>
+														<xs:documentation>An optional attribute which identifies whether or not this line should be drawn as a bezier spline.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="CtrlPoint1" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>When rendering a bezier spline, this attribute contains the "name" of the point element to use as the starting point's control point.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="CtrlPoint2" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>When rendering a bezier spline, this attribute contains the "name" of the point element to use as the end point's control point.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="variables" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="variable" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>The name of the variable, used to reference it in any field where formulas are allowed.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="value" type="xs:string" use="required">
+													<xs:annotation>
+														<xs:documentation>The value to assign to this variable name.  This value can reference other variable names, so long as they preceed it in the element collection list.  Formulas allowed.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="textBounds" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="x" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The x-coordinate offset of the upper-left corner of the text's bounding box.  Formulas allowed.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="y" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The y-coordinate offset of the upper-left corner of the text's bounding box.  Formulas allowed.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="w" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The width of the text's bounding box.  Formula's allowed.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="h" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The height of the text's bounding box.  Formula's allowed.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="startShape" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="points" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="point" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="name" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The name of this point.  This is how you will refer to this point when defining each "line" element.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="x" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The x-coordinate offset of the point.  Formulas allowed.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="y" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The y-coordinate offset of the point.  Formulas allowed.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="lines">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="line">
+														<xs:complexType>
+															<xs:attribute name="StartPoint" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The "name" of the point element where this line will be drawn from.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="EndPoint" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The "name" of the point element where this line will be drawn to.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="BezierLine" type="xs:boolean" use="optional" default="false">
+																<xs:annotation>
+																	<xs:documentation>An optional attribute which identifies whether or not this line should be drawn as a bezier spline.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="CtrlPoint1" type="xs:string" use="optional">
+																<xs:annotation>
+																	<xs:documentation>When rendering a bezier spline, this attribute contains the "name" of the point element to use as the starting point's control point.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="CtrlPoint2" type="xs:string" use="optional">
+																<xs:annotation>
+																	<xs:documentation>When rendering a bezier spline, this attribute contains the "name" of the point element to use as the end point's control point.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="width" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The width of the starting shape.  Formula's allowed.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="offsetAdjustment" type="xs:integer" use="optional" default="0">
+										<xs:annotation>
+											<xs:documentation>Like the normal shape definition, this allows you to manually override the offset, except that this is altering the offset calculation to the first chevron piece, rather than the starting shape's starting position.  Formula's allowed.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="endShape" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="points" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="point">
+														<xs:complexType>
+															<xs:attribute name="name" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The name of this point.  This is how you will refer to this point when defining each "line" element.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="x" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The x-coordinate offset of the point.  Formulas allowed.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="y" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The y-coordinate offset of the point.  Formulas allowed.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="lines">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="line">
+														<xs:complexType>
+															<xs:attribute name="StartPoint" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The "name" of the point element where this line will be drawn from.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="EndPoint" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The "name" of the point element where this line will be drawn to.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="BezierLine" type="xs:boolean" use="optional" default="false">
+																<xs:annotation>
+																	<xs:documentation>An optional attribute which identifies whether or not this line should be drawn as a bezier spline.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="CtrlPoint1" type="xs:string" use="optional">
+																<xs:annotation>
+																	<xs:documentation>When rendering a bezier spline, this attribute contains the "name" of the point element to use as the starting point's control point.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="CtrlPoint2" type="xs:string" use="optional">
+																<xs:annotation>
+																	<xs:documentation>When rendering a bezier spline, this attribute contains the "name" of the point element to use as the end point's control point.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="width" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The width of the starting shape.  Formula's allowed.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="offsetAdjustment" type="xs:integer" use="optional" default="0">
+										<xs:annotation>
+											<xs:documentation>Like the normal shape definition, this allows you to manually override the offset, except that this is altering the offset calculation to the first chevron piece, rather than the starting shape's starting position.  Formula's allowed.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="name" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation>The name of the shape.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="offsetAdjustment" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Manual offset adjustment when rendering each piece of the chevron. Formulas Allowed.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Author" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>The name of the shape's author. This is optional, and is only for shape creators' reference.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="CreatedDate" type="xs:date">
+							<xs:annotation>
+								<xs:documentation>The date when the shape was created.  This is optional, and is only for shape creators' reference.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

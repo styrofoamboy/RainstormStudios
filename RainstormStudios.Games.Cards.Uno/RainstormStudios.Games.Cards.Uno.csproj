@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35B8F50C-3193-44CE-AFF4-9ED7BFAF2CA0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RainstormStudios.Games.Cards</RootNamespace>
+    <AssemblyName>RainstormStudios.Games.Cards.Uno</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorAttribute.cs" />
+    <Compile Include="CardColor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UnoCard.cs" />
+    <Compile Include="UnoDeck.cs" />
+    <Compile Include="UnoGame.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RainstormStudios.Games\RainstormStudios.Games.csproj">
+      <Project>{5b01372a-43ba-4d4f-8992-ce2e0b173160}</Project>
+      <Name>RainstormStudios.Games</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RainstormStudios\RainstormStudios.csproj">
+      <Project>{2b3495a5-12d8-46af-9a15-4591bc67218e}</Project>
+      <Name>RainstormStudios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_blue_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_green_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_red_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_wild_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_wild_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unoCard_yellow_12.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

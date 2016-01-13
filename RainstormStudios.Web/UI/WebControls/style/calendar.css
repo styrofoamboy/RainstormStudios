@@ -1,0 +1,93 @@
+﻿.rsCalendarView
+{
+    font-family: Arial Verdana Sans-Serif;
+    table-layout: fixed;
+}
+.rsCalendarView A
+{
+    text-decoration: none;
+}
+.rsCalendarView TR.controls
+{
+}
+.rsCalendarView TR.controls TD
+{
+}
+.rsCalendarView TR.controls TD.prev
+{
+    text-align: left !important;
+    padding-left: 6px;
+}
+.rsCalendarView TR.controls TD.next
+{
+    text-align: right !important;
+    padding-right: 6px;
+}
+.rsCalendarView TR.controls TD.monthHdr
+{
+    text-align: center !important;
+    white-space: nowrap;
+}
+.rsCalendarView TR.header TD.dayHeader
+{
+    text-align: center;
+    white-space: nowrap;
+}
+.rsCalendarView TR.dates TD.day
+{
+    border-bottom: none !important;
+    min-height: 25px;
+}
+.rsCalendarView TR.dates TD.day .date
+{
+    float: right;
+}
+.rsCalendarView TR.events TD
+{
+    border-top: none !important;
+    border-bottom: none !important;
+    height: 18px;
+    line-height: 18px;
+}
+.rsCalendarView TR.events TD div
+{
+    margin: 1px;
+    padding: 2px;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+.rsCalendarView TR.events TD.NoEvent
+{
+}
+.rsCalendarView TR.events TD.evMid
+{
+    border-left: none !important;
+    border-right: none !important;
+}
+.rsCalendarView TR.events TD.evEnd
+{
+    border-left: none !important;
+}
+.rsCalendarView TR.events TD.evStart
+{
+    border-right: none !important;
+}
+.rsCalendarView TR.events TD.evFull
+{
+}
+.rsCalendarView TR.events TD.evMid div
+{
+    border-left: none !important;
+    border-right: none !important;
+}
+.rsCalendarView TR.events TD.evEnd div
+{
+    border-left: none !important;
+}
+.rsCalendarView TR.events TD.evStart div
+{
+    border-right: none !important;
+}
+.rsCalendarView TR.events TD.evFull div
+{
+}

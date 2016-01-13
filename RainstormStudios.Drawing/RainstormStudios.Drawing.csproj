@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FCDA335-1F3C-438F-AEE7-BC86F58E6670}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RainstormStudios.Drawing</RootNamespace>
+    <AssemblyName>RainstormStudios.Drawing</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/RainstormStudios.Drawing/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\RainstormStudios.Drawing.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorAttribute.cs" />
+    <Compile Include="Circle.cs" />
+    <Compile Include="Collections\BitmapCollection.cs" />
+    <Compile Include="Collections\PointCollection.cs" />
+    <Compile Include="Collections\PointFCollection.cs" />
+    <Compile Include="ColorSpace.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="FeatheredRectangle.cs" />
+    <Compile Include="Filters.cs" />
+    <Compile Include="IconLib\AuthorAttribute.cs" />
+    <Compile Include="IconLib\BitmapEncoders\BMPEncoder.cs" />
+    <Compile Include="IconLib\BitmapEncoders\ImageEncoder.cs" />
+    <Compile Include="IconLib\BitmapEncoders\PNGEncoder.cs" />
+    <Compile Include="IconLib\ColorProcessing\EuclideanQuantizer.cs" />
+    <Compile Include="IconLib\ColorProcessing\FloydSteinbergDithering.cs" />
+    <Compile Include="IconLib\ColorProcessing\IColorQuantizer.cs" />
+    <Compile Include="IconLib\ColorProcessing\IDithering.cs" />
+    <Compile Include="IconLib\ColorProcessing\IPaletteQuantizer.cs" />
+    <Compile Include="IconLib\ColorProcessing\OctreeQuantizer.cs" />
+    <Compile Include="IconLib\Enums.cs" />
+    <Compile Include="IconLib\Exceptions\IconNameAlreadyExistException.cs" />
+    <Compile Include="IconLib\Exceptions\ImageAlreadyExistsException.cs" />
+    <Compile Include="IconLib\Exceptions\ImageTooBigException.cs" />
+    <Compile Include="IconLib\Exceptions\InvalidFileException.cs" />
+    <Compile Include="IconLib\Exceptions\InvalidICLFileException.cs" />
+    <Compile Include="IconLib\Exceptions\InvalidIconFormatSelectionException.cs" />
+    <Compile Include="IconLib\Exceptions\InvalidIconSelectionException.cs" />
+    <Compile Include="IconLib\Exceptions\InvalidMultiIconFileException.cs" />
+    <Compile Include="IconLib\Exceptions\InvalidMultiIconMaskBitmap.cs" />
+    <Compile Include="IconLib\Exceptions\InvalidPixelFormatException.cs" />
+    <Compile Include="IconLib\IconImage.cs" />
+    <Compile Include="IconLib\LibraryFormats\IconFormat.cs" />
+    <Compile Include="IconLib\LibraryFormats\ILibraryFormat.cs" />
+    <Compile Include="IconLib\LibraryFormats\NEFormat.cs" />
+    <Compile Include="IconLib\LibraryFormats\PEFormat.cs" />
+    <Compile Include="IconLib\MultiIcon.cs" />
+    <Compile Include="IconLib\Resource.Designer.cs" />
+    <Compile Include="IconLib\SingleIcon.cs" />
+    <Compile Include="IconLib\Structs.cs" />
+    <Compile Include="IconLib\Tools.cs" />
+    <Compile Include="IconLib\Win32.cs" />
+    <Compile Include="Imaging.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="Polygon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RgbColor.cs" />
+    <Compile Include="Triangle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RainstormStudios\RainstormStudios.csproj">
+      <Project>{2B3495A5-12D8-46AF-9A15-4591BC67218E}</Project>
+      <Name>RainstormStudios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

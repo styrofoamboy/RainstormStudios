@@ -1,0 +1,579 @@
+﻿.rsButton
+{
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11pt;
+    font-weight: normal;
+    padding: 0px !important;
+    text-decoration: none;
+    min-width: 0px !important;
+    min-height: 0px !important;
+}
+.rsButton.active
+{
+    cursor: pointer;
+}
+.rsButton.disabled
+{
+    cursor: default;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.rsButton, .rsButton .lOuter, .rsButton .rOuter, .rsButton .inner, .rsButton .inner SPAN
+{
+    display: inline-block !important;
+    vertical-align: middle !important;
+    border: none !important;
+    background-color: transparent !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.rsButton .lOuter, .rsButton .rOuter, .rsButton .inner, .rsButton .inner SPAN
+{
+    float: none !important;
+}
+
+.rsButton .lOuter, .rsButton .rOuter, .rsButton .inner
+{
+    /*width: 100% !important;*/
+}
+.rsButton .lOuter, .rsButton .rOuter
+{
+    background-repeat: no-repeat !important;
+}
+.rsButton .inner
+{
+    background-repeat: repeat-x !important;
+    overflow: hidden;
+    text-align: center;
+}
+.rsButton .inner SPAN
+{
+    text-decoration: none;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.rsButton .lOuter
+{
+    background-position: left top !important;
+}
+.rsButton .rOuter
+{
+    background-position: right top !important;
+}
+
+
+
+/* --==< Standard Button Style >==-- */
+
+.rsButton.fancy, .rsButton.fancy .lOuter, .rsButton.fancy .rOuter, .rsButton.fancy .inner
+{
+    height: 24px !important;
+}
+
+.rsButton.fancy .inner SPAN
+{
+    font-weight: normal;
+    padding: 0px 4px !important;
+}
+.rsButton.fancy.active .inner SPAN
+{
+    color: Black !important;
+    text-shadow: 1px 1px 2px Silver;
+}
+.rsButton.fancy.disabled .inner SPAN
+{
+    color: Gray !important;
+}
+
+.rsButton.fancy .lOuter
+{
+    padding-left: 7px !important;
+}
+.rsButton.fancy .rOuter
+{
+    padding-right: 7px !important;
+}
+.rsButton.fancy .inner
+{
+    min-width: 60px;
+}
+
+.rsButton.fancy.blue .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.blue.l.png")%>');
+}
+.rsButton.fancy.blue .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.blue.r.png")%>');
+}
+.rsButton.fancy.blue .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.blue.c.png")%>');
+}
+
+.rsButton.fancy.gray .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.gray.l.png")%>');
+}
+.rsButton.fancy.gray .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.gray.r.png")%>');
+}
+.rsButton.fancy.gray .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.gray.c.png")%>');
+}
+
+.rsButton.fancy.green .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.green.l.png")%>');
+}
+.rsButton.fancy.green .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.green.r.png")%>');
+}
+.rsButton.fancy.green .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.green.c.png")%>');
+}
+
+.rsButton.fancy.pink .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.pink.l.png")%>');
+}
+.rsButton.fancy.pink .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.pink.r.png")%>');
+}
+.rsButton.fancy.pink .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.pink.c.png")%>');
+}
+
+.rsButton.fancy.purple .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.purple.l.png")%>');
+}
+.rsButton.fancy.purple .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.purple.r.png")%>');
+}
+.rsButton.fancy.purple .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.purple.c.png")%>');
+}
+
+.rsButton.fancy.red .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.red.l.png")%>');
+}
+.rsButton.fancy.red .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.red.r.png")%>');
+}
+.rsButton.fancy.red .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.red.c.png")%>');
+}
+
+.rsButton.fancy.yellow .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.yellow.l.png")%>');
+}
+.rsButton.fancy.yellow .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.yellow.r.png")%>');
+}
+.rsButton.fancy.yellow .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.yellow.c.png")%>');
+}
+
+.rsButton.fancy.blue.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.blue.lh.png")%>');
+}
+.rsButton.fancy.blue.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.blue.rh.png")%>');
+}
+.rsButton.fancy.blue.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.blue.ch.png")%>');
+}
+
+.rsButton.fancy.gray.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.gray.lh.png")%>');
+}
+.rsButton.fancy.gray.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.gray.rh.png")%>');
+}
+.rsButton.fancy.gray.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.gray.ch.png")%>');
+}
+
+.rsButton.fancy.green.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.green.lh.png")%>');
+}
+.rsButton.fancy.green.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.green.rh.png")%>');
+}
+.rsButton.fancy.green.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.green.ch.png")%>');
+}
+
+.rsButton.fancy.pink.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.pink.lh.png")%>');
+}
+.rsButton.fancy.pink.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.pink.rh.png")%>');
+}
+.rsButton.fancy.pink.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.pink.ch.png")%>');
+}
+
+.rsButton.fancy.purple.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.purple.lh.png")%>');
+}
+.rsButton.fancy.purple.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.purple.rh.png")%>');
+}
+.rsButton.fancy.purple.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.purple.ch.png")%>');
+}
+
+.rsButton.fancy.red.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.red.lh.png")%>');
+}
+.rsButton.fancy.red.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.red.rh.png")%>');
+}
+.rsButton.fancy.red.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.red.ch.png")%>');
+}
+
+.rsButton.fancy.yellow.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.yellow.lh.png")%>');
+}
+.rsButton.fancy.yellow.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.yellow.rh.png")%>');
+}
+.rsButton.fancy.yellow.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.fancy.yellow.ch.png")%>');
+}
+
+
+
+/* --==< Plastic Button Style >==-- */
+
+.rsButton.plastic, .rsButton.plastic .lOuter, .rsButton.plastic .rOuter, .rsButton.plastic .inner
+{
+    height: 24px !important;
+}
+
+.rsButton.plastic .inner SPAN
+{
+    font-weight: normal;
+    padding: 0px 4px !important;
+}
+.rsButton.plastic.active .inner SPAN
+{
+    color: Black !important;
+    text-shadow: 1px 1px 2px Silver;
+}
+.rsButton.plastic.disabled .inner SPAN
+{
+    color: Gray !important;
+}
+
+.rsButton.plastic .lOuter
+{
+    padding-left: 14px !important;
+}
+.rsButton.plastic .rOuter
+{
+    padding-right: 14px !important;
+}
+.rsButton.plastic .inner
+{
+    min-width: 50px;
+}
+
+.rsButton.plastic.blue .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.blue.l.png")%>');
+}
+.rsButton.plastic.blue .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.blue.r.png")%>');
+}
+.rsButton.plastic.blue .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.blue.c.png")%>');
+}
+
+.rsButton.plastic.gray .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.gray.l.png")%>');
+}
+.rsButton.plastic.gray .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.gray.r.png")%>');
+}
+.rsButton.plastic.gray .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.gray.c.png")%>');
+}
+
+.rsButton.plastic.green .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.green.l.png")%>');
+}
+.rsButton.plastic.green .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.green.r.png")%>');
+}
+.rsButton.plastic.green .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.green.c.png")%>');
+}
+
+.rsButton.plastic.pink .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.pink.l.png")%>');
+}
+.rsButton.plastic.pink .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.pink.r.png")%>');
+}
+.rsButton.plastic.pink .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.pink.c.png")%>');
+}
+
+.rsButton.plastic.purple .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.purple.l.png")%>');
+}
+.rsButton.plastic.purple .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.purple.r.png")%>');
+}
+.rsButton.plastic.purple .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.purple.c.png")%>');
+}
+
+.rsButton.plastic.red .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.red.l.png")%>');
+}
+.rsButton.plastic.red .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.red.r.png")%>');
+}
+.rsButton.plastic.red .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.red.c.png")%>');
+}
+
+.rsButton.plastic.yellow .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.yellow.l.png")%>');
+}
+.rsButton.plastic.yellow .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.yellow.r.png")%>');
+}
+.rsButton.plastic.yellow .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.yellow.c.png")%>');
+}
+
+.rsButton.plastic.blue.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.blue.lh.png")%>');
+}
+.rsButton.plastic.blue.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.blue.rh.png")%>');
+}
+.rsButton.plastic.blue.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.blue.ch.png")%>');
+}
+
+.rsButton.plastic.gray.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.gray.lh.png")%>');
+}
+.rsButton.plastic.gray.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.gray.rh.png")%>');
+}
+.rsButton.plastic.gray.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.gray.ch.png")%>');
+}
+
+.rsButton.plastic.green.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.green.lh.png")%>');
+}
+.rsButton.plastic.green.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.green.rh.png")%>');
+}
+.rsButton.plastic.green.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.green.ch.png")%>');
+}
+
+.rsButton.plastic.pink.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.pink.lh.png")%>');
+}
+.rsButton.plastic.pink.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.pink.rh.png")%>');
+}
+.rsButton.plastic.pink.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.pink.ch.png")%>');
+}
+
+.rsButton.plastic.purple.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.purple.lh.png")%>');
+}
+.rsButton.plastic.purple.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.purple.rh.png")%>');
+}
+.rsButton.plastic.purple.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.purple.ch.png")%>');
+}
+
+.rsButton.plastic.red.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.red.lh.png")%>');
+}
+.rsButton.plastic.red.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.red.rh.png")%>');
+}
+.rsButton.plastic.red.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.red.ch.png")%>');
+}
+
+.rsButton.plastic.yellow.active:hover .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.yellow.lh.png")%>');
+}
+.rsButton.plastic.yellow.active:hover .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.yellow.rh.png")%>');
+}
+.rsButton.plastic.yellow.active:hover .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.plastic.yellow.ch.png")%>');
+}
+
+
+/* --==< Classic (original) Button Style >==-- */
+
+.rsButton.classic, .rsButton.classic .lOuter, .rsButton.classic .rOuter, .rsButton.classic .inner
+{
+    height: 23px !important;
+}
+
+.rsButton.classic .inner SPAN
+{
+    font-weight: normal;
+    padding: 0px 4px !important;
+}
+
+.rsButton.classic.active .inner SPAN
+{
+    color: White !important;
+}
+.rsButton.classic.disabled .inner SPAN
+{
+    color: Gray !important;
+}
+
+.rsButton.classic .lOuter
+{
+    padding: 0px 0px 0px 5px !important;
+}
+.rsButton.classic .rOuter
+{
+    padding: 0px 5px 0px 0px !important;
+}
+.rsButton.classic .inner
+{
+    min-width: 60px;
+}
+
+.rsButton.classic.blue .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.classic.blue.l.png")%>');
+}
+.rsButton.classic.blue .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.classic.blue.r.png")%>');
+}
+.rsButton.classic.blue .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.classic.blue.c.png")%>');
+}
+.rsButton.classic.green .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.classic.green.l.png")%>');
+}
+.rsButton.classic.green .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.classic.green.r.png")%>');
+}
+.rsButton.classic.green .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.classic.green.c.png")%>');
+}
+.rsButton.classic.red .lOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.classic.red.l.png")%>');
+}
+.rsButton.classic.red .rOuter
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.classic.red.r.png")%>');
+}
+.rsButton.classic.red .inner
+{
+    background-image: url('<%=WebResource("RainstormStudios.Web.UI.WebControls.images.button.classic.red.c.png")%>');
+}

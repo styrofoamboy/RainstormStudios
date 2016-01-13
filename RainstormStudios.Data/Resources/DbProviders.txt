@@ -1,0 +1,30 @@
+SQL Driver||||0
+IBM DB2 Driver||||2
+Microsoft Jet 4.0 OLE DB|Microsoft.Jet.OLEDB.4.0|||1
+Microsoft OLE DB Provider for ODBC|MSDASQL|||1
+Microsoft OLE DB Provider for OLAP 8.0|MSOLAP|Client Cache Size=25;Auto Synch Period=10000||1
+Microsoft OLE DB Provider for Oracle|MSDAORA|||1
+Microsoft OLE DB Provider for DB2|DB2OLEDB|||1
+Microsoft OLE DB Provider for SQL|SQLOLEDB|||1
+Microsoft OLE DB Provider for DataShape|MSDataShape|||1
+Microsoft OLE DB Provider for MySQL|MsSQLProv|||1
+Microsoft OLE DB Provider for Visual FoxPro|vfpoledb.1|||1
+Microsoft OLE DB Provider for dBase IV|Microsoft.Jet.OLEDB.4.0|dBase IV||1
+Microsoft OLE DB Provider for Paradox|Microsoft.Jet.OLEDB.4.0|Paradox 5.x||1
+Microsoft OLE DB Provider for Access|Microsoft.Jet.OLEDB.4.0|||1
+Microsoft OLE DB Simple Provider|MSDAOSP|||1
+IBM OLE DB Provider for DB2|IBMDADB2|||1
+SQL Native Client|SQLNCLI|||1
+ODBC Driver for Microsoft Access|Microsoft Access Driver (*.mdb)|||3
+ODBC Driver for DB2|IBM DB2 ODBC DRIVER|||3
+ODBC Driver for Oracle|Microsoft ODBC for Oracle|||3
+ODBC Driver for Informix-CLI 2.5|Informix-CLI 2.5 (32 Bit)|||3
+ODBC Driver for Informix 3.30|INFORMIX 4.40 32 BIT|||3
+ODBC 2.50 Driver for MySQL|mySQL|||3
+ODBC 3.51 Driver for MySQL|MySQL ODBC 3.51 Driver|||3
+ODBC Driver for Visual FoxPro|Microsoft Visual FoxPro Driver|Exclusive=No;NULL=NO;Collate=Machine;BACKGROUNDFETCH=NO;DELETED=NO||3
+ODBC Driver for Paradox v5.x|Microsoft Paradox Driver (*.db)|DriverID=538;Fil=Paradox 5.X;CollatingSquence=ASCII||3
+ODBC Driver for Paradox v7.x|@MSDASQL.1|Persist Security Info=False;Mode=Read;|DSN=Paradox;DriverID=538;Fil=Paradox 7.X;MaxBufferSize=2048;PageTimeout=600;3
+ODBC Driver for AS/400|Client Access ODBC Driver (32-Bit)|||3
+ODBC for System DSN||||3
+ODBC for File DSN||||3

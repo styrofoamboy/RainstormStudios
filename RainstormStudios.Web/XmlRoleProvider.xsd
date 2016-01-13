@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by Emily Van Nes (Cal Data Systems, Inc.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="XmlRoleProvider">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Roles" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RoleID" type="xs:ID" nillable="false" msdata:AutoIncrement="true" msdata:Unique="true"/>
+							<xs:element name="Rolename" type="xs:string" nillable="false"/>
+							<xs:element name="ApplicationName" type="xs:string" nillable="false"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="UsersInRoles" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="UserName" type="xs:string" nillable="false"/>
+							<xs:element name="RoleName" type="xs:string" nillable="false"/>
+							<xs:element name="ApplicationName" type="xs:string" nillable="false"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

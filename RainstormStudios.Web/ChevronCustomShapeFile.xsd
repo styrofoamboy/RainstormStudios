@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by Emily Van Nes (Cal Data Systems, Inc.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="shapes">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="shape" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="points">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="point" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string"/>
+												<xs:attribute name="x" type="xs:string" use="required"/>
+												<xs:attribute name="y" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="lines" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="line" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="StartPoint" type="xs:string" use="required"/>
+												<xs:attribute name="EndPoint" type="xs:string" use="required"/>
+												<xs:attribute name="BezierLine" type="xs:boolean" use="optional" default="false"/>
+												<xs:attribute name="CtrlPoint1" type="xs:string"/>
+												<xs:attribute name="CtrlPoint2" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="variables" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="variable" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attribute name="value" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="textBounds" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="x" type="xs:string" use="required"/>
+									<xs:attribute name="y" type="xs:string" use="required"/>
+									<xs:attribute name="w" type="xs:string" use="required"/>
+									<xs:attribute name="h" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="name" type="xs:string" use="required"/>
+						<xs:attribute name="offsetAdjustment" type="xs:string"/>
+						<xs:attribute name="Author" type="xs:string"/>
+						<xs:attribute name="CreatedDate" type="xs:date"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

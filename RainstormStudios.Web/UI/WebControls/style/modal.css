@@ -1,0 +1,63 @@
+﻿.modalBackground {
+	background-color: Gray;
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+}
+.modalPopup
+{
+	border: solid 1px black;
+	background-color: White;
+}
+.modalHandle
+{
+	border-bottom: solid 1px darkgray;
+	background-color: Gray;
+	font-weight: normal;
+	font-family: Arial, Verdana, Sans-Serif;
+	text-align: center;
+	color: White;
+	cursor: default;
+	text-transform: uppercase;
+}
+.modalContent
+{
+	padding: 12px 12px 20px 12px;
+}
+.modalContent .modalSection div
+{
+	margin-top: 8px;
+}
+.modalContent .modalSection div cite
+{
+	display: inline-block;
+	width: 110px;
+	vertical-align: top;
+}
+.modalContent hr
+{
+	width: 90%;
+	height: 1px;
+	color: #e2e2e2;
+	margin-top: 4px;
+}
+.modalCommand
+{
+	border-top: solid 1px #ececec;
+	padding: 8px;
+}
+.modalCommand a
+{
+	float: right;
+	margin-top: 12px;
+	margin-right: 30px;
+	margin-bottom: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border: outset 2px silver;
+	min-width: 60px;
+	text-align: center;
+	background-color: #EFEFEF;
+	color: Black;
+}

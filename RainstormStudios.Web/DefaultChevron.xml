@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shapes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ChevronCustomShapeFile.xsd">
+	<shape name="Chevron01" offsetAdjustment="([diff] / 2) * -1">
+		<points>
+			<point name="LT" x="[L]" y="[T]"/>
+			<point name="LB" x="[L]" y="[B]"/>
+			<point name="LC" x="[L] + ([diff] / 2)" y="[T] + [diff]"/>
+			<point name="RT" x="[R] - ([diff] / 2)" y="[T]"/>
+			<point name="RB" x="[R] - ([diff] / 2)" y="[B]"/>
+			<point name="RC" x="[R]" y="[T] + [diff]"/>
+		</points>
+		<lines>
+			<line StartPoint="LT" EndPoint="RT"/>
+			<line StartPoint="RT" EndPoint="RC"/>
+			<line StartPoint="RC" EndPoint="RB"/>
+			<line StartPoint="RB" EndPoint="LB"/>
+			<line StartPoint="LB" EndPoint="LC"/>
+		</lines>
+		<variables>
+			<variable name="diff" value="[H] / 2"/>
+		</variables>
+		<textBounds h="[H]" w="([R] - ([diff] / 2)) - ([L] + ([diff] / 2))" x="[L] + ([diff] / 2)" y="[T]"/>
+	</shape>
+</shapes>

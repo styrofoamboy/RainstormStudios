@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+//  Copyright (c) 2013, Michael unfried
+//  Email:  serbius3@gmail.com
+//  All rights reserved.
+
+//  Redistribution and use in source and binary forms, with or without modification, 
+//  are permitted provided that the following conditions are met:
+
+//  Redistributions of source code must retain the above copyright notice, 
+//  this list of conditions and the following disclaimer. 
+//  Redistributions in binary form must reproduce the above copyright notice, 
+//  this list of conditions and the following disclaimer in the documentation 
+//  and/or other materials provided with the distribution. 
+
+//  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+//  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+//  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+//  PURPOSE. IT CAN BE DISTRIBUTED FREE OF CHARGE AS LONG AS THIS HEADER 
+//  REMAINS UNCHANGED.
+
+
+-=< Custom shape file >=-
+
+Creating your own custom shapes is fairly easy, but you will need to figure out what shape you want to create before hand, and know where
+	the individual points will be and how those points will be connected.
+
+Each "shape" element contains all of the points, lines and text bounds information needed for the chevron renderer to build the individual items
+	defined for a given chevron header using your custom shape.  When defining a shape, the "x" and "y" values defined for your points are
+	really just "offset" positions within the bounding rectangle that the chevron "piece" is being drawn into.  The bounding rectangle for a
+	given piece is determined automatically during the render process, based on the total width and height specified for the chevron header,
+	and the number of pieces and their item spacing.  It is important to remember, when defining your shapes, the their size can change based
+	on the size the user specifies that their chevron header should be.
+	
+When defining the point positions, you can use math equations and pre-defined variables, which are referenced by enclosing the variable name in
+	brackets (ie: [variableName]).  The renderer exposes 7 pre-built variables for you to use:
+	
+	1) [W] - the width of the a single piece's bounding rectangle.
+	
+	2) [H] - the height of a single piece's bounding rectange.
+	
+	3) [L] - the left edge of the bounding rectangle (effectively, "0" on the x coordinate plane).
+	
+	4) [R] - the right edge of the bounding rectangle (effectively, the same as "[W]").
+	
+	5) [T] - the top edge of the bounding rectangle (effectively, "0" on the y coordinate plane).
+	
+	6) [B] - the bottom edge of the bounding rectangle (effectively, the same as "[H]").
+	
+	7) [S] - the user-specified value for the space between chevron items (in integer pixels).
+
+
+In addition to these 7 pre-defined variables, you can also create your own variables under the "variables" element, as described below.  These
+	user-defined variables are referenced the same way, by enclosing the variable name in brackets (ie: [variableName]).
+	
+This means that if you wanted a variable that contained a value of 1/2 the height of the chevron piece, you would define a variable element:
+
+	<variable name="halfH" value="[H] / 2"/>
+	
+And you could then use the name "halfH" when defining your points:
+
+	<point name="TopLeft" x="[L]" y="[T]"/>
+	<point name="CenterLeft" x="[L] + ([halfH] / 2)" y="[halfH]"/>
+	
+This would define point "TopLeft" at the top, left most point (0, 0) on the piece's bounding rectangle.  Then define a second point, "CenterLeft"
+	at the vertical center of the piece's bounding rectangle's height, and at an x-coordinate position that is the bounding rectangle's left edge
+	plus the height divided by 4 (ie: ([H] / 2) / 2).  Using the variable "halfH" kept us from having to specify "[H] / 2" repeatedly when defining
+	our points. Variables also make changing your shapes easier if, for instance, you want to modify the overall look of your shape, without
+	having to update multiple math formulas within your point definitions.
+	
+NOTE:  When defining custom variables, be sure that you do not define any variables using the same name as the 7 pre-defined variables listed above.
+	
+All values that define a coordinate position or width will accept a math formula as input.  This includes the "point" element's "x" and "y"
+	attributes, the "shape" element's "offsetAdjustment" attribute, the "textBounds" element's "x", "y", "w" and "h" attributes, and of course
+	the "variable" element's "value" attribute.
+
+
+=====================================================================================================================================================
+NOTE:  When defining custom variables, you can reference other custom variables, but these are loaded "top down", so any variables that use another
+	custom variable in the value must come *after* the custom variable they reference in the list of variable definitions. For example:
+	
+	This is valid:
+
+		<variable name="halfH" value="[H] / 2"/>
+		<variable name="forthH" value="[halfH] / 2"/>
+	
+	This is NOT valid (and will cause a parsing exception):
+
+		<variable name="forthH" value="[halfH] / 2"/>
+		<variable name="halfH" value="[H] / 2"/>
+=====================================================================================================================================================
+
+
+After defining your points, and any custom variables, defining the "line" elements is just a matter of "connecting the dots".  Each "line" element
+	contains a "StartPoint" and "EndPoint" attribute.  It should be noted that the "startPoint" of each new "line" should be the "endPoint" of the
+	previous "line" if you want your shape to be properly formed and filled.  That said, if the "endPoint" of the last "line" element is not the
+	same point as the "startPoint" of your first "line" element, then the renderer will automatically "close" your shape by creating a line between
+	those two points.
+	
+Additionally, you can define your lines as "bezier curves".  This allows the creation of complex curves by drawing a curved line between two
+	points, using bezier control points as "weights" to "pull" the line in a different direction.  An explaination of bezier curves can be
+	found here: https://en.wikipedia.org/wiki/B%C3%A9zier_curve. Note that, this chevron header rendering engine uses a "cubic bezier curve",
+	as defined on this page.
+
+NOTE:  When defining a shape using bezier curves, allowing the renderer to "auto-complete" your shape by connecting the last point and first point,
+	as defined above, will result in a straight line with no bezier weights applied to it.
+
+You can see examples of full bezier spline shapes here: https://en.wikipedia.org/wiki/Composite_B%C3%A9zier_curve.
+
+Keep in mind that, when viewing examples of bezier curves and splines, you will frequently see examples with two control points (also sometimes
+	called "handles") for each point on the spline.  The chevron renderer draws its	bezier splines in the same way, but line-by-line, which
+	means the control points you define will be the two control points *between* two points.  This means each line definition will include
+	one control point for the starting point, and one control point for the ending point.  The control point on the "other side" of each point
+	will be defined by an adjacent line definition, if present; ie: the Chevron	renderer defines these control points by "line", rather than
+	defining them using the "by point" method that you will see in many examples online.  It's really a matter of symantics, but it is important
+	to understand the difference in order to get proper curves in your shapes.
+
+
+To define a new shape, you simply create a "shape" element as defined below:
+
+	The "shape" element takes the following attributes:
+
+	1) name - this is the name of the shape that will be refered to in the "CustomShapeName" attribute, when placing the chevron control on the page.
+
+	2) offsetAdjustment - this defines an offset of rendering each chevron shape "piece".  Normally, the system calculates the location of
+					the next chevron "piece" as the width of all previous pieces plus the user-defined "ItemSpacing" value.  By entering a negative
+					value for the shape's "offsetAdjustment" you can alter the horizontal location for each subsequent piece.  This allows you to make
+					a subsequent piece begin inside the bounds of a previous piece, thereby allowing you to create "interlocking" shapes.
+		
+	3) Author - this is an optional value that allows you to specify who created the shape in the file.
+
+	4) CreatedDate - like the Author attrbiute, this is an optional attribute to keep track of when a shape was created or modified.
+
+
+
+	The "shape" element will also contain the following child nodes.
+
+	1) points - a collection of "point" elements which define the various points used to draw the shape.  Each "point" element will have the following attrbiutes:
+
+				a) name - the name of the point, used to reference the point when drawing lines.
+			
+				b) x - the "x" coordinate offset of the point relative to the shape's bounds for each individual piece.  This can contain math formulas.
+			
+				c) y - the "y" coordinate offset of the point relative to the shape's bounds for each individual piece.  This can contain math formulas.
+			
+			
+	2) lines - a collection of "line" elements which define how to connect the various points into your shape.  To create a fully connected shape, the
+					"StartPoint" value of each line should be the same as the "EndPoint" of the preceeding line element.
+
+				a) StartPoint - this is the value from the "name" attribute of the point you want to start drawing from.
+			
+				b) EndPoint - this is the value from the "name" attribute of the point you want to draw to.
+			
+				c) BezierLine - this attribute contains a true/false value, indicating if this line should be drawn as a bezier spline.
+			
+				d) CtrlPoint1 - this is the value from the "name" attribute of the point that you want to use as the starting point's bezier control point.
+			
+				e) CtrlPoint2 - this is the value from the "name" attribute of the point that you want to use as the end point's bezier control point.
+			
+			
+	3) textBounds - a single element that defines the bounds in which text can be drawn on the shape.  This prevents text from appearing to go "outside"
+					the shape's bounds, and makes it so that text knows how to wrap properly within the shape.  This element contains the following attributes:
+			
+				a) h - the height of the bounding rectangle.
+			
+				b) w - the width of the bounding rectangle.
+			
+				c) x - the "x" coordinate offset of the upper left corner of the bounding rectangle.
+			
+				d) y - the "y" coordinate offset of the upper left corner of the bounding rectangle.
+			
+			
+	4) variables - a collection of "variable" elements that allow you to define custom values to be used when defining points, offsetAdjustment values and
+					textBounds.  This is primarily used to simplify any math that you have to do repeatedly for your point definitions, or to specify "constants"
+					that allow for simple modification of your shapes.  Each "variable" element contains the following attrbiutes.
+				
+				a) name - the name of the variable, used to reference the value of that variable anywhere that you can define a math equation.
+			
+				b) value - the value to assign to the variable name.  This is frequently a math formula, but can also be a literal value, to make it easier
+							to make modifications to your shape.
+						
+
+	5) startShape - the "startShape" element is a special, optional shape definition that will be drawn only once, at the beginning of rendering the chevron,
+					before any individual shape pieces are rendered.  Like its parent "shape" element, the "startShape" element has both "points" and "lines"
+					element collections which work exactly as in the parent, but will only be rendered once, prior to any chevron pieces.  Any variables defined
+					in the parent "shape" element's collections can be referenced here as well.  The shape will be drawn unfilled, with no background color,
+					using the user-defined border color.  This is not configurable at this time.  The "startShape" element has the following attributes:
+				
+				a) width - a value that defines the width of the start shape.  This defines the bounds into which the startShape will be drawn.
+			
+				b) offsetAdjustment - just like the parent "shape" entity, the start shape's "offsetAdjustment" attribute allows you to manually adjust
+							the spacing before drawing the first chrevron piece.
+						
+						
+	6) endShape - just like the "startShape" element, except rendered as the last thing in the chevron header.  All attributes and child elements are
+					otherwise identical.
+					
+=====================================================================================================================================================
+-->
+<shapes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ChevronCustomShapeFile.xsd">
+	<shape name="Arrow" offsetAdjustment="([diff] / 2) * -1" Author="Michael Unfried">
+		<points>
+			<point name="LT" x="[L]" y="[T]"/>
+			<point name="LB" x="[L]" y="[B]"/>
+			<point name="LC" x="[L] + ([diff] / 2)" y="[T] + [diff]"/>
+			<point name="RT" x="[R] - ([diff] / 2)" y="[T]"/>
+			<point name="RB" x="[R] - ([diff] / 2)" y="[B]"/>
+			<point name="RC" x="[R]" y="[T] + [diff]"/>
+		</points>
+		<lines>
+			<line StartPoint="LT" EndPoint="RT"/>
+			<line StartPoint="RT" EndPoint="RC"/>
+			<line StartPoint="RC" EndPoint="RB"/>
+			<line StartPoint="RB" EndPoint="LB"/>
+			<line StartPoint="LB" EndPoint="LC"/>
+		</lines>
+		<variables>
+			<variable name="diff" value="[H] / 2"/>
+		</variables>
+		<textBounds h="[H]" w="([R] - ([diff] / 2)) - ([L] + ([diff] / 2))" x="[L] + ([diff] / 2)" y="[T]"/>
+	</shape>
+	<shape name="Curved" offsetAdjustment="[curveAmt] * -1" Author="Michael Unfried" CreatedDate="2013-12-04">
+		<points>
+			<point name="LT" x="[L]" y="[T]"/>
+			<point name="RT" x="[R] - [curveAmt]" y="[T]"/>
+			<point name="RB" x="[R] - [curveAmt]" y="[B]"/>
+			<point name="LB" x="[L]" y="[B]"/>
+			<point name="RTCtrl" x="[R]" y="[T]"/>
+			<point name="RBCtrl" x="[R]" y="[B]"/>
+			<point name="LTCtrl" x="[L] + [curveAmt]" y="[T]"/>
+			<point name="LBCtrl" x="[L] + [curveAmt]" y="[B]"/>
+		</points>
+		<lines>
+			<line StartPoint="LT" EndPoint="RT"/>
+			<line StartPoint="RT" EndPoint="RB" BezierLine="true" CtrlPoint1="RTCtrl" CtrlPoint2="RBCtrl"/>
+			<line StartPoint="RB" EndPoint="LB"/>
+			<line StartPoint="LB" EndPoint="LT" BezierLine="true" CtrlPoint1="LBCtrl" CtrlPoint2="LTCtrl"/>
+		</lines>
+		<variables>
+			<variable name="curveAmt" value="[H] / 4"/>
+		</variables>
+		<textBounds h="[H]" w="[W] - ([curveAmt] * 2) - 4" x="[L] + [curveAmt] + 2" y="[T]"/>
+	</shape>
+	<shape name="Puzzle" offsetAdjustment="[nubW] * -1" Author="Michael Unfried" CreatedDate="2013-12-04">
+		<points>
+			<point name="LT" x="[L]" y="[T]"/>
+			<point name="LB" x="[L]" y="[B]"/>
+			<point name="RT" x="[rEdge]" y="[T]"/>
+			<point name="RB" x="[rEdge]" y="[B]"/>
+
+			<point name="RNubTop" x="[rEdge]" y="[center] - [nubH]" />
+			<point name="RNubBtm" x="[rEdge]" y="[center] + [nubH]"/>
+			<point name="RNubEdge" x="[R]" y="[center]"/>
+
+			<point name="RNubTopCtrlPt" x="[rEdge] + ([nubW] / 3)" y="[center] + ([nubH] / 3)"/>
+			<point name="RNubEdgeCtrlPtU" x="[R]" y="[T] + ([nubH] / 3)"/>
+			<point name="RNubEdgeCtrlPtL" x="[R]" y="[B] - ([nubH] / 3)"/>
+			<point name="RNubBtmCtrlPt" x="[rEdge] + ([nubW] / 3)" y="[center] - ([nubH] / 3)"/>
+
+			<point name="LNubTop" x="[L]" y="[center] - [nubH]"/>
+			<point name="LNubBtm" x="[L]" y="[center] + [nubH]"/>
+			<point name="LNubEdge" x="[L] + [nubW]" y="[center]"/>
+
+			<point name="LNubTopCtrlPt" x="[L] + ([nubW] / 3)" y="[center] + ([nubH] / 3)"/>
+			<point name="LNubEdgeCtrlPtU" x="[L] + [nubW]" y="[T] + ([nubH] / 3)"/>
+			<point name="LNubEdgeCtrlPtL" x="[L] + [nubW]" y="[B] - ([nubH] / 3)"/>
+			<point name="LNubBtmCtrlPt" x="[L] + ([nubW] / 3)" y="[center] - ([nubH] / 3)"/>
+		</points>
+		<lines>
+			<line StartPoint="LT" EndPoint="RT"/>
+			<line StartPoint="RT" EndPoint="RNubTop"/>
+			<line StartPoint="RNubTop" EndPoint="RNubEdge" BezierLine="true" CtrlPoint1="RNubTopCtrlPt" CtrlPoint2="RNubEdgeCtrlPtU"/>
+			<line StartPoint="RNubEdge" EndPoint="RNubBtm" BezierLine="true" CtrlPoint1="RNubEdgeCtrlPtL" CtrlPoint2="RNubBtmCtrlPt"/>
+			<line StartPoint="RNubBtm" EndPoint="RB"/>
+			<line StartPoint="RB" EndPoint="LB"/>
+			<line StartPoint="LB" EndPoint="LNubBtm"/>
+			<line StartPoint="LNubBtm" EndPoint="LNubEdge" BezierLine="true" CtrlPoint1="LNubBtmCtrlPt" CtrlPoint2="LNubEdgeCtrlPtL"/>
+			<line StartPoint="LNubEdge" EndPoint="LNubTop" BezierLine="true" CtrlPoint1="LNubEdgeCtrlPtU" CtrlPoint2="LNubTopCtrlPt"/>
+			<line StartPoint="LNubTop" EndPoint="LT"/>
+		</lines>
+		<variables>
+			<variable name="nubW" value="12"/>
+			<variable name="nubH" value="[H] / 4"/>
+			<variable name="nubCtrlOffset" value="[H] / 3"/>
+			<variable name="center" value="[H] / 2"/>
+			<variable name="rEdge" value="[R] - [nubW]"/>
+		</variables>
+		<textBounds h="[H]" w="[W] - ([nubW] * 2) - 4" x="[L] + [nubW] + 2" y="[T]"/>
+	</shape>
+	<shape name="Pipe" offsetAdjustment="[curveAmt] * -1" Author="Michael Unfried" CreatedDate="2013-12-04">
+		<points>
+			<point name="LT" x="[L]" y="[T]"/>
+			<point name="RT" x="[R] - [curveAmt]" y="[T]"/>
+			<point name="RB" x="[R] - [curveAmt]" y="[B]"/>
+			<point name="LB" x="[L]" y="[B]"/>
+			<point name="RTCtrl" x="[R]" y="[T]"/>
+			<point name="RBCtrl" x="[R]" y="[B]"/>
+			<point name="LTCtrl" x="[L] + [curveAmt]" y="[T]"/>
+			<point name="LBCtrl" x="[L] + [curveAmt]" y="[B]"/>
+		</points>
+		<lines>
+			<line StartPoint="LT" EndPoint="RT"/>
+			<line StartPoint="RT" EndPoint="RB" BezierLine="true" CtrlPoint1="RTCtrl" CtrlPoint2="RBCtrl"/>
+			<line StartPoint="RB" EndPoint="LB"/>
+			<line StartPoint="LB" EndPoint="LT" BezierLine="true" CtrlPoint1="LBCtrl" CtrlPoint2="LTCtrl"/>
+		</lines>
+		<variables>
+			<variable name="curveAmt" value="[H] / 3"/>
+		</variables>
+		<textBounds h="[H]" w="[W] - ([curveAmt] * 2) - 4" x="[L] + [curveAmt] + 2" y="[T]"/>
+		<startShape width="[curveAmt]">
+			<points>
+				<point name="ssT" x="[R]" y="[T]"/>
+				<point name="ssB" x="[R]" y="[B]"/>
+				<point name="ssTCtrl" x="[L]" y="[T]"/>
+				<point name="ssBCtrl" x="[L]" y="[B]"/>
+			</points>
+			<lines>
+				<line StartPoint="ssT" EndPoint="ssB" BezierLine="true" CtrlPoint1="ssTCtrl" CtrlPoint2="ssBCtrl"/>
+			</lines>
+		</startShape>
+	</shape>
+	<shape name="TaperPipe" offsetAdjustment="([curveAmt] * -1) - 2" Author="Michael Unfried" CreatedDate="2013-12-10">
+		<points>
+			<point name="LT" x="[L]" y="[T]"/>
+			<point name="RT" x="[R] - [curveAmt]" y="[T] + [taperAmt]"/>
+			<point name="RB" x="[R] - [curveAmt]" y="[B] - [taperAmt]"/>
+			<point name="LB" x="[L]" y="[B]"/>
+			<point name="RTCtrl" x="[R] - [taperAmt]" y="[T] + [taperAmt]"/>
+			<point name="RBCtrl" x="[R] - [taperAmt]" y="[B] - [taperAmt]"/>
+			<point name="LTCtrl" x="[L] + [curveAmt]" y="[T]"/>
+			<point name="LBCtrl" x="[L] + [curveAmt]" y="[B]"/>
+		</points>
+		<lines>
+			<line StartPoint="LT" EndPoint="RT"/>
+			<line StartPoint="RT" EndPoint="RB" BezierLine="true" CtrlPoint1="RTCtrl" CtrlPoint2="RBCtrl"/>
+			<line StartPoint="RB" EndPoint="LB"/>
+			<line StartPoint="LB" EndPoint="LT" BezierLine="true" CtrlPoint1="LBCtrl" CtrlPoint2="LTCtrl"/>
+		</lines>
+		<variables>
+			<variable name="curveAmt" value="[H] / 3"/>
+			<variable name="taperAmt" value="2"/>
+		</variables>
+		<textBounds h="[H]" w="[W] - ([curveAmt] * 2) - 4" x="[L] + [curveAmt] + 2" y="[T]"/>
+		<startShape width="[curveAmt]">
+			<points>
+				<point name="ssT" x="[R]" y="[T]"/>
+				<point name="ssB" x="[R]" y="[B]"/>
+				<point name="ssTCtrl" x="[L]" y="[T]"/>
+				<point name="ssBCtrl" x="[L]" y="[B]"/>
+			</points>
+			<lines>
+				<line StartPoint="ssT" EndPoint="ssB" BezierLine="true" CtrlPoint1="ssTCtrl" CtrlPoint2="ssBCtrl"/>
+			</lines>
+		</startShape>
+	</shape>
+	<shape name="Blob" offsetAdjustment="[OT] * -2" Author="Michael Unfried" CreatedDate="2014-02-11">
+		<points>
+			<point name="leftTip" x="[L]" y="[OT]"/>
+			<point name="leftTipHU" x="[L]" y="[T]"/>
+			<point name="leftTipHL" x="[L]" y="[centOff]"/>
+			<point name="topL" x="[L] + [OT]" y="[T]"/>
+			<point name="topLHL" x="[L] - ([OT] / 2)" y="[T]"/>
+			<point name="topLHR" x="[L] + ([OT] * 1.5)" y="[T]"/>
+			<point name="topR" x="[R] - ([OT] * 2)" y="[T]"/>
+			<point name="topRHL" x="[R] - ([OT] * 2.5)" y="[T]"/>
+			<point name="topRHR" x="[R] - ([OT] / 2)" y="[T]"/>
+			<point name="curR" x="[R] - [OT]" y="[B] - [centOff]"/>
+			<point name="curRHL" x="[R] - ([OT] * 2)" y="[B] - [centOff]"/>
+			<point name="curRHR" x="[R]" y="[B] - [centOff]"/>
+			<point name="rightTip" x="[R]" y="[B] - [OT]"/>
+			<point name="rightTipHU" x="[R]" y="[B] - [centOff]"/>
+			<point name="rightTipHL" x="[R]" y="[B]"/>
+			<point name="btmR" x="[R] - [OT]" y="[B]"/>
+			<point name="btmRHR" x="[R]" y="[B]"/>
+			<point name="btmRHL" x="[R] - ([OT] * 2)" y="[B]"/>
+			<point name="btmL" x="[L] + ([OT] * 2)" y="[B]"/>
+			<point name="btmLHR" x="[L] + ([OT] * 3)" y="[B]"/>
+			<point name="btmLHL" x="[L] + [OT]" y="[B]"/>
+			<point name="curL" x="[L] + [OT]" y="[T] + [centOff]"/>
+			<point name="curLHR" x="[L] + ([OT] * 2)" y="[T] + [centOff]"/>
+			<point name="curLHL" x="[L]" y="[T] + [centOff]"/>
+		</points>
+		<lines>
+			<line StartPoint="leftTip" EndPoint="topL" BezierLine="true" CtrlPoint1="leftTipHU" CtrlPoint2="topLHL"/>
+			<line StartPoint="topL" EndPoint="topR" BezierLine="true" CtrlPoint1="topLHR" CtrlPoint2="topRHL"/>
+			<line StartPoint="topR" EndPoint="curR" BezierLine="true" CtrlPoint1="topRHR" CtrlPoint2="curRHL"/>
+			<line StartPoint="curR" EndPoint="rightTip" BezierLine="true" CtrlPoint1="curRHR" CtrlPoint2="rightTipHU"/>
+			<line StartPoint="rightTip" EndPoint="btmR" BezierLine="true" CtrlPoint1="rightTipHL" CtrlPoint2="btmRHR"/>
+			<line StartPoint="btmR" EndPoint="btmL" BezierLine="true" CtrlPoint1="btmRHL" CtrlPoint2="btmLHR"/>
+			<line StartPoint="btmL" EndPoint="curL" BezierLine="true" CtrlPoint1="btmLHL" CtrlPoint2="curLHR"/>
+			<line StartPoint="curL" EndPoint="leftTip" BezierLine="true" CtrlPoint1="curLHL" CtrlPoint2="leftTipHL"/>
+		</lines>
+		<variables>
+			<variable name="halfH" value="[H] / 2"/>
+			<variable name="halfSpc" value="[S] / 2"/>
+			<variable name="centOff" value="[halfH] - [halfSpc]"/>
+			<variable name="OT" value="[centOff] / 2"/>
+		</variables>
+		<textBounds x="[L] + ([OT] * 2)" y="2" w="[W] - ([OT] * 4)" h="[H] - 4"/>
+	</shape>
+</shapes>
