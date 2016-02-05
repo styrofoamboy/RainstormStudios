@@ -221,6 +221,7 @@ namespace RainstormStudios.Unmanaged
         #region Public Methods
         //***************************************************************************
         // GDI32
+        // 
         public static IntPtr CreateScreenDC(int screenNum)
         {
             return Win32.CreateScreenDC(Screen.AllScreens[screenNum].DeviceName);
@@ -247,6 +248,7 @@ namespace RainstormStudios.Unmanaged
         }
         //***************************************************************************
         // USER32 - Windows
+        // 
         public static IntPtr GetActiveWindow()
         {
             return Api_User32.GetActiveWindow();
@@ -431,6 +433,7 @@ namespace RainstormStudios.Unmanaged
         }
         //***************************************************************************
         // USER32 - Graphics Functions
+        // 
         public static Rectangle GetWindowRect(IntPtr hWnd)
         {
             RECT bnds = new RECT();
