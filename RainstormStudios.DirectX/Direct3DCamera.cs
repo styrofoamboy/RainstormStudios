@@ -34,7 +34,7 @@ namespace RainstormStudios.DirectX
         public static readonly Direct3DCamera
             Empty;
         public Vector3
-            Posiiton,
+            Position,
             LookAt,
             UpVector;
         #endregion
@@ -44,7 +44,7 @@ namespace RainstormStudios.DirectX
         // Public Properties
         // 
         public Matrix ViewMatrix
-        { get { return Matrix.LookAtLH(this.Posiiton, this.LookAt, this.UpVector); } }
+        { get { return Matrix.LookAtLH(this.Position, this.LookAt, this.UpVector); } }
         #endregion
 
         #region Class Constructors
@@ -56,7 +56,7 @@ namespace RainstormStudios.DirectX
         { }
         public Direct3DCamera(Vector3 pos, Vector3 lookat, Vector3 up)
         {
-            this.Posiiton = pos;
+            this.Position = pos;
             this.LookAt = lookat;
             this.UpVector = up;
         }
@@ -66,6 +66,26 @@ namespace RainstormStudios.DirectX
         //***************************************************************************
         // Public Methods
         // 
+        public void MoveForward(double speed)
+        {
+
+        }
+        public void MoveLeft(double speed)
+        {
+
+        }
+        public void MoveRight(double speed)
+        {
+
+        }
+        public void Translate(float x, float y, float z)
+        {
+            this.Position.TransformCoordinate(Matrix.Translation(x, y, z));
+        }
+        public void Rotate(float x, float y, float z)
+        {
+            this.LookAt.TransformCoordinate(Matrix.RotationYawPitchRoll(x, y, z));
+        }
         #endregion
     }
 }
