@@ -47,6 +47,8 @@ namespace RainstormStudios.Games.Cards
             get { return this._wildSel; }
             set { this._wildSel = value; }
         }
+        public override bool IsGameOver
+        { get { return this.Players.Any(p => p.Hand.Count < 1); } }
         //***************************************************************************
         // Private Properties
         // 
