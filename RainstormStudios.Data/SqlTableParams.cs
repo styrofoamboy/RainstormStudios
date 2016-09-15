@@ -25,14 +25,14 @@ using RainstormStudios.Collections;
 namespace RainstormStudios.Data
 {
     [Author("Unfried, Michael")]
-    public struct ColumnParams : ICloneable
+    public class ColumnParams : ICloneable
     {
         #region Declarations
         //***************************************************************************
         // Public Fields
         // 
-        public static readonly ColumnParams
-            Empty;
+        //public static readonly ColumnParams
+        //    Empty;
         //***************************************************************************
         // Private Fields
         // 
@@ -108,12 +108,34 @@ namespace RainstormStudios.Data
         { get { return this._parent; } }
         public SqlTableParams Owner
         { get { return this._parent.Owner; } }
+        public bool IsQuotedValueType
+        {
+            get
+            {
+                // There is probably a better way to do this.
+                return this.DataType == SqlDbType.Bit
+                    || this.DataType == SqlDbType.Char
+                    || this.DataType == SqlDbType.Date
+                    || this.DataType == SqlDbType.DateTime
+                    || this.DataType == SqlDbType.DateTime2
+                    || this.DataType == SqlDbType.NChar
+                    || this.DataType == SqlDbType.NText
+                    || this.DataType == SqlDbType.NVarChar
+                    || this.DataType == SqlDbType.SmallDateTime
+                    || this.DataType == SqlDbType.Text
+                    || this.DataType == SqlDbType.Time
+                    || this.DataType == SqlDbType.VarChar
+                    || this.DataType == SqlDbType.Xml;
+            }
+        }
         #endregion
 
         #region Class Constructors
         //***************************************************************************
         // Class Constructors
         // 
+        public ColumnParams()
+        { }
         public ColumnParams(string ColumnName, Type DataType, int ColumnSize)
             : this(ColumnName, DataType, ColumnSize, -1)
         { }
