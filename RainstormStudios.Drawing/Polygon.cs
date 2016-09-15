@@ -50,6 +50,11 @@ namespace RainstormStudios.Drawing
         }
         public bool IsEmpty
         { get { return this._ply.IsEmpty; } }
+        public bool PreCalcBoundingBox
+        {
+            get { return this._ply.PreCalcBoundBox; }
+            set { this._ply.PreCalcBoundBox = value; }
+        }
         #endregion
 
         #region Class Constructors
@@ -175,6 +180,11 @@ namespace RainstormStudios.Drawing
             _area;
         protected bool
             _closeShape;
+        protected bool
+            _preCalcBBox;
+        float
+            _minX, _maxX,
+            _minY, _maxY;
         #endregion
 
         #region Properties
@@ -211,6 +221,11 @@ namespace RainstormStudios.Drawing
         }
         public bool IsEmpty
         { get { return this._pnts.Count == 0; } }
+        public bool PreCalcBoundBox
+        {
+            get { return this._preCalcBBox; }
+            set { this._preCalcBBox = value; }
+        }
         #endregion
 
         #region Class Constructors
@@ -222,6 +237,7 @@ namespace RainstormStudios.Drawing
             this._pnts = new List<PointF>();
             this._closeShape = false;
             this._area = 0.0f;
+            this._preCalcBBox = true;
         }
         protected PolygonF(Polygon ply)
             : this()
@@ -254,29 +270,39 @@ namespace RainstormStudios.Drawing
         public virtual void AddPoint(PointF val)
         {
             this._pnts.Add(val);
+            if (this._preCalcBBox)
+                this.UpdateMinMax(val);
             this._isDirty = true;
         }
         public virtual void AddRange(IEnumerable<PointF> val)
         {
             this._pnts.AddRange(val);
+            if (this._preCalcBBox)
+                this.UpdateMinMax(val);
             this._isDirty = true;
         }
         public virtual void InsertPoint(int idx, PointF val)
         {
             this.CheckRange(idx, "idx");
             this._pnts.Insert(idx, val);
+            if (this._preCalcBBox)
+                this.UpdateMinMax(val);
             this._isDirty = true;
         }
         public virtual void InsertRange(int idx, IEnumerable<PointF> val)
         {
             this.CheckRange(idx, "idx");
             this._pnts.InsertRange(idx, val);
+            if (this._preCalcBBox)
+                this.UpdateMinMax(val);
             this._isDirty = true;
         }
         public virtual void RemovePointAt(int idx)
         {
             this.CheckRange(idx, "idx");
             this._pnts.RemoveAt(idx);
+            if (this._preCalcBBox)
+                this.UpdateMinMax(this._pnts);
             this._isDirty = true;
         }
         public virtual void RemovePointRange(int idx, int count)
@@ -284,6 +310,8 @@ namespace RainstormStudios.Drawing
             this.CheckRange(idx, "idx");
             this.CheckRange(idx + count, "count");
             this._pnts.RemoveRange(idx, count);
+            if (this._preCalcBBox)
+                this.UpdateMinMax(this._pnts);
             this._isDirty = true;
         }
         public PointF GetPoint(int idx)
@@ -297,6 +325,8 @@ namespace RainstormStudios.Drawing
         {
             this.CheckRange(idx, "idx");
             this._pnts[idx] = val;
+            if (this._preCalcBBox)
+                this.UpdateMinMax(this._pnts);
             this._isDirty = true;
         }
         public virtual bool Contains(PointF p)
@@ -304,9 +334,13 @@ namespace RainstormStudios.Drawing
             if (this._pnts.Count < 3)
                 return false;
 
-            //this.EnsureValues();
-            //return this._tris.Any(t => t.Contains(p));
+            // First, we're going to do the quick min/max bounding box check.  If
+            //   it's outside this area, then it *cannot* be within the polygon.
+            if (p.X < this._minX || p.X > this._maxX || p.Y < this._minY || p.Y > this._maxY)
+                return false;
 
+            // If the point is at least within our bounding box, we're going to have
+            //   to do a more granular test.
             PointF p1, p2;
             bool inside = false;
             PointF[] poly = this._pnts.ToArray();
@@ -340,6 +374,8 @@ namespace RainstormStudios.Drawing
             PolygonF offsetPly = PolygonF.Offset(this, x, y);
             this.Clear();
             this._pnts.AddRange(offsetPly._pnts.ToArray());
+            if (this._preCalcBBox)
+                this.UpdateMinMax(this._pnts);
             offsetPly.Clear();
         }
         public virtual void Scale(float width, float height)
@@ -347,6 +383,8 @@ namespace RainstormStudios.Drawing
             PolygonF scalePly = PolygonF.Scale(this, width, height);
             this.Clear();
             this._pnts.AddRange(scalePly._pnts.ToArray());
+            if (this._preCalcBBox)
+                this.UpdateMinMax(this._pnts);
             scalePly.Clear();
         }
         public virtual void RotateAtCentroid(float degrees)
@@ -354,6 +392,8 @@ namespace RainstormStudios.Drawing
             PolygonF rotatePly = PolygonF.Rotate(this, degrees, this.Centroid);
             this.Clear();
             this._pnts.AddRange(rotatePly._pnts.ToArray());
+            if (this._preCalcBBox)
+                this.UpdateMinMax(this._pnts);
             rotatePly.Clear();
         }
         public virtual GraphicsPath GetShape()
@@ -379,6 +419,8 @@ namespace RainstormStudios.Drawing
         }
         public virtual RectangleF GetBounds()
         {
+            if (this._preCalcBBox)
+                this.UpdateMinMax(this._pnts);
             using (GraphicsPath path = this.GetShape())
             {
                 if (path == null)
@@ -481,6 +523,18 @@ namespace RainstormStudios.Drawing
 
                 this._isDirty = false;
             }
+        }
+        protected virtual void UpdateMinMax(IEnumerable<PointF> pnts)
+        {
+            foreach (var p in pnts)
+                this.UpdateMinMax(p);
+        }
+        protected virtual void UpdateMinMax(PointF p)
+        {
+            this._minX = System.Math.Min(this._minX, p.X);
+            this._maxX = System.Math.Max(this._maxX, p.X);
+            this._minY = System.Math.Min(this._minY, p.Y);
+            this._maxY = System.Math.Max(this._maxY, p.Y);
         }
         //***************************************************************************
         // Static Methods
