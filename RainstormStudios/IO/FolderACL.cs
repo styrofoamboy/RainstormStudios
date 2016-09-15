@@ -92,6 +92,8 @@ namespace RainstormStudios.IO
             _permCol;
         private FolderACLFileTable
             _fat;
+        private bool
+            _disposed;
         #endregion
 
         #region Properties
@@ -154,6 +156,7 @@ namespace RainstormStudios.IO
             this._fatSz = 0;
             this._verMinor = currentVersionMinor;
             this._verMajor = currentVersionMajor;
+            this._disposed = false;
 
             EventHandler clrEvnt = new EventHandler(this.Col_onCleared);
             CollectionEventHandler modEvnt = new CollectionEventHandler(this.Col_onModified);
@@ -183,6 +186,10 @@ namespace RainstormStudios.IO
         public FolderACL(string folderPath, object currentUserGuid)
             : this(folderPath, new Guid(currentUserGuid.ToString()))
         { }
+        ~FolderACL()
+        {
+            this.Dispose(false);
+        }
         #endregion
 
         #region Public Methods
@@ -191,10 +198,8 @@ namespace RainstormStudios.IO
         // 
         public void Dispose()
         {
-            //if (this._br != null)
-            //    this._br.Close();
-            //if (this._fs != null)
-            //    this._fs.Dispose();
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         public void AddFolderPermission(string groupName, FolderACLPermissionValue permissionValues)
@@ -471,6 +476,19 @@ namespace RainstormStudios.IO
         //***************************************************************************
         // Private Methods
         // 
+        protected void Dispose(bool disposing)
+        {
+            if (this._disposed)
+                return;
+
+            if (disposing)
+            {
+                this._permCol.Clear();
+                this._fat.Clear();
+            }
+
+            this._disposed = true;
+        }
         private Guid TestForGuid(object guidObj)
         {
             Guid tst = Guid.Empty;
