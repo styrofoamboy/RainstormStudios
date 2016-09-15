@@ -52,7 +52,14 @@ namespace RainstormStudios.Controls
         public string ConnectionString
         {
             get { return this._connStr; }
-            set { this._connStr = value; }
+            set
+            {
+                this._connStr = value;
+                // If we're updating the connection string, we need to invalidate any
+                //   previously loaded table names.
+                if (!this.DesignMode)
+                    this.ResetList();
+            }
         }
         [Category("Behavior"),Description("Gets or sets a bool value indicating true to prevent the drop-down box from showing a message box when an error occurs. Errors can still be captured with the PopulateError event."),DefaultValue(false)]
         public bool SupressErrorMessages
