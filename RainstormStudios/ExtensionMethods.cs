@@ -32,7 +32,8 @@ namespace RainstormStudios
         /// <typeparam name="T">A type which is struct that inherits the <see cref="T:System.IComparable"/> interface.</typeparam>
         /// <param name="matches">An array of values who's elements are of type 'T' to compare against this value.</param>
         /// <returns>A value of type <see cref="T:System.Boolean"/> indicating true if this value match any elements in the array. Otherwise, false.</returns>
-        public static bool MatchesAny<T>(this T value, params T[] matches) where T : struct, IComparable<T>
+        public static bool MatchesAny<T>(this T value, params T[] matches) 
+            where T : struct, IComparable<T>
         {
             for (int i = 0; i < matches.Length; i++)
                 // Stucts do not implicitly implement comparison operators, so we'll
@@ -50,7 +51,8 @@ namespace RainstormStudios
         /// <typeparam name="T">A type which is struct that inherits the <see cref="T:System.IComparable"/> interface.</typeparam>
         /// <param name="matches">An array of values who's elements are of type 'T' to compare against this value.</param>
         /// <returns>A value of type <see cref="T:System.Boolean"/> indicating true if this value match any elements in the array. Otherwise, false.</returns>
-        public static bool MatchesAll<T>(this T value, params T[] matches) where T : struct,IComparable<T>
+        public static bool MatchesAll<T>(this T value, params T[] matches)
+            where T : struct,IComparable<T>
         {
             for (int i = 0; i < matches.Length; i++)
                 // Structs do not implicitly implement comparison operators, so we'll
@@ -402,6 +404,14 @@ namespace RainstormStudios
 
             return words;
         }
+        public static double ToRadians(this int val)
+        { return (System.Math.PI / 180.0) * (double)val; }
+    }
+    [Author("Michael Unfried")]
+    public static class DoubleExtensions
+    {
+        public static double ToRadians(this double val)
+        { return (System.Math.PI / 180.0) * val; }
     }
     [Author("Michael Unfried")]
     public static class DateTimeExtensions
@@ -556,6 +566,16 @@ namespace RainstormStudios
 
             // Return the descriptive value.
             return dVal;
+        }
+        public static bool HasAllFlags(this Enum value, params Enum[] matches)
+        {
+            if (!value.GetType().GetCustomAttributes(true).Where(a => a.GetType().Name == "FlagsAttribute").Any())
+                throw new Exception("Specifed enumeration does not have a 'flags' attribute.");
+
+            for (int i = 0; i < matches.Length; i++)
+                if (!value.HasFlag(matches[i]))
+                    return false;
+            return true;
         }
         #endregion
 
