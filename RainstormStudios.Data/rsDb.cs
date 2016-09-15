@@ -1642,6 +1642,10 @@ namespace RainstormStudios.Data
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                     while (rdr.Read())
                     {
+                        if (rdr.GetValue(1).ToString() == "sysname")
+                            // I don't know exactly what this is, but the query actually returns an "extra" record for each column, with a datatype of "sysname"
+                            continue;
+
                         ColumnParams cp = new ColumnParams(); //rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), int.Parse(rdr.GetValue(3).ToString()));
                         cp.ColumnName = rdr.GetValue(0).ToString();
                         SqlDbType colType = SqlDbType.Variant;
@@ -1659,7 +1663,7 @@ namespace RainstormStudios.Data
                         string colKey = colKeyBase;
                         int colKeyCnt = 1;
                         while (cols.ContainsKey(colKey))
-                            colKey = colKeyBase + colKeyCnt.ToString().PadLeft(2, '0');
+                            colKey = colKeyBase + (colKeyCnt++).ToString().PadLeft(2, '0');
                         cols.Add(cp, colKey);
                     }
                 return cols;
@@ -2007,6 +2011,74 @@ namespace RainstormStudios.Data
             }
             catch
             { throw; }
+        }
+        public string[] ScriptInsert(string databaseName, string tableName, bool scriptUsing)
+        {
+            // Trim any qualifiers off the table name. We'll be determining the
+            //   owner name for ourselves and they shouldn't be specifying
+            //   the database name with a qualifier.
+            string spTblNm = (tableName.IndexOf('.') > -1) ? tableName.Substring(tableName.LastIndexOf('.') + 1) : tableName;
+            spTblNm = spTblNm.Trim('[', ']', ' ', '.');
+            string curDbName = string.Empty;
+            if (this.DbConnection.Database != databaseName)
+            {
+                curDbName = this.DbConnection.Database;
+                this.DbConnection.ChangeDatabase(databaseName);
+            }
+
+            List<string> sql = new List<string>();
+            List<string> sqlParams = new List<string>();
+            StringBuilder sbCols = new StringBuilder("(");
+            StringBuilder sbVals = new StringBuilder("(");
+            try
+            {
+                using (DataSet ds = this.Execute(string.Format("EXEC sp_help N'{0}'", tableName)))
+                {
+                    // Determine the table owner
+                    string tblOwner = ds.Tables[0].Rows[0]["Owner"].ToString();
+
+                    ColumnParamsCollection colParams = this.GetColumns(databaseName, tableName);
+
+                    // First, we're going to generate a parameter list, that should make it easy for the user
+                    //   to fill-in the insert values.
+                    int iParamNum = 0;
+                    foreach (ColumnParams col in colParams)
+                    {
+                        if (col.IsIdentity)
+                            continue;
+
+                        sqlParams.Add(string.Format("--{0} ({1}{2})", col.ColumnName, col.DataType, col.IsNullable ? "" : " NOT NULL"));
+                        string paramNm = string.Format("@p{0}", col.ColumnName);
+                        sqlParams.Add(string.Format("DECLARE {0} AS {1} = {2}{3}{2}", paramNm, col.DataType, col.IsQuotedValueType ? "'" : "", col.DefaultValue));
+                        sqlParams.Add("");
+
+                        if(iParamNum>0)
+                        {
+                            sbCols.Append(", ");
+                            sbVals.Append(", ");
+                        }
+
+                        sbCols.Append(col.ColumnName);
+                        sbVals.Append(paramNm);
+
+                        iParamNum++;
+                    }
+                    sbCols.Append(")");
+                    sbVals.Append(")");
+
+                    sql.AddRange(sqlParams);
+                    sql.Add(string.Format("INSERT INTO {0}.{1}", databaseName, tableName));
+                    sql.Add(sbCols.ToString());
+                    sql.Add("VALUES");
+                    sql.Add(sbVals.ToString());
+                }
+                return sql.ToArray();
+            }
+            finally
+            {
+                if (!string.IsNullOrEmpty(curDbName))
+                    this.DbConnection.ChangeDatabase(curDbName);
+            }
         }
         public int GetLastIdentity()
         {
