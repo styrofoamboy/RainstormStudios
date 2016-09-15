@@ -2156,8 +2156,8 @@ namespace RainstormStudios.Controls
                         this.ParseTables();
 
                         string tblKey = string.Empty;
-                        if (this._refTablesAlias.Contains(sQualNm))
-                            tblKey = this._refTablesAlias.GetKey(this._refTablesAlias.IndexOf(sQualNm));
+                        if (this._refTablesAlias.ContainsKey(sQualNm))
+                            tblKey = this._refTablesAlias[sQualNm];
                         else if (this._refTables.Contains(sQualNm))
                             tblKey = sQualNm;
 
