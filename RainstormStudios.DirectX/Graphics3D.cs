@@ -267,11 +267,11 @@ namespace RainstormStudios.DirectX
             this.EndScene();
         }
         public void SetCameraPosition(float x, float y, float z)
-        { this._camera.Posiiton = new Vector3(x, y, z); }
+        { this._camera.SetPosition(new Vector3(x, y, z)); }
         public void SetCameraLookAt(float x, float y, float z)
-        { this._camera.LookAt = new Vector3(x, y, z); }
+        { this._camera.SetLookAt(new Vector3(x, y, z)); }
         public void MoveCamera(float speed)
-        { MeshObject.MoveForward(ref this._camera.Posiiton, ref this._camera.LookAt, speed); }
+        { this._camera.MoveForward(speed); }
         public void CommitViewTransform()
         { this._device.Transform.View = this._camera.ViewMatrix; }
         #endregion

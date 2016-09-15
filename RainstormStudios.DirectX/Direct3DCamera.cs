@@ -33,10 +33,13 @@ namespace RainstormStudios.DirectX
         // 
         public static readonly Direct3DCamera
             Empty;
+        //***************************************************************************
+        // Private Fields
+        // 
         public Vector3
-            Position,
-            LookAt,
-            UpVector;
+            _v3Pos,
+            _v3Look,
+            _v3Up;
         #endregion
 
         #region Public Properties
@@ -45,6 +48,13 @@ namespace RainstormStudios.DirectX
         // 
         public Matrix ViewMatrix
         { get { return Matrix.LookAtLH(this.Position, this.LookAt, this.UpVector); } }
+        public Vector3 Position
+        { get { return this._v3Pos; } }
+        public Vector3 LookAt
+        { get { return this._v3Look; } }
+        public Vector3 UpVector
+        { get { return this._v3Up; } }
+
         #endregion
 
         #region Class Constructors
@@ -56,9 +66,9 @@ namespace RainstormStudios.DirectX
         { }
         public Direct3DCamera(Vector3 pos, Vector3 lookat, Vector3 up)
         {
-            this.Position = pos;
-            this.LookAt = lookat;
-            this.UpVector = up;
+            this._v3Pos = pos;
+            this._v3Look = lookat;
+            this._v3Up = up;
         }
         #endregion
 
@@ -66,9 +76,9 @@ namespace RainstormStudios.DirectX
         //***************************************************************************
         // Public Methods
         // 
-        public void MoveForward(double speed)
+        public void MoveForward(float speed)
         {
-
+            MeshObject.MoveForward(ref this._v3Pos, ref this._v3Look, speed);
         }
         public void MoveLeft(double speed)
         {
@@ -85,6 +95,14 @@ namespace RainstormStudios.DirectX
         public void Rotate(float x, float y, float z)
         {
             this.LookAt.TransformCoordinate(Matrix.RotationYawPitchRoll(x, y, z));
+        }
+        public void SetPosition(Vector3 vector)
+        {
+            this._v3Pos = vector;
+        }
+        public void SetLookAt(Vector3 vector)
+        {
+            this._v3Look = vector;
         }
         #endregion
     }
