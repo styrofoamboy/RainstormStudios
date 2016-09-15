@@ -88,7 +88,11 @@ namespace RainstormStudios.Unmanaged
         }
         public static DeviceContext GetScreen(int screenNum)
         {
-            return DeviceContext.GetDevice(System.Windows.Forms.Screen.AllScreens[screenNum].DeviceName);
+            return DeviceContext.GetScreen(System.Windows.Forms.Screen.AllScreens[screenNum].DeviceName);
+        }
+        public static DeviceContext GetScreen(string deviceName)
+        {
+            return DeviceContext.GetDevice(deviceName);
         }
         public static DeviceContext GetWindow(string windowName)
         {
