@@ -91,8 +91,7 @@ namespace RainstormStudios.Controls
         //***************************************************************************
         // Public Properties
         // 
-        [Category("Design"),Description("Specifies the size of feathering to do on the button's corners."),Browsable(true),DefaultValue(3)
-        ,DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        [Category("Design"),Description("Specifies the size of feathering to do on the button's corners."),Browsable(true),DefaultValue(3)]
         public int CornerFeather
         {
             get { return this._fthr; }
