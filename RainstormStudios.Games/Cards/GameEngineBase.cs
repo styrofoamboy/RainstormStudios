@@ -70,6 +70,7 @@ namespace RainstormStudios.Games.Cards
             get { return this._playerNames; }
             set { this._playerNames = value; }
         }
+        public abstract bool IsGameOver { get; }
         //***************************************************************************
         // Private Properties
         // 
@@ -88,6 +89,7 @@ namespace RainstormStudios.Games.Cards
         protected GameEngineBase(int numOfPlayers)
         {
             this._players = new Player<TDeck, TCard>[numOfPlayers];
+            this._playerNames = new string[numOfPlayers];
         }
         #endregion
 
@@ -126,13 +128,16 @@ namespace RainstormStudios.Games.Cards
             return newDeck;
         }
         protected virtual void InitPiles()
+        { this.InitPiles(true); }
+        protected void InitPiles(bool createDiscardPile)
         {
             if (this._piles == null)
                 this._piles = new CardPileCollection<TCard>();
             else
                 this._piles.Clear();
 
-            this._piles.Add(new CardPile<TCard>(), "DiscardPile");
+            if (createDiscardPile)
+                this._piles.Add(new CardPile<TCard>(), "DiscardPile");
         }
         protected virtual void DealHands()
         {
@@ -143,6 +148,18 @@ namespace RainstormStudios.Games.Cards
         protected virtual void InitPlayer(int idx, string name, CardPile<TCard> hand)
         {
             this._players[idx] = new Player<TDeck, TCard>(name, hand, this);
+        }
+        protected virtual void NextPlayer()
+        {
+            this._curPlayer++;
+            if (this._curPlayer > this.Players.Length - 1)
+                this._curPlayer = 0;
+        }
+        protected virtual void PreviousPlayer()
+        {
+            this._curPlayer--;
+            if (this._curPlayer < 0)
+                this._curPlayer = this.Players.Length - 1;
         }
         #endregion
     }

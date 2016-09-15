@@ -43,6 +43,8 @@ namespace RainstormStudios.Games.Cards
         { get { return (TCard)this._cards[index]; } }
         public int Count
         { get { return this._cards.Count; } }
+        public TCard TopCard
+        { get { return this[0]; } }
         #endregion
 
         #region Class Constructors
@@ -64,10 +66,10 @@ namespace RainstormStudios.Games.Cards
             this._cards.AddRange(pile._cards);
             pile._cards.Clear();
         }
-        public void AddPiles(CardPile<TCard>[] piles)
+        public void AddPiles(System.Collections.Generic.IEnumerable<CardPile<TCard>> piles)
         {
-            for (int i = 0; i < piles.Length; i++)
-                this.AddPile(piles[i]);
+            foreach (CardPile<TCard> p in piles)
+                this.AddPile(p);
         }
         public void MoveTopCard(CardPile<TCard> pile)
         { this.MoveCard(0, pile); }
