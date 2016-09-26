@@ -24,7 +24,6 @@ using RainstormStudios.Unmanaged;
 
 namespace RainstormStudios
 {
-    [Author("Unfried, Michael")]
     public enum ScrollBarInfoFlags : uint
     {
         SIF_RANGE = 0x1,
@@ -34,12 +33,10 @@ namespace RainstormStudios
         SIF_TRACKPOS = 0x10,
         SIF_ALL = (SIF_RANGE | SIF_PAGE | SIF_POS | SIF_TRACKPOS)
     }
-    [Author("Unfried, Michael")]
     public enum EMFlags : int
     {
         EM_SETSCROLLPOS = 0x0400 + 222
     }
-    [Author("Unfried, Michael")]
     public enum ScrollBarFlags : int
     {
         SBS_HORZ = 0x0000,
@@ -53,7 +50,6 @@ namespace RainstormStudios
         SBS_SIZEBOX = 0x0008,
         SBS_SIZEGRIP = 0x0010
     }
-    [Author("Unfried, Michael")]
     public enum ScrollBarTypes : uint
     {
         SB_HORZ = 0x0,
@@ -61,14 +57,12 @@ namespace RainstormStudios
         SB_CTRL = 0x2,
         SB_BOTH = 0x3
     }
-    [Author("Unfried, Michael")]
     [StructLayout(LayoutKind.Sequential)]                   // This is the default layout for a structure
     public struct NCCALCSIZE_PARAMS
     {
         public RECT rect0, rect1, rect2;                    // Can't use an array here so simulate one
         public IntPtr lppos;
     }
-    [Author("Unfried, Michael")]
     public enum NCCALCSIZERETURN
     {
         // WM_NCCALCSIZE return flags
@@ -81,7 +75,6 @@ namespace RainstormStudios
         WVR_REDRAW = (WVR_HREDRAW | WVR_VREDRAW),
         WVR_VALIDRECTS = 0x400
     }
-    [Author("Unfried, Michael")]
     class MsgType
     {
         public MsgType() { }

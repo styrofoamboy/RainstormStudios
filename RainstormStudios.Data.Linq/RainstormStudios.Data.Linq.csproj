@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorAttribute.cs" />
     <Compile Include="DataHelper.cs" />
     <Compile Include="DynamicLinq.cs" />
     <Compile Include="LinqDebugWriter.cs" />

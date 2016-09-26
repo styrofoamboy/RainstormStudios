@@ -26,7 +26,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Forms
 {
-    [Author("Unfried, Michael")]
     public partial class frmFindText : Form
     {
         #region Declarations

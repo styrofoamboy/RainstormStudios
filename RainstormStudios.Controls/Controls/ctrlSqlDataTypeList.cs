@@ -23,7 +23,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     [System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.ComboBox))]
     public class SqlDataTypeList : ComboBox
     {

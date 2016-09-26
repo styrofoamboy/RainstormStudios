@@ -29,7 +29,6 @@ using RainstormStudios.Drawing;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     [System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.Button)), System.ComponentModel.DesignerCategoryAttribute("UserControl")]
     public class AdvancedButton : Button
     {

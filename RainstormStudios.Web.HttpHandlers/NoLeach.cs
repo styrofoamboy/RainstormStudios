@@ -24,7 +24,6 @@ using System.Globalization;
 
 namespace RainstormStudios.Web.HttpHandlers
 {
-    [Author("Michael Unfried")]
     public class NoLeechImageHandler : IHttpHandler
     {
         public bool IsReusable

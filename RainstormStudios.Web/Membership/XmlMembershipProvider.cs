@@ -30,7 +30,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Web.Membership
 {
-    [Author("Michael Unfried")]
     public sealed class XmlMembershipProvider : System.Web.Security.MembershipProvider
     {
         #region Nested Classes

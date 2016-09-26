@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public class DataRead : IDisposable
     {
         #region Declarations

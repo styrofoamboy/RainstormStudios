@@ -24,7 +24,6 @@ using System.Drawing;
 
 namespace RainstormStudios.Collections
 {
-    [Author("Unfried, Michael")]
     public class PointCollection : ObjectCollectionBase<Point>
     {
         #region Class Constructors

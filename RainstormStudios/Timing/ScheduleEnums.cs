@@ -8,7 +8,6 @@ namespace RainstormStudios.Timing
     /// <summary>
     /// Used by the <see cref="T:RainstormStudios.Timing.Schedule"/> to determine the frequency with which an event occurs.
     /// </summary>
-    [Author("Michael Unfried")]
     public enum EventOccurance
     {
         Once = 0,
@@ -20,7 +19,6 @@ namespace RainstormStudios.Timing
     /// <summary>
     /// Used by the <see cref="T:RainstormStudios.Timing.Schedule"/> class to determine on which months an event should trigger.
     /// </summary>
-    [Author("Michael Unfried")]
     [Flags]
     public enum MonthOfYear : uint
     {
@@ -37,7 +35,6 @@ namespace RainstormStudios.Timing
         November = 1 << 10,
         December = 1 << 11
     }
-    [Author("Michael Unfried")]
     [Flags]
     public enum EventOccuranceType : uint
     {
@@ -48,7 +45,6 @@ namespace RainstormStudios.Timing
         Fith = 1 << 4,
         Last = 1 << 5
     }
-    [Author("Michael Unfried")]
     public enum WeeklyOccurance : uint
     {
         Sunday = 1 << 0,

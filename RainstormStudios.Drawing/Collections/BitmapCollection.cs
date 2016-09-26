@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Collections
 {
-    [Author("Unfried, Michael")]
     public class BitmapCollection : ObjectCollectionBase<Bitmap>
     {
         #region Class Constructors

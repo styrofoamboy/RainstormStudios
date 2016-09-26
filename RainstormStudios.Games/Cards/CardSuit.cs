@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Games.Cards
 {
-    [Author("Unfried, Michael")]
     public enum CardSuit : uint
     {
         Joker = 0,

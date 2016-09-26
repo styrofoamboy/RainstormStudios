@@ -25,7 +25,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Drawing.Charts.Pie
 {
-    [Author("Unfried, Michael")]
     public class PieChartSliceCollection : ObjectCollectionBase<PieChartSlice>, ICollection<PieChartSlice>
     {
         #region Global Objects

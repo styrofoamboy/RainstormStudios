@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.Web.Pop3
 {
-    [Author("Michael Unfried")]
     public class Pop3MailClient : Pop3MimeClientBase, IDisposable
     {
         #region Declarations

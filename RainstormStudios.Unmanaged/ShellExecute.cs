@@ -26,7 +26,6 @@ namespace RainstormStudios.Unmanaged
     /// <summary>
     /// Provides a managed class for accessing Windows' shell32.dll,ShellExecute unmanaged code.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class InteropShellExecute
     {
         #region Structs & Enums

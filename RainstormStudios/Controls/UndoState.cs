@@ -23,7 +23,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public enum UndoStateType
     {
         Insert,
@@ -36,7 +35,6 @@ namespace RainstormStudios.Controls
         Move,
         Drop
     }
-    [Author("Unfried, Michael")]
     public struct UndoState
     {
         #region Declarations
@@ -89,7 +87,6 @@ namespace RainstormStudios.Controls
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class UndoStateCollection : ObjectCollectionBase<UndoState>
     {
         #region Declarations

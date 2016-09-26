@@ -25,7 +25,6 @@ using System.Drawing;
 
 namespace RainstormStudios.Web.HttpHandlers
 {
-    [Author("Michael Unfried")]
     public class FileTypeIconHandler : IHttpHandler
     {
         #region Properties

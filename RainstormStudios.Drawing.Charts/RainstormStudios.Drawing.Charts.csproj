@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorAttribute.cs" />
     <Compile Include="ChartBase.cs" />
     <Compile Include="IChart.cs" />
     <Compile Include="IChartElement.cs" />

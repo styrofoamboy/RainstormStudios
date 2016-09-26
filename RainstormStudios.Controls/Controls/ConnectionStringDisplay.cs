@@ -24,7 +24,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unried, Michael")]
     public class ConnectionStringDisplay : TextBox
     {
         #region Declarations

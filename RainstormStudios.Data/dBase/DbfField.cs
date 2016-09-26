@@ -24,7 +24,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Data.dBase
 {
-    [Author("Unfried, Michael")]
     public struct DbfField
     {
         #region Declarations
@@ -151,7 +150,6 @@ namespace RainstormStudios.Data.dBase
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DbfFieldCollection : ObjectCollection
     {
         #region Declarations

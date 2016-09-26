@@ -8,7 +8,6 @@ namespace RainstormStudios.Collections
     /// <summary>
     /// Provides a strongly-typed collection object for storing Exception objects in key/value pairs.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class ExceptionCollection : ObjectCollectionBase<Exception>
     {
         #region Class Constructors

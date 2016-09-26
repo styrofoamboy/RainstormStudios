@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.Drawing.PDF
 {
-    [Author("Unfried, Michael")]
     public class PDFObject
     {
         #region Declarations
@@ -118,7 +117,6 @@ namespace RainstormStudios.Drawing.PDF
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class PDFDictionary : RainstormStudios.Collections.ObjectCollection
     {
         #region Public Methods
@@ -135,7 +133,6 @@ namespace RainstormStudios.Drawing.PDF
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class PDFObjectCollection : RainstormStudios.Collections.ObjectCollectionBase<PDFObject>
     {
         #region Properties

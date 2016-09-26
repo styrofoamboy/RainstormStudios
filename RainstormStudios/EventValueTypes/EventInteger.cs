@@ -25,7 +25,6 @@ namespace RainstormStudios.EventValueTypes
     /// <summary>
     /// Provides a container for a basic System.Boolean Type which will trigger an event when the value is changed.
     /// </summary>
-    [Author("Unfried, Michael")]
     public struct EventInteger
     {
         #region Declarations

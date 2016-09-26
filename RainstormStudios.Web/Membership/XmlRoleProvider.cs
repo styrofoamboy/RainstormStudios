@@ -28,7 +28,6 @@ using System.Configuration.Provider;
 
 namespace RainstormStudios.Web.Membership
 {
-    [Author("Michael Unfried")]
     public sealed class XmlRoleProvider : System.Web.Security.RoleProvider
     {
         #region Declarations

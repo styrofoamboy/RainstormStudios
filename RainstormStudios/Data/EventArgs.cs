@@ -23,7 +23,6 @@ using System.Text;
 namespace RainstormStudios.Data
 {
     public delegate void DataSetFilledEventHandler(object sender, DataSetFilledEventArgs e);
-    [Author("Unfried, Michael")]
     public class DataSetFilledEventArgs : EventArgs
     {
         #region Declarations

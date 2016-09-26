@@ -27,7 +27,6 @@ namespace RainstormStudios
     /// <summary>
     /// Provides static methods for parsing different types of string data.  This class is sealed.
     /// </summary>
-    [Author("Unfried, Michael")]
     public sealed class rsString
     {
         #region Global Variables

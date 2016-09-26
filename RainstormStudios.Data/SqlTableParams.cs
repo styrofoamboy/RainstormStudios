@@ -24,7 +24,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public class ColumnParams : ICloneable
     {
         #region Declarations
@@ -211,7 +210,6 @@ namespace RainstormStudios.Data
         //}
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class ColumnParamsCollection : ObjectCollectionBase<ColumnParams>, ICloneable
     {
         #region Declarations
@@ -321,7 +319,6 @@ namespace RainstormStudios.Data
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class SqlTableParams
     {
         #region Declarations

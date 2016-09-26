@@ -28,7 +28,6 @@ using System.Web.UI.HtmlControls;
 
 namespace RainstormStudios.Web
 {
-    [Author("Michael Unfried")]
     public class LinkButtonParser
     {
         #region Declarations

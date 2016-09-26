@@ -24,7 +24,6 @@ using System.Text;
 
 namespace RainstormStudios.Data.Linq
 {
-    [Author("Unfried, Michael")]
     public static class LinqExtensions
     {
         #region Declarations

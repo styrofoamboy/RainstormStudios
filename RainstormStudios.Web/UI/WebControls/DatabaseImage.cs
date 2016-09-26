@@ -27,7 +27,6 @@ using System.Web.UI.WebControls;
 
 namespace RainstormStudios.Web.UI.WebControls
 {
-    [Author("Unfried, Michael")]
     [ToolboxData("<{0}:ChevronHeader runat=\"server\"></{0}:ChevronHeader>"), ParseChildren(false), AspNetHostingPermission(System.Security.Permissions.SecurityAction.Demand, Level = AspNetHostingPermissionLevel.Minimal)]
     public class DatabaseImage : System.Web.UI.Control
     {

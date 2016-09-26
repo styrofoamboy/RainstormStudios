@@ -24,7 +24,6 @@ using System.Text;
 
 namespace RainstormStudios.Unmanaged
 {
-    [Author("Unfried, Michael")]
     [StructLayout(LayoutKind.Sequential)]
     public struct WindowInfo
     {
@@ -41,7 +40,6 @@ namespace RainstormStudios.Unmanaged
         public short creatorVersion;
     }
 
-    [Author("Unfried, Michael")]
     public struct WindowPlacement
     {
         // Declarations
@@ -53,7 +51,6 @@ namespace RainstormStudios.Unmanaged
         public Rectangle normalPosition;
     }
 
-    [Author("Unfried, Michael")]
     [StructLayout(LayoutKind.Sequential)]
     public struct ScrollBarInfo
     {
@@ -68,7 +65,6 @@ namespace RainstormStudios.Unmanaged
         public int[] rgState;
     }
 
-    [Author("Unfried, Michael")]
     [StructLayout(LayoutKind.Sequential)]
     public struct MOUSEINPUT
     {
@@ -78,7 +74,6 @@ namespace RainstormStudios.Unmanaged
         public IntPtr dwExtraInfo;
     }
 
-    [Author("Unfried, Michael")]
     [StructLayout(LayoutKind.Sequential)]
     public struct KEYBDINPUT
     {
@@ -88,7 +83,6 @@ namespace RainstormStudios.Unmanaged
         public IntPtr dwExtraInfo;
     }
 
-    [Author("Unfried, Michael")]
     [StructLayout(LayoutKind.Sequential)]
     public struct HARDWAREINPUT
     {
@@ -96,7 +90,6 @@ namespace RainstormStudios.Unmanaged
         public ushort wParamL, wParamH;
     }
 
-    [Author("Unfried, Michael")]
     [StructLayout(LayoutKind.Explicit)]
     public struct INPUT
     {
@@ -110,7 +103,6 @@ namespace RainstormStudios.Unmanaged
         public HARDWAREINPUT hi;
     }
 
-    [Author("Unfried, Michael")]
     [Serializable, StructLayout(LayoutKind.Sequential)]
     public struct RECT
     {
@@ -159,7 +151,6 @@ namespace RainstormStudios.Unmanaged
         #endregion
     }
 
-    [Author("Unfried, Michael")]
     [Serializable, StructLayout(LayoutKind.Sequential)]
     public struct POINT
     {

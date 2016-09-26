@@ -5,7 +5,6 @@ using System.Text;
 
 namespace RainstormStudios.Timing
 {
-    [Author("Michael Unfried")]
     public class ScheduleParams : ICloneable
     {
         #region Declarations
@@ -293,7 +292,6 @@ namespace RainstormStudios.Timing
         }
         #endregion
     }
-    [Author("Michael Unfried")]
     public class ScheduleParamsCollection : Collections.ObjectCollectionBase<ScheduleParams>
     {
         #region Public Methods

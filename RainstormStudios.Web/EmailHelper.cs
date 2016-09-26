@@ -26,7 +26,6 @@ using System.Web;
 
 namespace RainstormStudios.Web
 {
-    [Author("Unfried, Michael")]
     public class EmailHelper
     {
         #region Declarations
@@ -264,7 +263,6 @@ namespace RainstormStudios.Web
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class SendEmailCompleteEventArgs : System.EventArgs
     {
         #region Declarations
@@ -313,7 +311,6 @@ namespace RainstormStudios.Web
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class EmailHelperConfiguration : System.Configuration.ConfigurationSection
     {
         #region Declarations
@@ -407,7 +404,6 @@ namespace RainstormStudios.Web
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class EmailContactElement : System.Configuration.ConfigurationElement
     {
         #region Properties
@@ -432,7 +428,6 @@ namespace RainstormStudios.Web
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     [ConfigurationCollection(typeof(EmailContactElement))]
     public class EmailContactElementCollection : System.Configuration.ConfigurationElementCollection
     {

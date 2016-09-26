@@ -23,7 +23,6 @@ using System.Runtime.InteropServices;
 
 namespace RainstormStudios.Unmanaged
 {
-    [Author("Unfried, Michael")]
     public class InteropHtmlHelp
     {
         #region Structs & Enums

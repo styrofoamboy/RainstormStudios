@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Games.Cards
 {
-    [Author("Unfried, Michael")]
     public enum CardColor : uint
     {
         Wild = 0,

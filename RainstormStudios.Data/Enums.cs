@@ -25,7 +25,6 @@ namespace RainstormStudios.Data
     /// <summary>
     /// An emuneration which defines which type of flat file should be used.
     /// </summary>
-    [Author("Unfried, Michael")]
     public enum FlatFileType
     {
         XmlFile = 0,
@@ -34,7 +33,6 @@ namespace RainstormStudios.Data
         CSVTextFile,
         FixedWidthFile,
     }
-    [Author("Unfried, Michael")]
     public enum FlatFileFormatFlags
     {
         ColumnHeaders = 0x01,
@@ -45,7 +43,6 @@ namespace RainstormStudios.Data
         XlsColumnNames = 0x32,
         XlsImex = 0x64
     }
-    [Author("Unfried, Michael")]
     public enum TextAlignment
     {
         Left = 0,

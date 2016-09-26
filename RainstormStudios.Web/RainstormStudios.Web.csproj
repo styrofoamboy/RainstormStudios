@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AjaxResponse.cs" />
-    <Compile Include="AuthorAttribute.cs" />
     <Compile Include="EmailHelper.cs" />
     <Compile Include="ErrorHandler.cs" />
     <Compile Include="ExtensionMethods.cs" />

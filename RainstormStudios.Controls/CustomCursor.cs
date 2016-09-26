@@ -27,7 +27,6 @@ using System.Reflection;
 
 namespace RainstormStudios
 {
-    [Author("Unfried, Michael")]
     public static class CustomCursor
     {
         #region Declarations
@@ -198,6 +197,5 @@ namespace RainstormStudios
     }
 
     // Type-safe stream handling
-    [Author("Unfried, Michael")]
     public class CursorStream : MemoryStream { }
 }

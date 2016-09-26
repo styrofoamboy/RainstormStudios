@@ -25,7 +25,6 @@ using System.Text;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     [System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.DataGrid))]
     public class NumberedDataGrid : System.Windows.Forms.DataGrid
     {

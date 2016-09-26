@@ -28,7 +28,6 @@ namespace RainstormStudios.Data.Linq
     /// <summary>
     /// When an instance of this class is attached to a Linq2Sql data context's "Log" parameter, it outputs the generated T-SQL commands.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class LinqDebugWriter : System.IO.TextWriter
     {
         #region Declarations
@@ -155,7 +154,6 @@ namespace RainstormStudios.Data.Linq
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class LinqDebugWriterConfiguration : System.Configuration.ConfigurationSection
     {
         #region Declarations
@@ -248,7 +246,6 @@ namespace RainstormStudios.Data.Linq
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class ServerElement : System.Configuration.ConfigurationElement
     {
         #region Properties
@@ -264,7 +261,6 @@ namespace RainstormStudios.Data.Linq
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     [ConfigurationCollection(typeof(ServerElement))]
     public class ServerElementCollection : System.Configuration.ConfigurationElementCollection
     {

@@ -29,7 +29,6 @@ using Microsoft.Win32;
 
 namespace RainstormStudios.DynamicCodeGeneration
 {
-    [Author("Unfried, Michael")]
     public class DynaCode
     {
         #region Global Objects

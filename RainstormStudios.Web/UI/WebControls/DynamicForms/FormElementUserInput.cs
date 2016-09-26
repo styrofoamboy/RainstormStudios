@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Web.UI.WebControls.DynamicForms
 {
-    [Author("Unfried, Michael")]
     public class FormElementUserInput
     {
         #region Nested Types

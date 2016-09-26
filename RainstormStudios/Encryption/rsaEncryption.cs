@@ -23,7 +23,6 @@ using System.Security.Cryptography;
 
 namespace RainstormStudios.Encryption
 {
-    [Author("Unfried, Michael")]
     public class rsaEncryption
     {
         #region Declarations

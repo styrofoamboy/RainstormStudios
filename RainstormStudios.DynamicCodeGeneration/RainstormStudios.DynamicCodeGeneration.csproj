@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorAttribute.cs" />
     <Compile Include="DynaArgument.cs" />
     <Compile Include="DynaClass.cs" />
     <Compile Include="DynaCode.cs" />

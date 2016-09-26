@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios
 {
-    [Author("Michael Unfried")]
     public static class ValueTypeExtensions
     {
         /// <summary>
@@ -105,7 +104,6 @@ namespace RainstormStudios
             return sbTxt.ToString();
         }
     }
-    [Author("Michael Unfried")]
     public static class StringExtensions
     {
         /// <summary>
@@ -251,7 +249,6 @@ namespace RainstormStudios
             return new string(value.ToCharArray().Reverse().ToArray());
         }
     }
-    [Author("Michael Unfried")]
     public static class IntegerExtensions
     {
         /// <summary>
@@ -407,13 +404,11 @@ namespace RainstormStudios
         public static double ToRadians(this int val)
         { return (System.Math.PI / 180.0) * (double)val; }
     }
-    [Author("Michael Unfried")]
     public static class DoubleExtensions
     {
         public static double ToRadians(this double val)
         { return (System.Math.PI / 180.0) * val; }
     }
-    [Author("Michael Unfried")]
     public static class DateTimeExtensions
     {
         public static byte[] GetBinary(this DateTime value)
@@ -496,7 +491,6 @@ namespace RainstormStudios
                 return "th";
         }
     }
-    [Author("Michael Unfried")]
     public static class ExceptionExtensions
     {
         /// <summary>
@@ -520,7 +514,6 @@ namespace RainstormStudios
             return errMsg.Substring(errMsg.LastIndexOf(':') + 1);
         }
     }
-    [Author("Unfried, Michael")]
     public static class EnumExtensions
     {
         #region Declarations

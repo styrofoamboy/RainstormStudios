@@ -28,7 +28,6 @@ using RainstormStudios.Drawing;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public sealed class DropDownButton : RainstormStudios.Controls.AdvancedButton
     {
         #region Declarations

@@ -24,7 +24,6 @@ using System.Drawing;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public static class ColorExtensionMethods
     {
         /// <summary>

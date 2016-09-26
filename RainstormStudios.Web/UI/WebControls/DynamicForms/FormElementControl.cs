@@ -30,7 +30,6 @@ namespace RainstormStudios.Web.UI.WebControls.DynamicForms
     /// Serves as a base class for all of the Dynamic Form element control types.
     /// This class cannot be instantiated directly.  It uses a simple factory model.  To create a new control instance, use "FormElementControl.GetControl(FormElementData)".
     /// </summary>
-    [Author("Unfried, Michael")]
     public abstract class FormElementControl : System.Web.UI.WebControls.CompositeControl, INamingContainer, IScriptControl
     {
         #region Declarations

@@ -24,7 +24,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios
 {
-    [Author("Unfried, Michael")]
     public class rsDateTime
     {
         #region Fields

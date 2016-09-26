@@ -7,7 +7,6 @@ using System.Reflection;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public static class CsvWriter
     {
         /// <summary>

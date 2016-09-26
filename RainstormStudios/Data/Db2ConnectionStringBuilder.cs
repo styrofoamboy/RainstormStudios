@@ -24,7 +24,6 @@ using System.Text;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public class Db2ConnectionStringBuilder : DbConnectionStringBuilder
     {
         #region Class Constructors

@@ -24,7 +24,6 @@ using System.Drawing.Imaging;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public class YUV
     {
         #region Declarations
@@ -85,7 +84,6 @@ namespace RainstormStudios.Drawing
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class HSL
     {
         #region Declarations
@@ -186,14 +184,12 @@ namespace RainstormStudios.Drawing
         { return new HSL(c.GetHue(), c.GetSaturation(), c.GetBrightness()); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public enum HSLFilterType
     {
         Hue,
         Saturation,
         Luminance
     }
-    [Author("Unfried, Michael")]
     public sealed class ColorSpace
     {
         #region Public Methods

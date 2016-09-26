@@ -22,14 +22,12 @@ using System.Text;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public enum Direction
     {
         Horizontal = 0,
         Vertical,
         Both
     }
-    [Author("Unfried, Michael")]
     public enum Order
     {
         Clockwise,

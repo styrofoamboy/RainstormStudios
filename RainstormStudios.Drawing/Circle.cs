@@ -25,7 +25,6 @@ using RainstormStudios;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public struct Circle : ICloneable
     {
         #region Declarations
@@ -143,7 +142,6 @@ namespace RainstormStudios.Drawing
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public struct CircleF : ICloneable
     {
         #region Declarations

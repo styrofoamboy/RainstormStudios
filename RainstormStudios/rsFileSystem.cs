@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios
 {
-    [Author("Unfried, Michael")]
     public sealed class rsFileSystem
     {
         #region Declarations

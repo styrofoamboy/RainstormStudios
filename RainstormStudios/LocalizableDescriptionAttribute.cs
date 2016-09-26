@@ -29,7 +29,6 @@ namespace RainstormStudios
     /// <summary>
     /// Allow you to define memeber description attributes which reference localized (culture-specific) strings in the application's resource file.
     /// </summary>
-    [Author("Unfried, Michael")]
     [AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
     public sealed class LocalizableDescriptionAttribute : System.ComponentModel.DescriptionAttribute
     {

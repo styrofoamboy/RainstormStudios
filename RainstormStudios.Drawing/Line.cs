@@ -28,7 +28,6 @@ namespace RainstormStudios.Drawing
     /// <summary>
     /// A simple struct for storing a single, two-point line and also provides a number of static methods for performing geometric equations on lines.
     /// </summary>
-    [Author("Unfried, Michael")]
     public struct Line : ICloneable
     {
         #region Declarations
@@ -239,7 +238,6 @@ namespace RainstormStudios.Drawing
     /// <summary>
     /// A simple struct for storing a single, two-point line with floating decimal coordinate values and provides a number of static methods for perfoming geometric equations on lines.
     /// </summary>
-    [Author("Unfried, Michael")]
     public struct LineF : ICloneable
     {
         #region Declarations

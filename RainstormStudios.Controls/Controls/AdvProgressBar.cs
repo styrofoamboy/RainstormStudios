@@ -28,7 +28,6 @@ using RainstormStudios.Drawing;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     [System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.ProgressBar))]
     public class AdvancedProgressBar : Control
     {

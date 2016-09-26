@@ -25,7 +25,6 @@ namespace RainstormStudios
     /// <summary>
     /// Provides static methods for converting between Celcuis and Fahrenheit and vice versa.
     /// </summary>
-    [Author("Unfried, Michael")]
     public sealed class Temperature
     {
         #region Public Methods
@@ -47,7 +46,6 @@ namespace RainstormStudios
     /// <summary>
     /// Provides static methods for converting linear measurements.
     /// </summary>
-    [Author("Unfried, Michael")]
     public sealed class LinearMeasurementConversion
     {
         #region Declarations
@@ -105,7 +103,6 @@ namespace RainstormStudios
     /// <summary>
     /// Provides static methods for converting square measurments of surfaces.
     /// </summary>
-    [Author("Unfried, Michael")]
     public sealed class SurfaceMeasurementConversion
     {
         #region Public Methods
@@ -129,7 +126,6 @@ namespace RainstormStudios
     /// <summary>
     /// Provides static methods for converting volumetric measurements.
     /// </summary>
-    [Author("Unfried, Michael")]
     public sealed class VolumeMeasurementConversion
     {
         #region Public Methods
@@ -161,7 +157,6 @@ namespace RainstormStudios
     /// <summary>
     /// Provides static methods for converting weight measurements.
     /// </summary>
-    [Author("Unfried, Michael")]
     public sealed class WeightMeasurementConversion
     {
         #region Declarations

@@ -5,7 +5,6 @@ using System.Text;
 
 namespace RainstormStudios
 {
-    [Author("Unfried, Michael")]
     public enum SeverityLevel
     {
         Fatal = 0,

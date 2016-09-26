@@ -22,14 +22,12 @@ using System.Text;
 
 namespace RainstormStudios.Collections
 {
-    [Author("Unfried, Michael")]
     public enum SortDirection
     {
         None = -1,
         Ascending = 0,
         Descending = 1
     }
-    [Author("Unfried, Michael")]
     public enum CollectionAction : uint
     {
         Insert = 0,

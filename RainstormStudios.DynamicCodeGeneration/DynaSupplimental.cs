@@ -23,7 +23,6 @@ using System.CodeDom;
 
 namespace RainstormStudios.DynamicCodeGeneration
 {
-    [Author("Unfried, Michael")]
     public class DynaAttributeDeclaration
     {
         #region Declarations
@@ -63,7 +62,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// <summary>
     /// Provides a simple container and methods for building CodeDOM-based value cast expressions.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class DynaCast
     {
         #region Declarations
@@ -190,11 +188,9 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaTryCatchFinally
     {
     }
-    [Author("Unfried, Michael")]
     public class DynaCatchClause
     {
         #region Declarations

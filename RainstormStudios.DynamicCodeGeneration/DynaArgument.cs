@@ -23,7 +23,6 @@ using System.CodeDom;
 
 namespace RainstormStudios.DynamicCodeGeneration
 {
-    [Author("Unfried, Michael")]
     public class DynaArgument
     {
         #region Declarations
@@ -83,7 +82,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaArgumentCollection
     {
         #region Declarations

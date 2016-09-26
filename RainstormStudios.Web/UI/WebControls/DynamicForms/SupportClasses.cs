@@ -27,11 +27,9 @@ namespace RainstormStudios.Web.UI.WebControls.DynamicForms
     public delegate void DynamicFormEventHandler(object sender, DynamicFormEventArgs e);
     public delegate void DynamicFormElementRenderingEventHandler(object sender, DynamicFormElementRenderingEventArgs e);
     public delegate void DynamicFormElementEventHandler(object sender, DynamicFormElementEventArgs e);
-    [Author("Unfried, Michael")]
     public class DynamicFormEventArgs : System.EventArgs
     {
     }
-    [Author("Unfried, Michael")]
     public class DynamicFormRenderingEventArgs : DynamicFormEventArgs
     {
         #region Declarations
@@ -42,7 +40,6 @@ namespace RainstormStudios.Web.UI.WebControls.DynamicForms
             Cancel = false;
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynamicFormElementEventArgs : System.EventArgs
     {
         #region Declarations
@@ -66,7 +63,6 @@ namespace RainstormStudios.Web.UI.WebControls.DynamicForms
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynamicFormElementRenderingEventArgs : DynamicFormElementEventArgs
     {
         #region Declarations

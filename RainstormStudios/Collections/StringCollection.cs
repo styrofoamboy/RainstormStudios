@@ -8,7 +8,6 @@ namespace RainstormStudios.Collections
     /// <summary>
     /// Provides a strongly-typed collection object for storing String values in key/value pairs and provides functions for working with those strings.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class StringCollection : ObjectCollectionBase<String>
     {
         #region Declarations

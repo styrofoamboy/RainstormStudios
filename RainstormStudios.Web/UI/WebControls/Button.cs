@@ -26,7 +26,7 @@ using System.Web.UI.WebControls;
 
 namespace RainstormStudios.Web.UI.WebControls
 {
-    [Author("Unfried, Michael"), DefaultProperty("Text"), ParseChildren(false), ToolboxData("<{0}:Button runat=\"server\"></{0}:Button>")]
+    [DefaultProperty("Text"), ParseChildren(false), ToolboxData("<{0}:Button runat=\"server\"></{0}:Button>")]
     public class Button : System.Web.UI.WebControls.Button
     {
         #region Properties

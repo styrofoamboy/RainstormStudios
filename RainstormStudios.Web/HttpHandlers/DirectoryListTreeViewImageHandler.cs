@@ -26,7 +26,6 @@ using System.Web;
 
 namespace RainstormStudios.Web.HttpHandlers
 {
-    [Author("Michael Unfried")]
     class DirectoryListTreeViewImageHandler : IHttpHandler
     {
         #region Properties

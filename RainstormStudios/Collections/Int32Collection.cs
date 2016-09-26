@@ -8,7 +8,6 @@ namespace RainstormStudios.Collections
     /// <summary>
     /// Provides a strongly-type collection object for storing Int32 values in key/value pairs.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class Int32Collection : ObjectCollectionBase<Int32>
     {
         #region Declarations

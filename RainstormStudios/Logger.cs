@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios
 {
-    [Author("Unfried, Michael")]
     public class LogMessage
     {
         #region Declarations
@@ -118,7 +117,6 @@ namespace RainstormStudios
     /// 
     /// http://www.yoda.arachsys.com/csharp/singleton.html
     /// </remarks>
-    [Author("Unfried, Michael")]
     public sealed class Logger
     {
         #region Declarations

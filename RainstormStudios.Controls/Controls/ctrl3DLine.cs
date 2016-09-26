@@ -24,7 +24,6 @@ using System.Text;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public class ThreeDLine : System.Windows.Forms.Control
     {
         #region Properties

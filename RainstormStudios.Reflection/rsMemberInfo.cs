@@ -5,7 +5,6 @@ using System.Reflection;
 
 namespace RainstormStudios.Reflection
 {
-    [Author("Unfried, Michael")]
     public sealed class rsMemberInfo
     {
         #region Declarations

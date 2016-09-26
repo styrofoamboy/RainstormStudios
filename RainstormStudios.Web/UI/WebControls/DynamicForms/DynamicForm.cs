@@ -27,7 +27,6 @@ using RainstormStudios.Web.UI.WebControls.DynamicForms;
 
 namespace RainstormStudios.Web.UI.WebControls
 {
-    [Author("Unfried, Michael")]
     public class DynamicForm : CompositeControl, INamingContainer, IScriptControl, IPostBackDataHandler, IPostBackEventHandler
     {
         #region Declarations

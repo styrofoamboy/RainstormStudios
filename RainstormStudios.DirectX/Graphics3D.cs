@@ -27,7 +27,6 @@ using Microsoft.DirectX.Direct3D;
 
 namespace RainstormStudios.DirectX
 {
-    [Author("Unfried, Michael")]
     public class Graphics3D : IDisposable
     {
         #region Declarations

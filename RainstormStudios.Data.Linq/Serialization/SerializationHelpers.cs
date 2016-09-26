@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Data.Linq.Serialization
 {
-    [Author("Unfried, Michael")]
     internal class SerializationHelpers
     {
         /// <summary>

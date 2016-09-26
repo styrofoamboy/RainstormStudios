@@ -28,7 +28,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Michael Unfried")]
     public sealed class QueryTextParser
     {
         #region Declartions
@@ -180,7 +179,6 @@ namespace RainstormStudios.Controls
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     [DesignerCategory("UserControl"), ToolboxBitmap(typeof(QueryTextBox), "/QueryTextBox.bmp")]
     public class QueryTextBox : RainstormStudios.Controls.AdvRichTextBox
     {

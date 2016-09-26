@@ -27,7 +27,6 @@ namespace RainstormStudios.IO
     /// <summary>
     /// An enumeration containing the possible permission types for the FolderACL classes.
     /// </summary>
-    [Author("Unfried, Michael")]
     [Flags]
     public enum FolderACLPermissionValue : uint
     {
@@ -53,7 +52,6 @@ namespace RainstormStudios.IO
     /// website where documents are stored and provides a way to store that data without the need for a database containing
     /// eveny file name.
     /// </remarks>
-    [Author("Unfried, Michael")]
     public sealed class FolderACL : IDisposable
     {
         #region Declarations
@@ -1124,7 +1122,6 @@ namespace RainstormStudios.IO
     /// <summary>
     /// Stores ACL permission information for a given folder and account object.
     /// </summary>
-    [Author("Unfried, Michael")]
     public struct FolderACLPermission
     {
         #region Declarations
@@ -1284,7 +1281,6 @@ namespace RainstormStudios.IO
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public sealed class FolderACLPermissionEntry : ICloneable
     {
         #region NestedTypes
@@ -1496,7 +1492,6 @@ namespace RainstormStudios.IO
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public sealed class FolderACLPermissionEntryCollection : RainstormStudios.Collections.ObjectCollectionBase<FolderACLPermissionEntry>
     {
         #region Declarations
@@ -1727,7 +1722,6 @@ namespace RainstormStudios.IO
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public sealed class FolderACLFileEntry
     {
         #region Declarations
@@ -1843,7 +1837,6 @@ namespace RainstormStudios.IO
         // 
         #endregion
     }
-    [Author("Unfried, Michael")]
     public sealed class FolderACLFileTable : RainstormStudios.Collections.ObjectCollectionBase<FolderACLFileEntry>
     {
         #region Declarations

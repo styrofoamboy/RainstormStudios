@@ -27,7 +27,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// Provides a base class to the other AllOneSystem.DynaCode statement classes.
     /// This is an abstract class and cannot be instanced directly.
     /// </summary>
-    [Author("Unfried, Michael")]
     public abstract class DynaStatement
     {
         #region Declarations
@@ -79,7 +78,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public abstract class DynaExpression : DynaStatement
     {
         #region Declarations
@@ -105,7 +103,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// <summary>
     /// Provides a simple container and routines for building CodeDOM-based method invoke expression statements.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class DynaMethodExpression : DynaExpression
     {
         #region Declarations
@@ -268,7 +265,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// <summary>
     /// Provides a simple container and methods for building CodeDOM-based iteration loops.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class DynaIterationStatement : DynaStatement
     {
         #region Declarations
@@ -521,7 +517,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// <summary>
     /// Provides a simple container and methods for building CodeDOM-based assignment statements.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class DynaAssignmentStatement : DynaStatement
     {
         #region Declarations
@@ -585,7 +580,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// <summary>
     /// Provides a simple container and methods for building CodeDOM-based condition statements.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class DynaConditionStatement : DynaStatement
     {
         #region Declarations
@@ -830,7 +824,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// <summary>
     /// Provides a simple container and methods for building CodeDOM-based operator (comparison) statements.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class DynaOperatorExpression : DynaExpression
     {
         #region Declarations
@@ -905,7 +898,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// <summary>
     /// Provides a simple container and methods for building CodeDOM-based method return statements.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class DynaReturnStatement : DynaStatement
     {
         #region Declarations
@@ -970,7 +962,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// <summary>
     /// Provides a simple container and methods for building CodeDOM-base array definitions.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class DynaArrayCreateExpression : DynaExpression
     {
         #region Declarations
@@ -1073,7 +1064,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaArrayIndexerExpression : DynaExpression
     {
         #region Declarations
@@ -1113,7 +1103,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         { }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaDeclarationStatement : DynaStatement
     {
         #region Declarations
@@ -1201,7 +1190,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaLiteralExpression : DynaExpression
     {
         #region Declarations
@@ -1237,7 +1225,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaLiteralStatement : DynaExpression
     {
         #region Declarations
@@ -1273,7 +1260,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaObjectCreateExpression : DynaExpression
     {
         #region Declarations
@@ -1346,7 +1332,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaPrimitive : DynaExpression
     {
         #region Global Objects
@@ -1382,7 +1367,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaVariableReferenceExpression : DynaExpression
     {
         #region Declarations
@@ -1418,7 +1402,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaCommentStatement : DynaStatement
     {
         #region Declarations

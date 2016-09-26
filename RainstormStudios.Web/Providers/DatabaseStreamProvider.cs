@@ -33,7 +33,6 @@ using RainstormStudios.Web.UI.WebControls;
 
 namespace RainstormStudios.Providers
 {
-    [Author("Unfried, Michael")]
     public class DatabaseStreamProviderConfiguration : System.Configuration.ConfigurationSection
     {
         #region Properties
@@ -53,7 +52,6 @@ namespace RainstormStudios.Providers
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DatabaseStreamProviderManager
     {
         #region Declarations
@@ -111,7 +109,6 @@ namespace RainstormStudios.Providers
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public abstract class DatabaseStreamProvider : System.Configuration.Provider.ProviderBase
     {
         #region Public Methods
@@ -121,7 +118,6 @@ namespace RainstormStudios.Providers
         public abstract DatabaseStreamData GetImage(string providerKey);
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DatabaseStreamProviderCollection : System.Configuration.Provider.ProviderCollection
     {
         #region Properties
@@ -134,7 +130,6 @@ namespace RainstormStudios.Providers
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DatabaseStreamData
     {
         #region Properties

@@ -27,7 +27,7 @@ using System.Web.UI.WebControls;
 
 namespace RainstormStudios.Web.UI.WebControls.DynamicForms
 {
-    [Serializable, Author("Unfried, Michael")]
+    [Serializable]
     public class FormElementData : System.ComponentModel.INotifyPropertyChanged
     {
         #region Declaratons
@@ -542,7 +542,7 @@ namespace RainstormStudios.Web.UI.WebControls.DynamicForms
         }
         #endregion
     }
-    [Serializable, Author("Unfried, Michael")]
+    [Serializable]
     public class FormElementDataCollection : Collections.ObjectCollectionBase<FormElementData>
     {
         #region Declarations
@@ -581,7 +581,7 @@ namespace RainstormStudios.Web.UI.WebControls.DynamicForms
         }
         #endregion
     }
-    [Serializable, Author("Unfried, Michael")]
+    [Serializable]
     public class FormElementDataAnswer
     {
         #region Declarations
@@ -635,7 +635,7 @@ namespace RainstormStudios.Web.UI.WebControls.DynamicForms
         }
         #endregion
     }
-    [Serializable, Author("Unfried, Michael")]
+    [Serializable]
     public class FormElementDataAnswerCollection : Collections.ObjectCollectionBase<FormElementDataAnswer>
     {
         #region Declarations

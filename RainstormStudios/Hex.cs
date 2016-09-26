@@ -26,7 +26,6 @@ namespace RainstormStudios
     /// <summary>
     /// Provides a set of static methods for working with hexidecimal values.
     /// </summary>
-    [Author("Unfried, Michael")]
     public sealed class Hex
     {
         #region Declarations

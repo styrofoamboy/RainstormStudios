@@ -24,7 +24,6 @@ namespace RainstormStudios
 {
     public delegate void GenericCrossThreadDelegate();
     public delegate void ExceptionEventHandler(object sender, ExceptionEventArgs e);
-    [Author("Unfried, Michael")]
     public class ExceptionEventArgs : EventArgs
     {
         #region Declarations

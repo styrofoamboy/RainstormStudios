@@ -22,14 +22,12 @@ using System.Text;
 
 namespace RainstormStudios.Web.HttpHandlers
 {
-    [Author("Michael Unfried")]
     public interface iDynamicImageControl
     {
         string ContentType
         { get; }
         System.IO.MemoryStream RenderImage();
     }
-    [Author("Michael Unfried")]
     public class HttpImageRenderStream : System.Web.IHttpModule
     {
         #region Declarations

@@ -29,7 +29,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.DirectX
 {
-    [Author("Unfried, Michael")]
     public class VertexBufferCollection : ObjectCollectionBase<VertexBuffer>
     {
         #region Class Constructors
@@ -67,7 +66,6 @@ namespace RainstormStudios.DirectX
         { base.RemoveAt(this.IndexOfKey(key)); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class TextureCollection : ObjectCollectionBase<Texture>
     {
         #region Class Constructors
@@ -111,7 +109,6 @@ namespace RainstormStudios.DirectX
         { base.RemoveAt(this.IndexOfKey(key)); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class MaterialCollection : ObjectCollectionBase<Material>
     {
         #region Class Constructors
@@ -155,7 +152,6 @@ namespace RainstormStudios.DirectX
         { base.RemoveAt(this.IndexOfKey(key)); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class Font3DCollection : ObjectCollectionBase<D3D.Font>
     {
         #region Class Constructors
@@ -193,7 +189,6 @@ namespace RainstormStudios.DirectX
         { base.RemoveAt(this.IndexOfKey(key)); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class EffectCollection : ObjectCollectionBase<Effect>
     {
         #region Class Constructors
@@ -231,7 +226,6 @@ namespace RainstormStudios.DirectX
         { base.RemoveAt(this.IndexOfKey(key)); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class MeshObjectCollection : ObjectCollectionBase<MeshObject>
     {
         #region Class Constructors

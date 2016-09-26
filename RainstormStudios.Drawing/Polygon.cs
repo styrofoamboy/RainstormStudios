@@ -24,7 +24,6 @@ using System.Drawing.Drawing2D;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public class Polygon : ICloneable
     {
         #region Declarations
@@ -163,7 +162,6 @@ namespace RainstormStudios.Drawing
         { return !(val1 == val2); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class PolygonF : ICloneable
     {
         #region Declarations

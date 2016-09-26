@@ -9,7 +9,6 @@ using System.Web.UI.WebControls;
 
 namespace RainstormStudios.Web.UI.WebControls
 {
-    [Author("Unfried, Michael")]
     [DefaultProperty("Items"), ParseChildren(ChildrenAsProperties = true), ToolboxData("<{0}:ToolBar runat=\"server\"></{0}:ToolBar>")]
     public class ToolBar : System.Web.UI.WebControls.CompositeControl, INamingContainer
     {
@@ -167,7 +166,6 @@ namespace RainstormStudios.Web.UI.WebControls
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     [Serializable]
     public class ToolBarItem
     {
@@ -190,7 +188,6 @@ namespace RainstormStudios.Web.UI.WebControls
         { }
         #endregion
     }
-    [Author("Unfried, Michael")]
     [Serializable]
     public class ToolBarItemCollection : Collections.ObjectCollectionBase<ToolBarItem>
     {
@@ -231,7 +228,6 @@ namespace RainstormStudios.Web.UI.WebControls
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public enum ToolBarDisplayMode : uint
     {
         ImageOnly = 0,

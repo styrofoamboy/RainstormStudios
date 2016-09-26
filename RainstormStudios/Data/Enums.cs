@@ -26,7 +26,6 @@ namespace RainstormStudios.Data
     /// <summary>
     /// Specifies which ADO.NET provider to use in database operations.
     /// </summary>
-    [Author("Unfried, Michael")]
     public enum AdoProviderType
     {
         /// <summary>
@@ -55,7 +54,6 @@ namespace RainstormStudios.Data
         [Description("ODBC Provider")]
         OdbcProvider
     }
-    [Author("Unfried, Michael")]
     public enum DataTargetType
     {
         None = -1,
@@ -66,7 +64,6 @@ namespace RainstormStudios.Data
         Db,
         dBase
     }
-    [Author("Unfried, Michael")]
     public enum QueryFieldParseOption
     {
         None = 0,

@@ -9,7 +9,6 @@ namespace RainstormStudios.Timing
     /// A class that contains information about an event (who's details are stored in a seperate array) such
     /// as Name, Event Time, and the oridinal position in the originating array where it's details are stored.
     /// </summary>
-    [Author("Michael Unfried")]
     public class ScheduleEvent : ICloneable
     {
         #region Declarations
@@ -162,7 +161,6 @@ namespace RainstormStudios.Timing
     /// <summary>
     /// A custom class used to store a list of Events.
     /// </summary>
-    [Author("Michael Unfried")]
     public class ScheduleEventCollection : Collections.ObjectCollectionBase<ScheduleEvent>, ICloneable
     {
         #region Public Methods
@@ -183,7 +181,6 @@ namespace RainstormStudios.Timing
         }
         #endregion
     }
-    [Author("Michael Unfried")]
     public sealed class ScheduleEventComparer : System.Collections.IComparer
     {
         #region Public Methods

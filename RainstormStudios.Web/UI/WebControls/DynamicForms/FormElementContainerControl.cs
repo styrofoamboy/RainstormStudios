@@ -26,7 +26,6 @@ using System.Web.UI.WebControls;
 
 namespace RainstormStudios.Web.UI.WebControls.DynamicForms
 {
-    [Author("Unfried, Michael")]
     public abstract class FormElementContainerControl : FormElementControl
     {
         #region Class Constructors

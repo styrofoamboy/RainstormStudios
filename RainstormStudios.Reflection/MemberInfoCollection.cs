@@ -6,7 +6,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Reflection
 {
-    [Author("Unfried, Michael")]
     public class MemberInfoCollection : ObjectCollectionBase<MemberInfo>
     {
         #region Declarations

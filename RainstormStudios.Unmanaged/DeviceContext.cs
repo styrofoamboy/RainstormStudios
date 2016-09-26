@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Unmanaged
 {
-    [Author("Unfried, Michael")]
     public class DeviceContext : IDisposable
     {
         #region Declarations

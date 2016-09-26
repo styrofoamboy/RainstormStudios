@@ -8,7 +8,6 @@ namespace RainstormStudios.Web
     /// <summary>
     /// A simple class for transporting an encapsulated AJAX response between the server and client.
     /// </summary>
-    [Author("Unfried, Michael")]
     [Serializable]
     public class AjaxResponse
     {

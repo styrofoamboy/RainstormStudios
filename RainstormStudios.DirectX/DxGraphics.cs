@@ -25,7 +25,6 @@ using D3D = Microsoft.DirectX.Direct3D;
 
 namespace RainstormStudios.DirectX
 {
-    [Author("Unfried, Michael")]
     public class DxGraphics : IDisposable
     {
         #region Sub Classes

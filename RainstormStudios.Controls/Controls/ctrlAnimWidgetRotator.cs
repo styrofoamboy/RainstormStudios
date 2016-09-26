@@ -25,7 +25,6 @@ using System.ComponentModel;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public class AnimWidgetRotator : System.Windows.Forms.Panel
     {
         #region Declarations

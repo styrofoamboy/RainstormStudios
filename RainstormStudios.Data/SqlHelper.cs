@@ -7,7 +7,6 @@ using System.Text;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public sealed class SqlHelper
     {
         #region Public Methods

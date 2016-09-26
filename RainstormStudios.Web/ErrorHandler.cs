@@ -27,12 +27,10 @@ using System.Web.UI;
 
 namespace RainstormStudios.Web
 {
-    [Author("Unfried, Michael")]
     public interface IMasterPageErrorHandler
     {
         void ShowSystemError(string msg, bool showAdditionalInfo = true);
     }
-    [Author("Unfried, Michael")]
     public class ErrorHandler
     {
         #region Declaration
@@ -198,7 +196,6 @@ namespace RainstormStudios.Web
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class ErrorHandlerConfiguration : System.Configuration.ConfigurationSection
     {
         #region Declarations
@@ -277,7 +274,6 @@ namespace RainstormStudios.Web
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class ErrorEmailContactElement : EmailContactElement
     {
         #region Properties
@@ -294,7 +290,6 @@ namespace RainstormStudios.Web
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     [ConfigurationCollection(typeof(ErrorEmailContactElement))]
     public class ErrorEmailContactElementCollection : System.Configuration.ConfigurationElementCollection
     {

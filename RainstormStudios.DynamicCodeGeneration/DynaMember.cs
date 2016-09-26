@@ -23,7 +23,6 @@ using System.CodeDom;
 
 namespace RainstormStudios.DynamicCodeGeneration
 {
-    [Author("Unfried, Michael")]
     public abstract class DynaMember
     {
         #region Declarations
@@ -84,7 +83,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaMethod : DynaMember
     {
         #region Declarations
@@ -289,7 +287,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaConstructor : DynaMethod
     {
         #region Properties
@@ -336,7 +333,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaEntryPoint : DynaMethod
     {
         #region Properties
@@ -371,7 +367,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaField : DynaMember
     {
         #region Properties
@@ -415,7 +410,6 @@ namespace RainstormStudios.DynamicCodeGeneration
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DynaProperty : DynaMethod
     {
         #region Declarations

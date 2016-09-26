@@ -27,7 +27,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public class SqlDatabaseList : System.Windows.Forms.ComboBox
     {
         #region Declarations

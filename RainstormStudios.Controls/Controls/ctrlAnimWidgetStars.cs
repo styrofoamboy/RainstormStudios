@@ -25,7 +25,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public class AnimWidgetStars : Panel
     {
         #region StarClass

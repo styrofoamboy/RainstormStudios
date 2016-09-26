@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public enum LockedProviderType
     {
         None = -1,
@@ -31,19 +30,16 @@ namespace RainstormStudios.Controls
         Db2Provider,
         OdbcProvider
     }
-    [Author("Unfried, Michael")]
     public enum FileDialogType
     {
         Open = 0,
         Save
     }
-    [Author("Unfried, Michael")]
     public enum TargetControlType
     {
         Source = 0,
         Destination
     }
-    [Author("Unfried, Michael")]
     public enum MovementSpeed
     {
         VerySlow = 6,

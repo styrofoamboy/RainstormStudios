@@ -25,7 +25,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public struct FeatheredRectangle : ICloneable
     {
         #region Declarations
@@ -314,7 +313,6 @@ namespace RainstormStudios.Drawing
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public struct FeatheredRectangleF : ICloneable
     {
         #region Declarations

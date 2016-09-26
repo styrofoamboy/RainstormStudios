@@ -26,7 +26,6 @@ using System.Web;
 
 namespace RainstormStudios.Web
 {
-    [Author("Unfried, Michael")]
     public class LogManager
     {
         #region Declarations
@@ -147,7 +146,6 @@ namespace RainstormStudios.Web
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class LogManagerConfiguration : System.Configuration.ConfigurationSection
     {
         #region Declarations

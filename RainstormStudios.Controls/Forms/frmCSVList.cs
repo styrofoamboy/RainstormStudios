@@ -27,7 +27,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Forms
 {
-    [Author("Unfried, Michael")]
     public partial class frmCSVList : Form
     {
         #region Properties

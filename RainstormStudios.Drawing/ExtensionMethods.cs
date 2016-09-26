@@ -6,7 +6,6 @@ using System.Text;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public static class ColorExtensionMethods
     {
         /// <summary>

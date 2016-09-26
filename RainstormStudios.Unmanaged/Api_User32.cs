@@ -24,7 +24,6 @@ using System.Runtime.InteropServices;
 
 namespace RainstormStudios.Unmanaged
 {
-    [Author("Unfried, Michael")]
     class Api_User32
     {
         const uint MAX_PATH = 260;

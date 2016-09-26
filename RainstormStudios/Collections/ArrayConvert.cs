@@ -26,7 +26,6 @@ namespace RainstormStudios.Collections
     /// <summary>
     /// Provides static methods for working with arrays.
     /// </summary>
-    [Author("Unfried, Michael")]
     public abstract class ArrayConvert
     {
         #region Public Methods

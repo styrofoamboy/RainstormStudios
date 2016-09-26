@@ -27,7 +27,6 @@ namespace RainstormStudios
     /// <summary>
     /// Provides static methods for accessing UI Forms and Controls across thread boundaries.
     /// </summary>
-    [Author("Unfried, Michael")]
     public sealed class CrossThreadUI
     {
         #region Declarations

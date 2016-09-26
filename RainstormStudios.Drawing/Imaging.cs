@@ -26,7 +26,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public abstract class Imaging
     {
         #region Public Methods

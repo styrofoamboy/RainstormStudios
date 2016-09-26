@@ -27,7 +27,6 @@ using RainstormStudios.Data;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public partial class ConnectionStringBox : RsUserControlBase
     {
         #region Declarations

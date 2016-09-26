@@ -25,7 +25,6 @@ namespace RainstormStudios.Data
     /// <summary>
     /// Custom event argument class for the RowProcessed events.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class RowProcessedEventArgs : EventArgs
     {
         #region Declarations
@@ -70,7 +69,6 @@ namespace RainstormStudios.Data
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class WriteToDbMethodCompleteEventArgs : EventArgs
     {
         #region Declarations
@@ -99,7 +97,6 @@ namespace RainstormStudios.Data
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class WriteToDbOperationCompleteEventArgs : EventArgs
     {
         #region Declarations

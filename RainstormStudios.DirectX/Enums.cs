@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.DirectX
 {
-    [Author("Unfried, Michael")]
     public enum ExitCode
     {
         Null = 0x00000001,

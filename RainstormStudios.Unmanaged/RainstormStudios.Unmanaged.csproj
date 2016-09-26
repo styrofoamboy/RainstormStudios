@@ -61,7 +61,6 @@
     <Compile Include="Api_AdvApi32.cs" />
     <Compile Include="Api_NetApi32.cs" />
     <Compile Include="Api_Gdi32.cs" />
-    <Compile Include="AuthorAttribute.cs" />
     <Compile Include="DeviceContext.cs" />
     <Compile Include="HotKeys.cs" />
     <Compile Include="HtmlHelp.cs" />

@@ -25,7 +25,6 @@ using System.Text;
 
 namespace RainstormStudios.Data.Linq
 {
-    [Author("Unfried, Michael")]
     public enum ComparisonOperator : int
     {
         Equals = 0,
@@ -36,7 +35,6 @@ namespace RainstormStudios.Data.Linq
         LessThanOrEqual = 5,
         Contains = 6
     }
-    [Author("Unfried, Michael")]
     public class DataHelper
     {
         private static readonly string[] compOpStr = new string[] { " =", " <>", " >", " >=", " <", " <=", ".ToString().Contains(" };

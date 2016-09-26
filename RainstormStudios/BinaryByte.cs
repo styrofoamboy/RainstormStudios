@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios
 {
-    [Author("Michael Unfried")]
     public struct BinaryByte
     {
         #region Declarations

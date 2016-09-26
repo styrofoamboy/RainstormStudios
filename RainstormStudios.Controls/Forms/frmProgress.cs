@@ -27,7 +27,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Forms
 {
-    [Author("Unfried, Michael")]
     public partial class frmProgress : Form
     {
         #region Declarations

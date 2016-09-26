@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyCollection.cs" />
-    <Compile Include="AuthorAttribute.cs" />
     <Compile Include="MemberInfoCollection.cs" />
     <Compile Include="ModuleCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

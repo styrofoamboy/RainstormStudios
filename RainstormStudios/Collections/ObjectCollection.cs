@@ -8,7 +8,6 @@ namespace RainstormStudios.Collections
     /// <summary>
     /// Provides a collection object for storing generic key/value pairs.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class ObjectCollection : ObjectCollectionBase<Object>
     {
         #region Class Constructors

@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Games.Cards
 {
-    [Author("Unfried, Michael")]
     public class CardPile<TCard> : System.Collections.Generic.IEnumerable<TCard>
         where TCard : ICard
     {

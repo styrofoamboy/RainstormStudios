@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Web.UI.WebControls.DynamicForms
 {
-    [Author("Unfried, Michael")]
     public enum FormElementDisplayType : uint
     {
         Textbox = 1,
@@ -37,7 +36,7 @@ namespace RainstormStudios.Web.UI.WebControls.DynamicForms
         GridCell = 9,
         HiddenField = 10
     }
-    [Flags, Author("Unfried, Michael")]
+    [Flags]
     public enum FormElementDisplayOptions
     {
         // Using the "bit-shift" method means I can just use incremental numbers and not

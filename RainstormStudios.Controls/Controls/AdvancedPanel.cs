@@ -23,7 +23,6 @@ using System.Runtime.InteropServices;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     [System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.Panel))]
     public class AdvancedPanel : System.Windows.Forms.Panel
     {

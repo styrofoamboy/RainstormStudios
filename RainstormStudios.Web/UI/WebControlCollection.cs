@@ -24,7 +24,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Collections
 {
-    [Author("Michael Unfried")]
     public class WebControlCollection : ObjectCollectionBase<System.Web.UI.Control>
     {
         #region Properties

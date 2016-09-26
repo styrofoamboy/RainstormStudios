@@ -27,7 +27,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Drawing.BinaryImages
 {
-    [Author("Unfried, Michael")]
     public class TiffTag
     {
         #region Global Objects
@@ -347,7 +346,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class TiffTagCollection : ObjectCollectionBase<TiffTag>
     {
         #region Class Constructors
@@ -372,7 +370,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         { base.Insert(index, value, key); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class TiffIdf
     {
         #region Global Objects
@@ -680,7 +677,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         { this._owner = owner; }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class TiffIdfCollection : ObjectCollectionBase<TiffIdf>
     {
         #region Class Constructors
@@ -705,7 +701,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         { base.Insert(index, value, key); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public abstract class TiffStream
     {
         #region Global Objects
@@ -740,7 +735,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         { get { return true; } }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class TiffReader : TiffStream
     {
         #region Global Objects
@@ -849,7 +843,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class TiffWriter : TiffStream
     {
         #region Global Objects

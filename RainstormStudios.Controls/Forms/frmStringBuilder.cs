@@ -32,7 +32,6 @@ using RainstormStudios.Data;
 
 namespace RainstormStudios.Forms
 {
-    [Author("Unfried, Michael")]
     public partial class frmStringBuilder : Form
     {
         #region Declarations

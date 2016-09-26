@@ -23,7 +23,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public struct FieldMapping : ICloneable
     {
         #region Declarations
@@ -90,7 +89,6 @@ namespace RainstormStudios.Data
         //}
         #endregion
     }
-    [Author("Unfried, Michael")]
     class FieldMappingCollection : ObjectCollectionBase<FieldMapping>
     {
         #region Class Constructors
@@ -151,7 +149,6 @@ namespace RainstormStudios.Data
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DbMappingRules : ICloneable
     {
         #region Declarations

@@ -24,7 +24,6 @@ using System.Web;
 
 namespace RainstormStudios.Web.HttpHandlers
 {
-    [Author("Michael Unfried")]
     public class Clock : IHttpHandler
     {
         #region Properties

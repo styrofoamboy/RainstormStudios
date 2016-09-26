@@ -25,7 +25,6 @@ namespace RainstormStudios
     /// <summary>
     /// Provides static methods for generation output only when compiled with the DEBUG switch.
     /// </summary>
-    [Author("Unfried, Michael")]
     public static partial class DebugOnly
     {
         [System.Diagnostics.Conditional("DEBUG")]

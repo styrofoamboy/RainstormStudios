@@ -25,7 +25,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public partial class IPEntryBox : UserControl
     {
         //***************************************************************************

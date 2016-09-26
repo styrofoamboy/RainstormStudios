@@ -25,7 +25,6 @@ using System.Web;
 
 namespace RainstormStudios.Web.HttpHandlers
 {
-    [Author("Michael Unfried")]
     public class TimelineHandler : IHttpHandler
     {
         #region Properties

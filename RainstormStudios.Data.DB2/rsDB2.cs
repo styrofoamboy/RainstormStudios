@@ -26,7 +26,6 @@ using IBM.Data.DB2;
 
 namespace RainstormStudios.Data.DB2
 {
-    [Author("Unfried, Michael")]
     public class rsDbDb2 : rsDb
     {
         #region Declarations

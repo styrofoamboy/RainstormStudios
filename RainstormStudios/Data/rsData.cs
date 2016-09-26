@@ -30,7 +30,6 @@ namespace RainstormStudios.Data
     /// <summary>
     /// Provides static methods for working with database connection strings and data type conversions.  This class is sealed.
     /// </summary>
-    [Author("Unfried, Michael")]
     public sealed class rsData
     {
         #region Public Methods

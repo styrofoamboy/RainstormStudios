@@ -8,7 +8,6 @@ namespace RainstormStudios.Timing
     /// <summary>
     /// Creates, sorts, and contains a series of AosEvents objects and exposes methods for handling and controlling the events.
     /// </summary>
-    [Author("Michael Unfried")]
     public class Scheduler
     {
         #region Declarations

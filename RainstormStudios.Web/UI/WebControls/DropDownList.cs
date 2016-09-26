@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.Web.UI.WebControls
 {
-    [Author("Michael Unfried")]
     public class DropDownList : System.Web.UI.WebControls.DropDownList
     {
         #region Declarations

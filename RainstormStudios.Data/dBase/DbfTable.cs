@@ -25,7 +25,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Data.dBase
 {
-    [Author("Unfried, Michael")]
     public class DbfTable : IDisposable
     {
         #region Declarations
@@ -875,7 +874,6 @@ namespace RainstormStudios.Data.dBase
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DbfFieldException : Exception
     {
         #region Declarations

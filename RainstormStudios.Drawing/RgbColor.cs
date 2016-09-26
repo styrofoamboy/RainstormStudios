@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public class RgbColor
     {
         #region Declarations

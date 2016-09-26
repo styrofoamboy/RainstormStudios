@@ -27,7 +27,6 @@ using System.Drawing.Drawing2D;
 
 namespace RainstormStudios.Web.HttpHandlers
 {
-    [Author("Unfried, Michael")]
     public class GradientBackgroundHandler : System.Web.IHttpHandler
     {
         #region Properties

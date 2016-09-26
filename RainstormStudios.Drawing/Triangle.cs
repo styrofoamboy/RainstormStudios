@@ -23,7 +23,6 @@ using System.Drawing.Drawing2D;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public struct Vector 
     {
         public Point
@@ -37,7 +36,6 @@ namespace RainstormStudios.Drawing
             this.Angle = ang;
         }
     }
-    [Author("Unfried, Michael")]
     public struct Triangle : ICloneable
     {
         #region Fields
@@ -371,7 +369,6 @@ namespace RainstormStudios.Drawing
          */
         #endregion
     }
-    [Author("Unfried, Michael")]
     public struct TriangleF : ICloneable
     {
         #region Declarations

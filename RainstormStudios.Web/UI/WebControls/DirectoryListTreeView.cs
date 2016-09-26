@@ -26,7 +26,6 @@ using System.Web.UI.WebControls;
 
 namespace RainstormStudios.Web.UI.WebControls
 {
-    [Author("Michael Unfried")]
     public enum DirectoryListTreeViewRootType : int
     {
         VirtualPath = 0,

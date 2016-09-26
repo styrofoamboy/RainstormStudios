@@ -24,7 +24,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public enum WriteToDbMethod
     {
         /// <summary>
@@ -44,7 +43,6 @@ namespace RainstormStudios.Data
         /// </summary>
         LineByLine
     }
-    [Author("Unfried, Michael")]
     public struct WriteToDbResults
     {
         #region Declarations
@@ -101,7 +99,6 @@ namespace RainstormStudios.Data
         { }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public struct WriteToDbAttempt
     {
         #region Declarations
@@ -199,7 +196,6 @@ namespace RainstormStudios.Data
         { }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class WriteToDbAttemptCollection : CollectionBase
     {
         #region Public Properties
@@ -246,7 +242,6 @@ namespace RainstormStudios.Data
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class WriteToDb
     {
         #region Declarations

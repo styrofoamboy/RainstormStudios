@@ -24,7 +24,6 @@ using System.Drawing.Imaging;
 
 namespace RainstormStudios.Drawing
 {
-    [Author("Unfried, Michael")]
     public class ConvMatrix
     {
         #region Declarations
@@ -110,14 +109,12 @@ namespace RainstormStudios.Drawing
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public enum EdgeDetectionMethod : short
     {
         Kirsh = 1,
         Prewitt = 2,
         Sobel = 3
     }
-    [Author("Unfried, Michael")]
     public enum BitmapFilterType
     {
         Invert,
@@ -127,7 +124,6 @@ namespace RainstormStudios.Drawing
         Gamma,
         Color
     }
-    [Author("Unfried, Michael")]
     public class BitmapFilter
     {
         #region Public Methods

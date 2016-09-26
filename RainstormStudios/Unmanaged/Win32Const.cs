@@ -23,7 +23,6 @@ using System.Text;
 namespace RainstormStudios.Unmanaged
 {
     public delegate bool Win32Callback(IntPtr hWnd, IntPtr lParam);
-    [Author("Unfried, Michael")]
     public sealed class Win32Const
     {
         public const int GWL_HWNDPARENT = (-8);

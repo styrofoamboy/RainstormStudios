@@ -30,7 +30,6 @@ namespace RainstormStudios.Unmanaged
     /// <summary>
     /// Provides access to unmanaged Win32 MFC functions.
     /// </summary>
-    [Author("Unfried, Michael")]
     public abstract class Win32
     {
         public static bool

@@ -27,7 +27,6 @@ namespace RainstormStudios.Unmanaged
     /// <summary>
     /// Provides a managed class to access Windows' Shell32.dll,SHFileOperation unmanaged code.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class InteropShellFileOperation
     {
         #region Structs & Enums
@@ -179,7 +178,6 @@ namespace RainstormStudios.Unmanaged
     /// <summary>
     /// Contains bool option flags for shell32.dll,SHFileOperation calls.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class FILEOP_FLAGS
     {
         #region Structs & Enums

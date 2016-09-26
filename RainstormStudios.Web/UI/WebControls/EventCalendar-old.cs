@@ -28,7 +28,7 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Web.UI.WebControls
 {
-    [Author("Michael Unfried"),DataObject(true)]
+    [DataObject(true)]
     public sealed class EventCalendarOld : System.Web.UI.WebControls.Calendar, System.Web.UI.INamingContainer, IPostBackEventHandler, IBindableTemplate
     {
         #region Declarations
@@ -394,7 +394,6 @@ namespace RainstormStudios.Web.UI.WebControls
         }
         #endregion
     }
-    [Author("Michael Unfried")]
     public struct CalendarEventOld
     {
         #region Declarations
@@ -471,7 +470,6 @@ namespace RainstormStudios.Web.UI.WebControls
         }
         #endregion
     }
-    [Author("Michael Unfried")]
     public class CalendarEventCollectionOld : RainstormStudios.Collections.ObjectCollectionBase<CalendarEventOld>
     {
         #region Declarations

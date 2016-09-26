@@ -25,7 +25,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Data.dBase
 {
-    [Author("Unfried, Michael")]
     public class DbfHeader
     {
         #region Class Enums

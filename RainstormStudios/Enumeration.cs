@@ -31,7 +31,6 @@ namespace RainstormStudios
     /// The use of this class has been depreciated, in favor of using actual enumerations with a <see cref="T:System.ComponentModel.Description"/>
     /// or <see cref="T:LocalizableDescriptionAttribute"/> attached to the values.
     /// </remarks>
-    [Author("Michael Unfried")]
     [Obsolete("The use of this class has been depreciated, in favor of using actual enumerations with LocalizableDescription attributes on the values.")]
     public abstract class Enumeration : IComparable
     {

@@ -28,7 +28,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     [System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.RichTextBox)), DesignerCategoryAttribute("UserControl")]
     public class AdvRichTextBox : System.Windows.Forms.RichTextBox
     {
@@ -1200,7 +1199,6 @@ namespace RainstormStudios.Controls
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class AdvRichTextPrintController : System.Drawing.Printing.StandardPrintController
     {
         #region Public Methods

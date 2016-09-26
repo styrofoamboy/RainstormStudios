@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public abstract class DataTarget
     {
         #region Declarations
@@ -40,7 +39,6 @@ namespace RainstormStudios.Data
         { get; }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class FlatDataTarget : DataTarget
     {
         #region Declarations
@@ -96,7 +94,6 @@ namespace RainstormStudios.Data
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public abstract class TextDataTarget : FlatDataTarget
     {
         #region Declarations
@@ -132,7 +129,6 @@ namespace RainstormStudios.Data
         { }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class CsvDataTarget : TextDataTarget
     {
         #region Declarations
@@ -166,7 +162,6 @@ namespace RainstormStudios.Data
         { }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DelimDataTarget : TextDataTarget
     {
         #region Declarations
@@ -200,7 +195,6 @@ namespace RainstormStudios.Data
         { }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class FixedWidthDataTarget : FlatDataTarget
     {
         #region Properties
@@ -223,7 +217,6 @@ namespace RainstormStudios.Data
         { }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class ExcelDataTarget : FlatDataTarget
     {
         #region Declarations
@@ -255,7 +248,6 @@ namespace RainstormStudios.Data
         { }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class XmlDataTarget : FlatDataTarget
     {
         #region Declarations

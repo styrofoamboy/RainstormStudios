@@ -24,7 +24,6 @@ using System.Windows.Forms;
 
 namespace RainstormStudios.Controls
 {
-    [Author("Unfried, Michael")]
     public class DataGridDropListColumn : System.Windows.Forms.DataGridTextBoxColumn
     {
         #region Declarations
@@ -181,7 +180,6 @@ namespace RainstormStudios.Controls
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class DataGridFileBrowseColumn : System.Windows.Forms.DataGridTextBoxColumn
     {
         #region Declarations

@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.DynamicCodeGeneration
 {
-    [Author("Unfried, Michael")]
     public enum CodeDomProviderType
     {
         CSharp = 0,

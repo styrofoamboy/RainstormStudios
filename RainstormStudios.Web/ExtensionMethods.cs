@@ -25,7 +25,6 @@ using System.Web.UI;
 
 namespace RainstormStudios.Web
 {
-    [Author("Unfried, Michael")]
     public static class WebExtensionMethods
     {
         /// <summary>

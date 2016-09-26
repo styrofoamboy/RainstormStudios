@@ -30,7 +30,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public abstract class rsDb : IDisposable
     {
         #region Declarations
@@ -1042,7 +1041,6 @@ namespace RainstormStudios.Data
         protected abstract DbDataAdapter CreateAdapterObject();
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class rsDbSql : rsDb
     {
         #region Properties
@@ -2371,7 +2369,6 @@ namespace RainstormStudios.Data
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class rsDbOle : rsDb
     {
         #region Properties
@@ -2471,7 +2468,6 @@ namespace RainstormStudios.Data
         { return new OleDbDataAdapter(this.DbCommand); }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public class rsDbOdbc : rsDb
     {
         #region Properties

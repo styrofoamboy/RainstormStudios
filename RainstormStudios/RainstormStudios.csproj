@@ -68,7 +68,6 @@
   <ItemGroup>
     <Compile Include="ActiveDirectory\ADAuth.cs" />
     <Compile Include="ActiveDirectory\Impersonation.cs" />
-    <Compile Include="AuthorAttribute.cs" />
     <Compile Include="BinaryByte.cs" />
     <Compile Include="Collections\ByteCollection.cs" />
     <Compile Include="Collections\DataSetCollections.cs" />

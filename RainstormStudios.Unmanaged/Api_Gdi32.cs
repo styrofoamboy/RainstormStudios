@@ -23,7 +23,6 @@ using System.Runtime.InteropServices;
 
 namespace RainstormStudios.Unmanaged
 {
-    [Author("Unfried, Michael")]
     class Api_Gdi32
     {
 		[DllImport("gdi32.dll")]

@@ -31,7 +31,6 @@ namespace RainstormStudios.Collections
     /// <summary>
     /// Contains event information for all RainstormStudios collections object's events.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class CollectionEventArgs : EventArgs
     {
         #region Declarations
@@ -160,7 +159,6 @@ namespace RainstormStudios.Collections
     /// <summary>
     /// Provides a base object for strongly-type collections of key/value pairs.  This class is abstract.
     /// </summary>
-    [Author("Unfried, Michael")]
     public abstract class ObjectCollectionBase<T> : CollectionBase, System.Collections.ICollection, System.Collections.Generic.IEnumerable<T>
     {
         #region Declarations

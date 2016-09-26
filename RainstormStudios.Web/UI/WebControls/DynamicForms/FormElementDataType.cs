@@ -23,7 +23,7 @@ using System.Text;
 
 namespace RainstormStudios.Web.UI.WebControls.DynamicForms
 {
-    [Serializable, Author("Unfried, Michael")]
+    [Serializable]
     public struct FormElementDataType
     {
         #region Declarations
@@ -115,7 +115,7 @@ namespace RainstormStudios.Web.UI.WebControls.DynamicForms
         }
         #endregion
     }
-    [Serializable, Author("Unfried, Michael")]
+    [Serializable]
     public sealed class FormElementDataTypeCollection : Collections.ObjectCollectionBase<FormElementDataType>
     {
         #region Properties

@@ -24,7 +24,6 @@ using System.Text;
 
 namespace RainstormStudios.Drawing.Charts
 {
-    [Author("Unfried, Michael")]
     public interface IChartElement<TChart> : IChartElement
         where TChart : IChart
     {
@@ -36,7 +35,6 @@ namespace RainstormStudios.Drawing.Charts
             Owner { get; }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public interface IChartElement
     {
         #region Properties

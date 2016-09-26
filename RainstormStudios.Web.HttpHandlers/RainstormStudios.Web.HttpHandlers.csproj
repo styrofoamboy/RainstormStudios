@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalogClock.cs" />
-    <Compile Include="AuthorAttribute.cs" />
     <Compile Include="Clock.cs" />
     <Compile Include="DyanamicImageHandler.cs" />
     <Compile Include="FileTypeIcon.cs" />

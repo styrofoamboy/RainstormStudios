@@ -8,7 +8,6 @@ namespace RainstormStudios.Collections
     /// <summary>
     /// Provides a strongly-typed collection object for storing Byte values in key/value pairs.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class ByteCollection : ObjectCollectionBase<Byte>
     {
         #region Declarations

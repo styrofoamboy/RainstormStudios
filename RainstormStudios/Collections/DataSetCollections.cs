@@ -23,7 +23,6 @@ using System.Text;
 
 namespace RainstormStudios.Collections
 {
-    [Author("Unfried, Michael")]
     public class DataSetCollection : ObjectCollectionBase<DataSet>
     {
         #region Class Constructors

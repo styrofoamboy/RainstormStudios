@@ -25,7 +25,6 @@ using System.Text;
 
 namespace RainstormStudios.IO
 {
-    [Author("Unfried, Michael")]
     public class DelimitedTextReader:IDisposable
     {
         #region Declarations

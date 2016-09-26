@@ -24,7 +24,6 @@ using System.Text;
 
 namespace RainstormStudios.Drawing.Charts.Pie
 {
-    [Author("Unfried, Michael")]
     public struct PieChartSlice : IChartElement<PieChart>
     {
         #region Global Objects

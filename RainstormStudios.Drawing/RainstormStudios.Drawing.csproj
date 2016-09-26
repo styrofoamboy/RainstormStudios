@@ -65,7 +65,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorAttribute.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Collections\BitmapCollection.cs" />
     <Compile Include="Collections\PointCollection.cs" />

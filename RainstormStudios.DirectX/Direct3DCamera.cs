@@ -24,7 +24,6 @@ using Microsoft.DirectX.Direct3D;
 
 namespace RainstormStudios.DirectX
 {
-    [Author("Unfried, Michael")]
     public struct Direct3DCamera
     {
         #region Global Objects

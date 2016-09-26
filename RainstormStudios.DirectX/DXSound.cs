@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.DirectX
 {
-    [Author("Unfried, Michael")]
     public class DXSound
     {
     }

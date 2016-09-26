@@ -33,7 +33,6 @@ using RainstormStudios.Web.UI.WebControls;
 
 namespace RainstormStudios.Web.HttpHandlers
 {
-    [Author("Unfried, Michael")]
     public class ChevronImageHandler : IHttpHandler
     {
         #region Nested Classes

@@ -23,7 +23,6 @@ using System.Runtime.InteropServices;
 
 namespace RainstormStudios.Unmanaged
 {
-    [Author("Unfried, Michael")]
     class Api_NetApi32
     {
         const int ERROR_SUCCESS = 0;

@@ -27,7 +27,6 @@ using RainstormStudios.Web.UI.WebControls.Calendar;
 
 namespace RainstormStudios.Web.UI.WebControls.Calendar
 {
-    [Author("Unfried, Michael")]
     public class CalendarView : CompositeControl, INamingContainer, ICallbackEventHandler
     {
         #region Declarations

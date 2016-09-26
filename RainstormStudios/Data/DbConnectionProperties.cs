@@ -28,7 +28,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Data
 {
-    [Author("Unfried, Michael")]
     public struct DbConnectionProperties
     {
         #region Declarations

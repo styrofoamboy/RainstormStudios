@@ -24,7 +24,6 @@ using System.Web;
 
 namespace RainstormStudios.Web.HttpHandlers
 {
-    [Author("Unfried, Michael")]
     public class AnalogClock : System.Web.IHttpHandler
     {
         #region Properties

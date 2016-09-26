@@ -24,21 +24,18 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.IO
 {
-    [Author("Unfried, Michael")]
     public class FixedWidthStreamWriter : IDisposable
     {
         #region Sub-Classes
         //***************************************************************************
         // Sub-Classes
         // 
-        [Author("Unfried, Michael")]
         public enum StringAlignment
         {
             Left = 0,
             Center,
             Right
         }
-        [Author("Unfried, Michael")]
         public class FixedWidthColumn
         {
             #region Declarations
@@ -93,7 +90,6 @@ namespace RainstormStudios.IO
             }
             #endregion
         }
-        [Author("Unfried, Michael")]
         public class FixedWidthColumnCollection : CollectionBase
         {
             #region Public Properties
@@ -162,7 +158,6 @@ namespace RainstormStudios.IO
             }
             #endregion
         }
-        [Author("Unfried, Michael")]
         public class FixedWidthRow
         {
             #region Declarations

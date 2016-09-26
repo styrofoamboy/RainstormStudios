@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.Unmanaged
 {
-    [Author("Unfried, Michael")]
     public enum BinaryRasterOperations
     {
         R2_BLACK = 1,           /*  0       */
@@ -43,7 +42,6 @@ namespace RainstormStudios.Unmanaged
         R2_WHITE = 16,          /*  1       */
         R2_LAST = 16
     }
-    [Author("Unfried, Michael")]
     public enum TernaryRasterOperations
     {
         SRCCOPY = 0x00CC0020,       /* dest = source                   */
@@ -62,14 +60,12 @@ namespace RainstormStudios.Unmanaged
         BLACKNESS = 0x00000042,     /* dest = BLACK                    */
         WHITENESS = 0x00FF0062      /* dest = WHITE                    */
     }
-    [Author("Unfried, Michael")]
     public enum PeekMessageFlags
     {
         PM_NOREMOVE = 0,
         PM_REMOVE = 1,
         PM_NOYIELD = 2
     }
-    [Author("Unfried, Michael")]
     public enum Win32Messages : long
     {
         CB_GETEDITSEL = 0x00000140,
@@ -663,14 +659,12 @@ namespace RainstormStudios.Unmanaged
         TBSTYLE_TRANSPARENT = 0x00008000,
         TBSTYLE_EX_DRAWDDARROWS = 0x00000001,
     }
-    [Author("Unfried, Michael")]
     public enum InputType : int
     {
         Mouse = 0,
         Keyboard = 1,
         Hardware = 2
     }
-    [Author("Unfried, Michael")]
     public enum MOUSEEVENTF : uint
     {
         MOVE = Win32Const.MOUSEEVENTF_MOVE,
@@ -686,7 +680,6 @@ namespace RainstormStudios.Unmanaged
         VIRTUALDESK = Win32Const.MOUSEEVENTF_VIRTUALDESK,
         ABSOLUTE = Win32Const.MOUSEEVENTF_ABSOLUTE
     }
-    [Author("Unfried, Michael")]
     public enum KEYEVENTF : uint
     {
         EXTENDEDKEY = Win32Const.KEYEVENTF_EXTENDEDKEY,
@@ -694,7 +687,6 @@ namespace RainstormStudios.Unmanaged
         UNICODE = Win32Const.KEYEVENTF_UNICODE,
         SCANCODE = Win32Const.KEYEVENTF_SCANCODE
     }
-    [Author("Unfried, Michael")]
     public enum VK : ushort
     {
         SHIFT = 0x10,
@@ -764,7 +756,6 @@ namespace RainstormStudios.Unmanaged
     /// <summary>
     /// Defines the style bits that a window can have
     /// </summary>
-    [Author("Unfried, Michael")]
     [Flags()]
     public enum WindowStyles : uint
     {
@@ -886,7 +877,6 @@ namespace RainstormStudios.Unmanaged
         /// </summary>
         WS_OVERLAPPEDWINDOW = (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX)
     }
-    [Author("Unfried, Michael")]
     [Flags()]
     public enum ExtendedWindowStyles : uint
     {
@@ -898,7 +888,6 @@ namespace RainstormStudios.Unmanaged
         WS_EX_TOOLWINDOW = 0x80,
         WS_EX_APPWINDOW = 0x40000
     }
-    [Author("Unfried, Michael")]
     public enum ShowWindowCmds
     {
         SW_HIDE = 0,
@@ -917,7 +906,6 @@ namespace RainstormStudios.Unmanaged
         SW_FORCEMINIMIZE = 11,
         SW_MAX = 11
     }
-    [Author("Unfried, Michael")]
     [Flags()]
     public enum RedrawWindowFlags : uint
     {
@@ -933,14 +921,12 @@ namespace RainstormStudios.Unmanaged
         RDW_FRAME = 0x0400,
         RDW_NOFRAME = 0x0800
     }
-    [Author("Unfried, Michael")]
     public enum ScrollBarObjectID : uint
     {
         HSCROLL = 0xFFFFFFFA,
         VSCROLL = 0xFFFFFFFB,
         CLIENT = 0xFFFFFFFC
     }
-    [Author("Unfried, Michael")]
     [Flags()]
     public enum HotkeyModifiers
     {

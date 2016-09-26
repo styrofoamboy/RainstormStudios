@@ -24,7 +24,7 @@ using System.Text;
 
 namespace RainstormStudios.Web.UI.WebControls.DynamicForms
 {
-    [Serializable, Author("Unfried, Michael")]
+    [Serializable]
     public class FormData : INotifyPropertyChanged
     {
         #region Declarations

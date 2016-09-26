@@ -26,7 +26,6 @@ namespace RainstormStudios.DynamicCodeGeneration
     /// <summary>
     /// Provides a simple container and methods for building a CodeDOM-based class.
     /// </summary>
-    [Author("Unfried, Michael")]
     public class DynaClass
     {
         #region Declarations

@@ -23,7 +23,6 @@ using System.Runtime.InteropServices;
 
 namespace RainstormStudios.Unmanaged
 {
-    [Author("Unfried, Michael")]
     class Api_AdvApi32
     {
         const int ERROR_SUCCESS = 0;
@@ -44,7 +43,6 @@ namespace RainstormStudios.Unmanaged
             StringBuilder ReferencedDomainName,
             ref uint cchReferencedDomainName,
             out SID_NAME_USE peUse);
-        [Author("Unfried, Michael")]
         enum SID_NAME_USE
         {
             SidTypeUser = 1,
@@ -104,7 +102,6 @@ namespace RainstormStudios.Unmanaged
 
         [DllImport("userenv.dll", SetLastError = true, CharSet = CharSet.Auto)]
         static extern bool LoadUserProfile(IntPtr hToken, ref PROFILEINFO lpProfileInfo);
-        [Author("Unfried, Michael")]
         public struct PROFILEINFO
         {
             public int dwSize;
@@ -137,7 +134,6 @@ namespace RainstormStudios.Unmanaged
             int dwLoginType,
             int dwLogonProvider,
             out IntPtr phToken);
-        [Author("Unfried, Michael")]
         public enum LogonType : int
         {
             /// <summary>
@@ -179,7 +175,6 @@ namespace RainstormStudios.Unmanaged
             /// </summary>
             LOGON32_LOGON_NEW_CREDENTIALS = 9
         }
-        [Author("Unfried, Michael")]
         public enum LogonProvider : int
         {
             /// <summary>

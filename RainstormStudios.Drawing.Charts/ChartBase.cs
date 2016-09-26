@@ -24,7 +24,6 @@ using System.Text;
 
 namespace RainstormStudios.Drawing.Charts
 {
-    [Author("Unfried, Michael")]
     public abstract class ChartBase<TChartElement> : IChart<TChartElement>
         where TChartElement : IChartElement, new()
     {

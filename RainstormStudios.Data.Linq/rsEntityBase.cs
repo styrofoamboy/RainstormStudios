@@ -39,7 +39,6 @@ namespace RainstormStudios.Data.Linq
     /// Linq2Sql entities inherit from this class, please look at the inline
     /// documentation in the code file.
     /// </summary>
-    [Author("Unfried, Michael")]
     [Serializable]
     public abstract class rsEntityBase
     {
@@ -296,7 +295,6 @@ namespace RainstormStudios.Data.Linq
     /// This class further extends the functionality of the <see cref="T:ITCWebToolkit.Linq.ITCEntityBase"/> class by
     /// enabling on-the-fly attach/detach methods for your Linq2Sql entities.
     /// </summary>
-    [Author("Unfried, Michael")]
     [Serializable]
     public abstract class rsEntityDetachable : rsEntityBase, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
     {
@@ -395,7 +393,6 @@ namespace RainstormStudios.Data.Linq
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TContext"></typeparam>
-    [Author("Unfried, Michael")]
     public abstract class rsEntityRepository<TEntity> : rsEntityDetachable, IRepository<TEntity>
         where TEntity : rsEntityDetachable
     {
@@ -468,7 +465,6 @@ namespace RainstormStudios.Data.Linq
         }
         #endregion
     }
-    [Author("Unfried, Michael")]
     public abstract class rsContextFactory<TContext> : IRepositoryFactory<TContext>
         where TContext : System.Data.Linq.DataContext
     {
@@ -478,7 +474,6 @@ namespace RainstormStudios.Data.Linq
     /// an 'unknown' entity type for access to these methods.
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    [Author("Unfried, Michael")]
     public interface IRepository<TEntity>
         where TEntity : class
     {
@@ -486,7 +481,6 @@ namespace RainstormStudios.Data.Linq
         IList<TEntity> GetAllRecords();
         TEntity Save();
     }
-    [Author("Unfried, Michael")]
     public interface IRepositoryFactory<TContext>
         where TContext : System.Data.Linq.DataContext
     {

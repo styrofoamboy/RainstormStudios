@@ -22,7 +22,6 @@ using System.Text;
 
 namespace RainstormStudios.Drawing.BinaryImages
 {
-    [Author("Unfried, Michael")]
     public enum TiffTagType
     {
         NewSubFileType = 0xfe,
@@ -72,7 +71,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         ColorMap = 0x141,
         Custom = 0x8000
     }
-    [Author("Unfried, Michael")]
     public enum TiffFieldType
     {
         ByteType = 0x01,
@@ -81,7 +79,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         LongType = 0x04,
         Rational = 0x05
     }
-    [Author("Unfried, Michael")]
     public enum TiffCompressMode
     {
         None = 0x01,
@@ -94,14 +91,12 @@ namespace RainstormStudios.Drawing.BinaryImages
     //public enum TiffSubFileType
     //{
     //}
-    [Author("Unfried, Michael")]
     public enum TiffResolutionUnit
     {
         None = 0x01,
         Inch = 0x02,
         Centimeter = 0x03
     }
-    [Author("Unfried, Michael")]
     public enum TiffPhotometricInterpretation
     {
         GreyWhiteNull = 0x00,
@@ -110,13 +105,11 @@ namespace RainstormStudios.Drawing.BinaryImages
         Pallette = 0x03,
         Mask = 0x04
     }
-    [Author("Unfried, Michael")]
     public enum TiffPlanarConfiguration
     {
         Sequential = 0x01,
         Planar = 0x02
     }
-    [Author("Unfried, Michael")]
     public enum TiffGreyResponseUnit
     {
         Tenths = 0x01,
@@ -125,7 +118,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         TenThousandths = 0x04,
         HundredThousandths = 0x05
     }
-    [Author("Unfried, Michael")]
     enum TiffTagIDFieldType
     {
         NewSubFileType = 0x04,
@@ -174,7 +166,6 @@ namespace RainstormStudios.Drawing.BinaryImages
         PrimaryChromaticities = 0x05,
         ColorMap = 0x03
     }
-    [Author("Unfried, Michael")]
     enum TiffTagIDDefValues
     {
         NewSubFileType = 0,

@@ -26,7 +26,6 @@ using System.Web.UI.WebControls;
 
 namespace RainstormStudios.Web.UI.WebControls.DynamicForms
 {
-    [Author("Unfried, Michael")]
     public class FormElementImage : FormElementControl
     {
         #region Class Constructors
