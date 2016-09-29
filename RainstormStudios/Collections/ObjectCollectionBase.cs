@@ -406,7 +406,8 @@ namespace RainstormStudios.Collections
                 throw new ArgumentOutOfRangeException("Specified key was not found in the collection.", "key");
             int idx = this.IndexOfKey(key);
             this.RemoveAt(idx);
-            this._keys.RemoveAt(idx);
+            // Key removal is handled by the 'OnRemoveComplete' event handler.
+            //this._keys.RemoveAt(idx);
         }
         public virtual bool Remove(T value)
         {
@@ -416,7 +417,8 @@ namespace RainstormStudios.Collections
 
             int idx = this.IndexOf(value);
             this.RemoveAt(idx);
-            this._keys.RemoveAt(idx);
+            // Key removal is handled by the 'OnRemoveComplete' event handler.
+            //this._keys.RemoveAt(idx);
             return true;
         }
         public virtual int IndexOf(T value)
