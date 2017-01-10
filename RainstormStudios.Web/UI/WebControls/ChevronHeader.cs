@@ -27,7 +27,7 @@ using System.Web.UI;
 
 // NOTE:  To use the ChevronHeader control, an HttpHandler must be referenced in the application's web.config file.
 // 
-// <add path="chevron.axd" verb="*" type="RainstormStudios.Web.HttpHandlers.ChevronImageHandler, RainstormStudios"/>
+// <add path="chevron.axd" verb="*" type="RainstormStudios.Web.HttpHandlers.ChevronImageHandler, RainstormStudios.Web"/>
 // 
 
 namespace RainstormStudios.Web.UI.WebControls
