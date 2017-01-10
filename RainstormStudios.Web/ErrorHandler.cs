@@ -226,7 +226,7 @@ namespace RainstormStudios.Web
             set { base["appName"] = value; }
         }
         [ConfigurationProperty("writeErrorsToEventLog", DefaultValue = "true", IsRequired = false)]
-        [SettingsDescription("Specifies 'true' if error messages should be written to the event log using the 'ITCWebToolkit.Web.LogManager' class.  Otherwise, false.")]
+        [SettingsDescription("Specifies 'true' if error messages should be written to the event log using the 'RainstormStudios.Web.LogManager' class.  Otherwise, false.")]
         //[SubclassTypeValidator(typeof(Boolean))]
         public bool WriteErrorsToEventLog
         {

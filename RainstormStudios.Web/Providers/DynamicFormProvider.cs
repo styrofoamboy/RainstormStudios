@@ -335,7 +335,7 @@ namespace RainstormStudios.Providers
             if (string.IsNullOrEmpty(config["description"]))
             {
                 config.Remove("description");
-                config.Add("description", "ITC Default SQL DynamicForm Provider");
+                config.Add("description", "Default SQL DynamicForm Provider");
             }
 
             base.Initialize(name, config);

@@ -102,7 +102,7 @@ namespace RainstormStudios.Data.Linq
         /// <typeparam name="T">The non-generic data type of the source <see cref="T:System.Linq.IQueryable"/> data.</typeparam>
         /// <param name="filterProperty">A <see cref="T:System.String"/> value indicating the name of a public, non-static property member of type 'T' to compare.</param>
         /// <param name="filterValue">A <see cref="T:System.Object"/> value indicating the value(s) to compare against.</param>
-        /// <param name="op">A value from the <see cref="T:ITCWebToolkit.ComparisonOperator"/> enumeration indicating how the data will be compared.</param>
+        /// <param name="op">A value from the <see cref="T:RainstormStudios.Data.Linq.ComparisonOperator"/> enumeration indicating how the data will be compared.</param>
         /// <param name="matchCase">A value of type <see cref="T:System.Boolean"/> indicating true if the comparison should be case sensitive. Otherwise, false.</param>
         /// <returns>A value of type <see cref="T:System.Linq.IQueryable"/> containing the data matching the filter requirements.</returns>
         public static IQueryable<T> Filter<T>(this IQueryable<T> data, string filterProperty, object filterValue, Linq.ComparisonOperator op, bool matchCase = false)
@@ -124,7 +124,7 @@ namespace RainstormStudios.Data.Linq
         /// </summary>
         /// <param name="filterProperty">A <see cref="T:System.String"/> value indicating the name of a public, non-static property member of type 'T' to compare.</param>
         /// <param name="filterValue">A <see cref="T:System.Object"/> value indicating the value(s) to compare against.</param>
-        /// <param name="op">A value from the <see cref="T:ITCWebToolkit.ComparisonOperator"/> enumeration indicating how the data will be compared.</param>
+        /// <param name="op">A value from the <see cref="T:RainstormStudios.Data.Linq.ComparisonOperator"/> enumeration indicating how the data will be compared.</param>
         /// <param name="matchCase">A value of type <see cref="T:System.Boolean"/> indicating true if the comparison should be case sensitive. Otherwise, false.</param>
         /// <returns>A value of type <see cref="T:System.Linq.IQueryable"/> containing the data matching the filter requirements.</returns>
         public static IQueryable Filter(this IQueryable data, string filterProperty, object filterValue, Linq.ComparisonOperator op, bool matchCase = false)
@@ -153,7 +153,7 @@ namespace RainstormStudios.Data.Linq
         /// <summary>
         /// Creates a duplicate copy of this Linq2Sql entity, but is completely detached from a database context. NOTE: This method should be considered 'expensive', because it uses reflection during the clone process.
         /// </summary>
-        /// <typeparam name="T">A Linq2Sql entity that inherits from <see cref="T:ITCWebToolkit.Linq.ITCEntityBase"/>.</typeparam>
+        /// <typeparam name="T">A Linq2Sql entity that inherits from <see cref="T:RainstormStudios.Data.Linq.rsEntityBase"/>.</typeparam>
         /// <param name="src">The Linq2Sql entity to copy.</param>
         /// <param name="primaryKeyCols">A list of <see cref="T:System.String"/> values containing the names of properties that contain the primary key values from the database. These properties' values will not be cloned to the new instance.</param>
         /// <returns>A new instance of the entitiy type which contains all the same values, except for any property names listed in the <paramref name="primaryKeyCols"/> parameter.</returns>
@@ -211,7 +211,7 @@ namespace RainstormStudios.Data.Linq
         /// <summary>
         /// Determines if this Linq2Sql entity is attached to the specified context.
         /// </summary>
-        /// <typeparam name="T">A Linq2Sql entity that inherits from the <see cref="T:ITCWebToolkit.Linq.ITCEntityBase"/> class.</typeparam>
+        /// <typeparam name="T">A Linq2Sql entity that inherits from the <see cref="T:RainstormStudios.Data.Linq.rsEntityBase"/> class.</typeparam>
         /// <param name="entity">The Linq2Sql entity to test.</param>
         /// <param name="dbContext">An <see cref="T:System.Data.Linq.DataContext"/> Linq2Sql data context.</param>
         /// <returns>A <see cref="T:System.Boolean"/> value indicating true, if the entity is attached. Otherwise, false.</returns>
@@ -223,7 +223,7 @@ namespace RainstormStudios.Data.Linq
         /// <summary>
         /// Determines if the specified Linq2Sql entity is attached to this context.
         /// </summary>
-        /// <typeparam name="T">A Linq2Sql class that inherits from the <see cref="T:ITCWebToolkit.Linq.ITCEntityBase"/> class.</typeparam>
+        /// <typeparam name="T">A Linq2Sql class that inherits from the <see cref="T:RainstormStudios.Data.Linq.rsEntityBase"/> class.</typeparam>
         /// <param name="dbContext">An <see cref="T:System.Data.Linq.DataContext"/> object.</param>
         /// <param name="entity">The Linq2Sql entity to test.</param>
         /// <returns>A <see cref="T:System.Boolean"/> value indicating true, if the entity is attached. Other, false.</returns>

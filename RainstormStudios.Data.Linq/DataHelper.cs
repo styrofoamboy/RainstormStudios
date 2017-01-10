@@ -127,7 +127,7 @@ namespace RainstormStudios.Data.Linq
         /// <param name="dataset">A value of type generic <see cref="T:System.Linq.IQueryable"/> containing the data to be filtered.</param>
         /// <param name="filterProperty">A <see cref="T:System.String"/> value indicating the name of a public, non-static property member of type 'T' to compare.</param>
         /// <param name="filterValue">A <see cref="T:System.Object"/> value indicating the value(s) to compare against.</param>
-        /// <param name="op">A value from the <see cref="T:ITCWebToolkit.ComparisonOperator"/> enumeration indicating how the data will be compared.</param>
+        /// <param name="op">A value from the <see cref="T:RainstormStudios.Data.Linq.ComparisonOperator"/> enumeration indicating how the data will be compared.</param>
         /// <param name="matchCase">A value of type <see cref="T:System.Boolean"/> indicating true if the comparison should be case sensitive. Otherwise, false.</param>
         /// <returns>A value of type <see cref="T:System.Linq.IQueryable"/> containing the data matching the filter requirements.</returns>
         public static IQueryable<T> FilterResult<T>(IQueryable<T> dataset, string filterProperty, object filterValue, ComparisonOperator op, bool matchCase = false)
@@ -147,7 +147,7 @@ namespace RainstormStudios.Data.Linq
         /// <param name="dataset">A value of type <see cref="T:System.Linq.IQueryable"/> containing the data to be filtered.</param>
         /// <param name="filterProperty">A <see cref="T:System.String"/> value indicating the name of a public, non-static property member of type 'T' to compare.</param>
         /// <param name="filterValue">A <see cref="T:System.Object"/> value indicating the value(s) to compare against.</param>
-        /// <param name="op">A value from the <see cref="T:ITCWebToolkit.ComparisonOperator"/> enumeration indicating how the data will be compared.</param>
+        /// <param name="op">A value from the <see cref="T:RainstormStudios.Data.Linq.ComparisonOperator"/> enumeration indicating how the data will be compared.</param>
         /// <param name="matchCase">A value of type <see cref="T:System.Boolean"/> indicating true if the comparison should be case sensitive. Otherwise, false.</param>
         /// <returns>A value of type <see cref="T:System.Linq.IQueryable"/> containing the data matching the filter requirements.</returns>
         public static IQueryable FilterResult(IQueryable dataset, string filterProperty, object filterValue, ComparisonOperator op, bool matchCase = false)

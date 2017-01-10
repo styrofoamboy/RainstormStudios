@@ -292,7 +292,7 @@ namespace RainstormStudios.Data.Linq
         #endregion
     }
     /// <summary>
-    /// This class further extends the functionality of the <see cref="T:ITCWebToolkit.Linq.ITCEntityBase"/> class by
+    /// This class further extends the functionality of the <see cref="T:RainstormStudios.Data.Linq.rsEntityBase"/> class by
     /// enabling on-the-fly attach/detach methods for your Linq2Sql entities.
     /// </summary>
     [Serializable]

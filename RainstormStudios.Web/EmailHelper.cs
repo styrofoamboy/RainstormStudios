@@ -363,7 +363,7 @@ namespace RainstormStudios.Web
             set { base["siteUrl"] = value; }
         }
         [ConfigurationProperty("writeExceptionsToLog", DefaultValue = "true", IsRequired = false)]
-        [SettingsDescription("A boolean value indicating 'true' if errors that occur while trying to send email should be written to the a log using the ITCWebToolkit.Web.LogManager class.  Otherwise, 'false'.")]
+        [SettingsDescription("A boolean value indicating 'true' if errors that occur while trying to send email should be written to the a log using the RainstormStudios.Web.LogManager class.  Otherwise, 'false'.")]
         //[SubclassTypeValidator(typeof(Boolean))]
         public bool WriteExceptionsToLog
         {
