@@ -87,6 +87,29 @@ namespace RainstormStudios.Web
             else
                 return null;
         }
+
+        public static string AsJSON(this object src)
+        {
+            System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            return serializer.Serialize(src);
+        }
+
+        /// <summary>
+        /// NOTE: This will fail if any public members of the specified type are not standard .NET types.
+        /// </summary>
+        /// <typeparam name="T">The type to convert the serialized JSON data into.</typeparam>
+        /// <param name="src"></param>
+        /// <returns></returns>
+        public static T FromJSON<T>(this string src)
+        {
+            // TODO:: This will fail if any properties within the containing Type are
+            //   not standard system data types.  I need to capture this exception,
+            //   and display a message indicating exactly what needs to be done to
+            //   make this class work, or provide an overload with reflection
+            //   that can make this work with non-system types.
+            System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            return serializer.Deserialize<T>(src);
+        }
     }
     public class ControlNotFoundException : Exception
     {
