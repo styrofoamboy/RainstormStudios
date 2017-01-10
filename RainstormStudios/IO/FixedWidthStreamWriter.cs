@@ -225,12 +225,13 @@ namespace RainstormStudios.IO
         // Global Variables
         // 
         bool _wCols = false;
+        bool _disposed = false;
         FileStream _fs;
         string _fn;
         FixedWidthColumnCollection _cols;
         #endregion
 
-        #region Public Properties
+        #region Properties
         //***************************************************************************
         // Public Properties
         // 
@@ -242,6 +243,8 @@ namespace RainstormStudios.IO
         { get { return this._fs.Position; } }
         public FixedWidthColumnCollection Columns
         { get { return this._cols; } }
+        public bool IsDisposed
+        { get { return this._disposed; } }
         #endregion
 
         #region Class Constructors
@@ -265,33 +268,12 @@ namespace RainstormStudios.IO
         {
             this._wCols = writeColHeaders;
         }
+        //***************************************************************************
+        // Deconstructor
+        // 
         ~FixedWidthStreamWriter()
         {
-            if (this._fs != null)
-                this._fs.Dispose();
-        }
-        #endregion
-
-        #region Private Methods
-        //***************************************************************************
-        // Private Methods
-        // 
-        private string ParseField(FixedWidthColumn col, string value)
-        {
-            string fVal = (value.Length <= col.Width) ? value : value.Substring(0, col.Width);
-            switch (col.Alignment)
-            {
-                case StringAlignment.Left:
-                    fVal = fVal.PadRight(col.Width, col.BlankCharacter);
-                    break;
-                case StringAlignment.Center:
-                    fVal = fVal.PadLeft((int)System.Math.Floor((double)(col.Width / 2)), col.BlankCharacter).PadRight((int)System.Math.Ceiling((double)(col.Width / 2)), col.BlankCharacter);
-                    break;
-                case StringAlignment.Right:
-                    fVal = fVal.PadLeft(col.Width, col.BlankCharacter);
-                    break;
-            }
-            return fVal;
+            this.Dispose(false);
         }
         #endregion
 
@@ -301,8 +283,8 @@ namespace RainstormStudios.IO
         // 
         public void Dispose()
         {
-            this._fn = string.Empty;
-            this._fs.Dispose();
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
         public void WriteRow(params string[] values)
         {
@@ -329,6 +311,39 @@ namespace RainstormStudios.IO
             }
             byte[] b = ArrayConvert.ToBytes(wVal + "\r\n");
             this._fs.Write(b, 0, b.Length);
+        }
+        #endregion
+
+        #region Private Methods
+        //***************************************************************************
+        // Private Methods
+        // 
+        private string ParseField(FixedWidthColumn col, string value)
+        {
+            string fVal = (value.Length <= col.Width) ? value : value.Substring(0, col.Width);
+            switch (col.Alignment)
+            {
+                case StringAlignment.Left:
+                    fVal = fVal.PadRight(col.Width, col.BlankCharacter);
+                    break;
+                case StringAlignment.Center:
+                    fVal = fVal.PadLeft((int)System.Math.Floor((double)(col.Width / 2)), col.BlankCharacter).PadRight((int)System.Math.Ceiling((double)(col.Width / 2)), col.BlankCharacter);
+                    break;
+                case StringAlignment.Right:
+                    fVal = fVal.PadLeft(col.Width, col.BlankCharacter);
+                    break;
+            }
+            return fVal;
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this._fn = string.Empty;
+                if (this._fs != null)
+                    this._fs.Dispose();
+            }
+            this._disposed = true;
         }
         #endregion
     }

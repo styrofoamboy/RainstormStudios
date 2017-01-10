@@ -25,7 +25,7 @@ using System.Text;
 
 namespace RainstormStudios.IO
 {
-    public class DelimitedTextReader:IDisposable
+    public class DelimitedTextReader : IDisposable
     {
         #region Declarations
         //***************************************************************************
@@ -42,6 +42,8 @@ namespace RainstormStudios.IO
             _sr;
         private Encoding
             _enc;
+        private bool
+            _disposed = false;
         #endregion
 
         #region Properties
@@ -86,6 +88,13 @@ namespace RainstormStudios.IO
             this._colDelim = colDelimiter;
             this._txtQual = textQualifier;
         }
+        //***************************************************************************
+        // Deconstructor
+        // 
+        ~DelimitedTextReader()
+        {
+            this.Dispose(false);
+        }
         #endregion
 
         #region Public Methods
@@ -94,17 +103,8 @@ namespace RainstormStudios.IO
         // 
         public void Dispose()
         {
-            if (this._sr != null)
-            {
-                this._sr.DiscardBufferedData();
-                this._sr.Close();
-                this._sr.Dispose();
-            }
-            if (this._strm!=null)
-            {
-                this._strm.Close();
-                this._strm.Dispose();
-            }
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
         public string ReadField()
         {
@@ -133,18 +133,6 @@ namespace RainstormStudios.IO
         //***************************************************************************
         // Private Methods
         // 
-        //private void InitRegex()
-        //{
-        //    string newRgx = string.Empty;
-        //    // (?<qual>[qual]?).*(?\\k'qual')(?[colDelim]|[rowDelim]|$)
-        //    if (!string.IsNullOrEmpty(this._txtQual))
-        //        newRgx += "(?<qual>" + this._txtQual + "?)";
-        //    newRgx += ".*";
-        //    if (!string.IsNullOrEmpty(this._txtQual))
-        //        newRgx += "(?\\k'qual')";
-        //    newRgx += "(?" + this._colDelim + "|" + this._rowDelim + "|$)?";
-        //    this._rgx = new Regex(newRgx, RegexOptions.Compiled | RegexOptions.Singleline);
-        //}
         private string ReadField(out bool endOfRecord)
         {
             bool inQual = false;
@@ -190,6 +178,24 @@ namespace RainstormStudios.IO
                 }
             }
             return bfr;
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (this._sr != null)
+                {
+                    this._sr.DiscardBufferedData();
+                    this._sr.Close();
+                    this._sr.Dispose();
+                }
+                if (this._strm != null)
+                {
+                    this._strm.Close();
+                    this._strm.Dispose();
+                }
+            }
+            this._disposed = true;
         }
         #endregion
     }
