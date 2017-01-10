@@ -128,7 +128,7 @@ namespace RainstormStudios.Controls
             set
             {
                 _btnShape = value;
-                this._fthr = 0;
+                //this._fthr = 0;
                 if (this.Visible) this.Refresh();
             }
         }
