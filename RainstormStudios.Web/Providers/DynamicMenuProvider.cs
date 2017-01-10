@@ -166,7 +166,7 @@ namespace RainstormStudios.Providers
             if (string.IsNullOrEmpty(config["description"]))
             {
                 config.Remove("description");
-                config.Add("description", "ITC Default DynamicMenu Provider");
+                config.Add("description", "Default DynamicMenu Provider");
             }
 
             base.Initialize(name, config);
@@ -184,7 +184,7 @@ namespace RainstormStudios.Providers
             List<DynamicMenuItem> items = new List<DynamicMenuItem>();
             using (SqlConnection conn = this.GetOpenConnection())
             {
-                string sqlMenu = "SELECT MenuID FROM tbls_std.Menus WHERE LOWER(MenuName) = @0";
+                string sqlMenu = "SELECT MenuID FROM dbo.Menus WHERE LOWER(MenuName) = @0";
                 using (SqlCommand cmd = new SqlCommand(sqlMenu, conn))
                 {
                     cmd.Parameters.Add(new SqlParameter { ParameterName = "@0", Value = menuName.ToLower(), DbType = DbType.String });
@@ -193,7 +193,7 @@ namespace RainstormStudios.Providers
                     if (cmdVal == null || !int.TryParse(cmdVal.ToString(), out menuID))
                         throw new Exception("Specified menu was not found in the database.");
                 }
-                string sqlMenuItems = "SELECT * FROM tbls_std.MenuItems WHERE MenuID = @0 AND ActiveFlag = 'true' AND ParentMenuItemID IS NULL ORDER BY OrdinalValue, MenuItemName";
+                string sqlMenuItems = "SELECT * FROM MenuItems WHERE MenuID = @0 AND ActiveFlag = 'true' AND ParentMenuItemID IS NULL ORDER BY OrdinalValue, MenuItemName";
                 using (SqlCommand cmd = new SqlCommand(sqlMenuItems, conn))
                 {
                     cmd.Parameters.Add(new SqlParameter { ParameterName = "@0", Value = menuID, DbType = DbType.Int32 });
@@ -215,7 +215,7 @@ namespace RainstormStudios.Providers
             List<string> names = new List<string>();
             using (SqlConnection conn = this.GetOpenConnection())
             {
-                string sql = "SELECT MenuName FROM tbls_std.Menus WHERE ActiveFlag = 'true' ORDER BY MenuName";
+                string sql = "SELECT MenuName FROM Menus WHERE ActiveFlag = 'true' ORDER BY MenuName";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                     while (rdr.Read())
@@ -263,7 +263,7 @@ namespace RainstormStudios.Providers
         private DynamicMenuItem[] GetChildren(SqlConnection conn, DynamicMenuItem item)
         {
             List<DynamicMenuItem> items = new List<DynamicMenuItem>();
-            string sql = "SELECT * FROM tbls_std.MenuItems WHERE MenuID = @0 AND ParentMenuItemID = @1 AND ActiveFlag = 'true' ORDER BY OrdinalValue, MenuItemName";
+            string sql = "SELECT * FROM MenuItems WHERE MenuID = @0 AND ParentMenuItemID = @1 AND ActiveFlag = 'true' ORDER BY OrdinalValue, MenuItemName";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             using (SqlDataReader rdr = cmd.ExecuteReader())
                 while (rdr.Read())
