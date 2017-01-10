@@ -73,6 +73,7 @@
     <Compile Include="Collections\DataSetCollections.cs" />
     <Compile Include="Collections\DateTimeCollection.cs" />
     <Compile Include="Collections\ExceptionCollection.cs" />
+    <Compile Include="Collections\ExtensionMethods.cs" />
     <Compile Include="Collections\Int32Collection.cs" />
     <Compile Include="Collections\ObjectCollection.cs" />
     <Compile Include="Collections\StringCollection.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="EventValueTypes\EventInteger.cs" />
     <Compile Include="EventValueTypes\EventString.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="IO\AutoSaveManager.cs" />
     <Compile Include="IO\CircularBuffer.cs" />
     <Compile Include="IO\FolderACL.cs" />
     <Compile Include="Collections\ObjectCollectionBase.cs" />
@@ -139,6 +141,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
