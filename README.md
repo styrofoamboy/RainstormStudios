@@ -11,3 +11,6 @@ The RainstormStudios.Web library includes the following 3rd party libraries:
 
 * NCalc - a mathematical expressions evaluator in .NET
   * https://ncalc.codeplex.com/
+
+* DynamicLinq - Scott Gu
+  * http://weblogs.asp.net/scottgu/dynamic-linq-part-1-using-the-linq-dynamic-query-library
