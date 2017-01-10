@@ -174,7 +174,7 @@ namespace RainstormStudios.Controls
 
             if (dataObj.ContainsText(System.Windows.Forms.TextDataFormat.Html))
             {
-
+                throw new NotSupportedException("Cannot handle HTML data.");
             }
 
             return dataObj;
