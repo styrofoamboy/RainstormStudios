@@ -28,157 +28,6 @@ using RainstormStudios.Collections;
 
 namespace RainstormStudios.Controls
 {
-    public sealed class QueryTextParser
-    {
-        #region Declartions
-        //****************************************************************************
-        // Global Constants
-        // 
-        static readonly string[] sqlKeywords = new string[]{
-            "add","all","alter","and","any","as","asc","authorization","backup","begin","break",
-            "browse","bulk","by","cascade","case","check","checkpoint","close","clustered",
-            "coalesce","collate","column","commit","compute","constraint","contains","containsable",
-            "continue","create","cross","current","current_date","current_time",
-            "current_timestamp","current_user","cursor","database","dbcc","deallocate","declare",
-            "default","delete","deny","desc","disk","distinct","distributed","double","drop",
-            "dummy","dump","else","end","errlvl","escape","except","exec","execute","exists","exit",
-            "fetch","file","fillfactor","for","foreign","freetext","freetexttable","from","full",
-            "function","goto","grant","group","having","holdlock","identity_insert",
-            "identitycol","if","in","index","inner","insert","intersect","into","is","join","key",
-            "kill","left","like","lineno","load","national","nocheck","nonclustered","not","null",
-            "nullif","of","off","offsets","on","open","opendatasource","openquery","openrowset",
-            "openxml","option","or","order","outer","over","percent","plan","precision","primary",
-            "print","proc","procedure","public","raiserror","read","readtext","reconfigure",
-            "references","replication","restore","restrict","return","revoke","right","rollback",
-            "rowcount","rowguidcol","rule","save","schema","select","session_user","set","setuser",
-            "shutdown","some","statistics","system_user","table","textsize","then","to","top","tran",
-            "transaction","trigger","truncate","tsequal","union","unique","update","updatetext",
-            "use","user","values","varying","view","waitfor","when","where","while","with",
-            "writetext","pivot","returns","dateadd",
-            "varchar","nvarchar","char","nchar","int","bigint","binary","bit","datetime","decimal",
-            "float","image","money","ntext","text","numeric","real","smallint","smalldatetime",
-            "smallmoney","text","timestamp","tinyint","uniqueidentifier","varbinary","xml"
-        };
-        static readonly string[] sqlFunc = new string[]{
-            "getdate","datediff","datename","datepart","convert","day","month","year","hour","minute","second",
-            "rtrim","ltrim","str","len","isnull","isnumeric","cert_id","charindex","cast","ceiling","floor",
-            "round","checksum","sum","substring","charindex","upper","lower","left","right","difference","ascii",
-            "nchar","patindex","soundex","space","str","stuff","unicode","quotename","replace","replicate",
-            "reverse","avg","HashBytes"
-        };
-        //***************************************************************************
-        // Private Fields
-        // 
-        private Regex
-            _rgxKeyWord = null,
-            _rgxComment = null,
-            _rgxMLComment = null,
-            _rgxStrLiteral = null,
-            //_rgxAlias = null,
-            _rgxFunc = null,
-            _rgxVar = null,
-            _rgxTblRef = null;
-        static readonly QueryTextParser
-            _singleInstance = new QueryTextParser();
-        #endregion
-
-        #region Properties
-        //***************************************************************************
-        // Public Properties
-        // 
-        public static QueryTextParser Instance
-        { get { return _singleInstance; } }
-        public Regex KeyWord
-        { get { return this._rgxKeyWord; } }
-        public Regex Function
-        { get { return this._rgxFunc; } }
-        public Regex Variable
-        { get { return this._rgxVar; } }
-        public Regex Comment
-        { get { return this._rgxComment; } }
-        public Regex CommentML
-        { get { return this._rgxMLComment; } }
-        public Regex Literal
-        { get { return this._rgxStrLiteral; } }
-        public Regex TableReference
-        { get { return this._rgxTblRef; } }
-        #endregion
-
-        #region Class Constructors
-        //***************************************************************************
-        // Class Constructors
-        // 
-        /// <summary>
-        /// A single constructor, which is private and parameterless.
-        /// </summary>
-        /// <remarks>
-        ///     This prevents other classes from instantiating it
-        /// (which would be a violation of the singleton patern). It also prevents
-        /// subclassing. If a singleton can be subclassed, and if each of those
-        /// subclasses can create an instance, the patern is violated.
-        /// 
-        /// http://www.yoda.arachsys.com/csharp/singleton.html
-        /// </remarks>
-        private QueryTextParser()
-        {
-            this.InitRegex();
-        }
-        /// <summary>
-        /// Explicit static constructor.
-        /// </summary>
-        /// <remarks>
-        /// Explicit static constructor to tell C# compiler not to mark type as
-        /// 'beforefieldinit'.
-        /// 
-        /// http://www.yoda.arachsys.com/csharp/beforefieldinit.html
-        /// </remarks>
-        static QueryTextParser()
-        { }
-        #endregion
-
-        #region Private Methods
-        //***************************************************************************
-        // Private Methods
-        // 
-        private void InitRegex()
-        {
-            try
-            {
-                #region DEPRECIATED CODE
-                // These methods for building the '_rgxKeyWord' and '_rgxFunc'
-                //   objects had inate performance issues due to the use of
-                //   string concatenation.
-
-                //string regStr = "";
-                //foreach (string str in QueryTextBox.sqlKeywords)
-                //    regStr += "|" + str;
-                //this._rgxKeyWord = new Regex("(?<!--.*|\\[)(?:\\b(" + regStr.Substring(1) + ")\\b)(?!\\])", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-                //regStr = "";
-                //foreach (string str in QueryTextBox.sqlFunc)
-                //    regStr += "|" + str;
-                //this._rgxFunc = new Regex("(?<!--.*|\\[)(?:\\b(" + regStr.Substring(1) + ")\\b)(?!\\])", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-                #endregion
-
-                this._rgxKeyWord = new Regex("(?<!--.*|\\[)(?:\\b(" + string.Join("|", QueryTextParser.sqlKeywords) + ")\\b)(?!\\])", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-                this._rgxFunc = new Regex("(?<!--.*|\\[)(?:\\b(" + string.Join("|", QueryTextParser.sqlFunc) + ")\\b)(?!\\])", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-                this._rgxVar = new Regex("(?<!--.*|\\[)@{2}\\w+(?!\\])\\b", RegexOptions.Compiled);
-                this._rgxComment = new Regex("--.*", RegexOptions.Compiled);
-                this._rgxMLComment = new Regex("/\\*(?:.*?)(?:(\\*/)|$)", RegexOptions.Compiled | RegexOptions.Singleline);
-                //this._rgxStrLiteral = new Regex("'{1}(.*?)(('{1})|$)", RegexOptions.Compiled | RegexOptions.Singleline);
-                this._rgxStrLiteral = new Regex("(?<!--.*|\\[)'{1}(?:.*?)('{1}|$)", RegexOptions.Compiled);
-                //this._rgxAlias = new Regex(@"(?<!(--.*))[a-zA-Z]*\.(?=\w+)", RegexOptions.Compiled);
-                //this._rgxAlias = new Regex(@"(?<alias>(?<!--.*)[a-zA-Z]*)\.(?=\w+)/k(\bfrom\b\w+(\s*|as\b)<alias>)", RegexOptions.Compiled);
-                this._rgxTblRef = new Regex(@"\b(FROM|JOIN)(?!(\s*/|\(?)SELECT)\s+(\[?(?<db>.*?)\]?\.)?(\[?(?<sch>.*?)\]?\.)?\[?(?<tbl>.*?)\]?\s+(?!(WHERE|ON|JOIN|INNER|OUTER|LEFT|RIGHT|FULL|PIVOT|GROUP|HAVING))(AS)?(\[)?(?<als>\w+)($|[\s\n]+)", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Multiline);
-
-                // This one was supposed to find table references without an alias,
-                //   but doesn't work correctly and "over grabs" the aliases into
-                //   the next table definition.
-                //this._rgxTblRef = new Regex(@"\b(FROM|JOIN)(?!(\s*/|\(?)SELECT)\s+(\[?(?<db>.*?)\]?\.)?(\[?(?<sch>.*?)\]?\.)?\[?(?<tbl>.*?)\]?\s+((?!(WHERE|ON|JOIN|INNER|OUTER|LEFT|RIGHT|FULL|PIVOT|GROUP|HAVING))(AS)?(\[)?(?<als>\w+))?(\s|\b)", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Multiline);
-            }
-            catch { }
-        }
-        #endregion
-    }
     [DesignerCategory("UserControl"), ToolboxBitmap(typeof(QueryTextBox), "/QueryTextBox.bmp")]
     public class QueryTextBox : RainstormStudios.Controls.AdvRichTextBox
     {
@@ -2818,6 +2667,157 @@ namespace RainstormStudios.Controls
         {
             if (this.InsertModeChanged != null)
                 this.InsertModeChanged(this, e);
+        }
+        #endregion
+    }
+    public sealed class QueryTextParser
+    {
+        #region Declartions
+        //****************************************************************************
+        // Global Constants
+        // 
+        static readonly string[] sqlKeywords = new string[]{
+            "add","all","alter","and","any","as","asc","authorization","backup","begin","break",
+            "browse","bulk","by","cascade","case","check","checkpoint","close","clustered",
+            "coalesce","collate","column","commit","compute","constraint","contains","containsable",
+            "continue","create","cross","current","current_date","current_time",
+            "current_timestamp","current_user","cursor","database","dbcc","deallocate","declare",
+            "default","delete","deny","desc","disk","distinct","distributed","double","drop",
+            "dummy","dump","else","end","errlvl","escape","except","exec","execute","exists","exit",
+            "fetch","file","fillfactor","for","foreign","freetext","freetexttable","from","full",
+            "function","goto","grant","group","having","holdlock","identity_insert",
+            "identitycol","if","in","index","inner","insert","intersect","into","is","join","key",
+            "kill","left","like","lineno","load","national","nocheck","nonclustered","not","null",
+            "nullif","of","off","offsets","on","open","opendatasource","openquery","openrowset",
+            "openxml","option","or","order","outer","over","percent","plan","precision","primary",
+            "print","proc","procedure","public","raiserror","read","readtext","reconfigure",
+            "references","replication","restore","restrict","return","revoke","right","rollback",
+            "rowcount","rowguidcol","rule","save","schema","select","session_user","set","setuser",
+            "shutdown","some","statistics","system_user","table","textsize","then","to","top","tran",
+            "transaction","trigger","truncate","tsequal","union","unique","update","updatetext",
+            "use","user","values","varying","view","waitfor","when","where","while","with",
+            "writetext","pivot","returns","dateadd",
+            "varchar","nvarchar","char","nchar","int","bigint","binary","bit","datetime","decimal",
+            "float","image","money","ntext","text","numeric","real","smallint","smalldatetime",
+            "smallmoney","text","timestamp","tinyint","uniqueidentifier","varbinary","xml"
+        };
+        static readonly string[] sqlFunc = new string[]{
+            "getdate","datediff","datename","datepart","convert","day","month","year","hour","minute","second",
+            "rtrim","ltrim","str","len","isnull","isnumeric","cert_id","charindex","cast","ceiling","floor",
+            "round","checksum","sum","substring","charindex","upper","lower","left","right","difference","ascii",
+            "nchar","patindex","soundex","space","str","stuff","unicode","quotename","replace","replicate",
+            "reverse","avg","HashBytes"
+        };
+        //***************************************************************************
+        // Private Fields
+        // 
+        private Regex
+            _rgxKeyWord = null,
+            _rgxComment = null,
+            _rgxMLComment = null,
+            _rgxStrLiteral = null,
+            //_rgxAlias = null,
+            _rgxFunc = null,
+            _rgxVar = null,
+            _rgxTblRef = null;
+        static readonly QueryTextParser
+            _singleInstance = new QueryTextParser();
+        #endregion
+
+        #region Properties
+        //***************************************************************************
+        // Public Properties
+        // 
+        public static QueryTextParser Instance
+        { get { return _singleInstance; } }
+        public Regex KeyWord
+        { get { return this._rgxKeyWord; } }
+        public Regex Function
+        { get { return this._rgxFunc; } }
+        public Regex Variable
+        { get { return this._rgxVar; } }
+        public Regex Comment
+        { get { return this._rgxComment; } }
+        public Regex CommentML
+        { get { return this._rgxMLComment; } }
+        public Regex Literal
+        { get { return this._rgxStrLiteral; } }
+        public Regex TableReference
+        { get { return this._rgxTblRef; } }
+        #endregion
+
+        #region Class Constructors
+        //***************************************************************************
+        // Class Constructors
+        // 
+        /// <summary>
+        /// A single constructor, which is private and parameterless.
+        /// </summary>
+        /// <remarks>
+        ///     This prevents other classes from instantiating it
+        /// (which would be a violation of the singleton patern). It also prevents
+        /// subclassing. If a singleton can be subclassed, and if each of those
+        /// subclasses can create an instance, the patern is violated.
+        /// 
+        /// http://www.yoda.arachsys.com/csharp/singleton.html
+        /// </remarks>
+        private QueryTextParser()
+        {
+            this.InitRegex();
+        }
+        /// <summary>
+        /// Explicit static constructor.
+        /// </summary>
+        /// <remarks>
+        /// Explicit static constructor to tell C# compiler not to mark type as
+        /// 'beforefieldinit'.
+        /// 
+        /// http://www.yoda.arachsys.com/csharp/beforefieldinit.html
+        /// </remarks>
+        static QueryTextParser()
+        { }
+        #endregion
+
+        #region Private Methods
+        //***************************************************************************
+        // Private Methods
+        // 
+        private void InitRegex()
+        {
+            try
+            {
+                #region DEPRECIATED CODE
+                // These methods for building the '_rgxKeyWord' and '_rgxFunc'
+                //   objects had inate performance issues due to the use of
+                //   string concatenation.
+
+                //string regStr = "";
+                //foreach (string str in QueryTextBox.sqlKeywords)
+                //    regStr += "|" + str;
+                //this._rgxKeyWord = new Regex("(?<!--.*|\\[)(?:\\b(" + regStr.Substring(1) + ")\\b)(?!\\])", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+                //regStr = "";
+                //foreach (string str in QueryTextBox.sqlFunc)
+                //    regStr += "|" + str;
+                //this._rgxFunc = new Regex("(?<!--.*|\\[)(?:\\b(" + regStr.Substring(1) + ")\\b)(?!\\])", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+                #endregion
+
+                this._rgxKeyWord = new Regex("(?<!--.*|\\[)(?:\\b(" + string.Join("|", QueryTextParser.sqlKeywords) + ")\\b)(?!\\])", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+                this._rgxFunc = new Regex("(?<!--.*|\\[)(?:\\b(" + string.Join("|", QueryTextParser.sqlFunc) + ")\\b)(?!\\])", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+                this._rgxVar = new Regex("(?<!--.*|\\[)@{2}\\w+(?!\\])\\b", RegexOptions.Compiled);
+                this._rgxComment = new Regex("--.*", RegexOptions.Compiled);
+                this._rgxMLComment = new Regex("/\\*(?:.*?)(?:(\\*/)|$)", RegexOptions.Compiled | RegexOptions.Singleline);
+                //this._rgxStrLiteral = new Regex("'{1}(.*?)(('{1})|$)", RegexOptions.Compiled | RegexOptions.Singleline);
+                this._rgxStrLiteral = new Regex("(?<!--.*|\\[)'{1}(?:.*?)('{1}|$)", RegexOptions.Compiled);
+                //this._rgxAlias = new Regex(@"(?<!(--.*))[a-zA-Z]*\.(?=\w+)", RegexOptions.Compiled);
+                //this._rgxAlias = new Regex(@"(?<alias>(?<!--.*)[a-zA-Z]*)\.(?=\w+)/k(\bfrom\b\w+(\s*|as\b)<alias>)", RegexOptions.Compiled);
+                this._rgxTblRef = new Regex(@"\b(FROM|JOIN)(?!(\s*/|\(?)SELECT)\s+(\[?(?<db>.*?)\]?\.)?(\[?(?<sch>.*?)\]?\.)?\[?(?<tbl>.*?)\]?\s+(?!(WHERE|ON|JOIN|INNER|OUTER|LEFT|RIGHT|FULL|PIVOT|GROUP|HAVING))(AS)?(\[)?(?<als>\w+)($|[\s\n]+)", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Multiline);
+
+                // This one was supposed to find table references without an alias,
+                //   but doesn't work correctly and "over grabs" the aliases into
+                //   the next table definition.
+                //this._rgxTblRef = new Regex(@"\b(FROM|JOIN)(?!(\s*/|\(?)SELECT)\s+(\[?(?<db>.*?)\]?\.)?(\[?(?<sch>.*?)\]?\.)?\[?(?<tbl>.*?)\]?\s+((?!(WHERE|ON|JOIN|INNER|OUTER|LEFT|RIGHT|FULL|PIVOT|GROUP|HAVING))(AS)?(\[)?(?<als>\w+))?(\s|\b)", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Multiline);
+            }
+            catch { }
         }
         #endregion
     }
